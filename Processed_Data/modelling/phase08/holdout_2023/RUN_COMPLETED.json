@@ -1,0 +1,10 @@
+{
+ "protocol": "Phase 8 \u00a7P",
+ "utc": "2026-10-29T16:10:05+00:00",
+ "outputs_sha256": {
+  "holdout_results.csv": "a795935a2ab818b36aa0d09d8cb3f6d8a083ea7a75dfd9db2c2c8b636b4e7707",
+  "holdout_bootstrap.csv": "a738a48326fe8bb03786f0db9c7bdb90a2e77b4c968457c00664451800a6d89c",
+  "holdout_refit_log.csv": "ff6474ad02e9e7ed23adcc2777d1818f3321c731bc75b87b48ac6a7119488fee",
+  "holdout_provenance.csv": "17f05cb4b1b5e2ad68b00c3ade0c7967a6fec9a82e81e3d9be28361b86bf5150"
+ }
+}

@@ -1,0 +1,12 @@
+key,value
+protocol,Phase_08_Modelling_Plan.md §P
+decision_unchanged,D-42
+freeze_manifest_sha256,79e4d0484f2144d12fcc38c6f5e40eea186372b184902d337fce090be49c0938
+freeze_verified,True
+inputs_sha256,"{""Processed_Data\\features\\features_onion.parquet"": ""c480a5985b388c5afe374eb67a75f60c236c2abcb269a5dd0adb5aa8ce5035f9"", ""Processed_Data\\features\\features_potato.parquet"": ""3909e59f9237098b1f49f900cb02d62993a8cda350eaf89fbf3c89cad58fc22f"", ""Processed_Data\\features\\features_wheat.parquet"": ""a01beaee619c496ee3ca7156a1bc79a06d863a4483de3b8638bd3b15e55c4beb"", ""Processed_Data\\features_audit\\feature_registry.csv"": ""ff9f4de46e4e52a7aa445e91f3b387a53a20f949f158a84c5f2f8d433f1d0340""}"
+last_reported_date,"{""Onion"": ""2024-02-02"", ""Potato"": ""2024-02-02"", ""Wheat"": ""2024-02-01""}"
+holdout_target_sundays,2023-01-01 .. 2024-01-28
+training_rule,"training_examples(ex, refit): every target that ended by the refit date (Phase 8 expanding window)"
+bootstrap,"10000 replicates, seed 20261022, series and market clusters, percentile 95%"
+started_utc,2026-10-29T16:09:06+00:00
+seconds,57.6

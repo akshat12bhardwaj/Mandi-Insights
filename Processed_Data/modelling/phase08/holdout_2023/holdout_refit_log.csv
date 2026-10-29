@@ -1,0 +1,7 @@
+crop,horizon_weeks,model,config,refit_date,n_train,n_train_holdout_targets,train_last_target_sunday,n_holdout_rows,fit_seconds
+Onion,1,hgb_conservative,no_weather,2022-10-02,456417,0,2022-10-02,684,4.98
+Onion,1,hgb_conservative,no_weather,2023-01-01,466116,686,2023-01-01,8685,3.94
+Onion,1,hgb_conservative,no_weather,2023-04-02,475542,9427,2023-04-02,8918,3.87
+Onion,1,hgb_conservative,no_weather,2023-07-02,484974,18443,2023-07-02,8994,3.91
+Onion,1,hgb_conservative,no_weather,2023-10-01,494317,27549,2023-10-01,9378,4.02
+Onion,1,hgb_conservative,no_weather,2024-01-07,504308,37160,2024-01-07,1948,3.99

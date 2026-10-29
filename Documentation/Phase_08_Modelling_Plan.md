@@ -661,3 +661,9 @@ For persistence cells the selected approach is persistence, so the improvement i
 - No changes to D-42, and no tuning or selection.
 
 **When:** only after the Phase 8 checkpoint is committed and the project owner approves running it.
+## Q. §P holdout result (run once, 2026-10-29; `Code/modelling/holdout_evaluation.py`; Decision Log D-55)
+
+- Run exactly once under the §P freeze (`holdout_2023/holdout_freeze_manifest.csv`) and run-once lock; outputs in `Processed_Data/modelling/phase08/holdout_2023/`.
+- Persistence, combined 2023 + 2024-01, h = 1 MAE (Rs/quintal): Onion 212.6, Potato 84.4, Wheat 63.7.
+- Onion h = 1 `hgb_conservative` (no_weather): MAE 189.4, **+10.9 %** vs persistence [95% series-cluster 10.0, 11.9]; 2023 +11.1 %, 2024-01 +8.9 %.
+- D-42 is unchanged (§P: the holdout cannot change it). 2023 is retired from untouched-test claims and may serve as ordinary history for future, separately versioned experiments (D-55).

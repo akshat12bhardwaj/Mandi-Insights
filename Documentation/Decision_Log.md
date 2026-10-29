@@ -567,3 +567,32 @@ RMSE improved in both years. Any change to the selection would need a new decisi
 **Dependencies**: PySpark is **not** in the default `requirements.txt`. It is needed only to rerun the Spark ETL or its tests, and lives in the separately documented venv with JDK 21 (root `README.md`, "Optional: Spark environment"); `Code/tests/test_bigdata_spark.py` skips without it. No Hadoop / HDFS code or dependency is added.
 **Not changed**: every earlier decision, freeze and evaluation boundary (D-42, D-45, PQ-1, D-52 / D-53).
 **Phase**: final scope (not a numbered phase).
+### D-55 — [RECORDED 2026-10-29 under the project owner's autonomous-execution mandate] Phase 8 §P holdout evaluated once; 2023 retired from untouched-test claims
+**Authority**: the owner's 2026-10-29 mandate authorised running the original §P evaluation exactly once if its runner was demonstrably valid, then retiring 2023 by an append-only record. §P required "the Phase 8 checkpoint committed" (true since `a28fb52`) and owner approval (this mandate).
+**Runner validity checks (all before any holdout row was scored)**:
+1. No §P runner existed; §P listed its safeguards as "to implement before running". `Code/modelling/holdout_evaluation.py` implements them and **reuses the D-42-frozen Phase 8 code unchanged** (`dataset.py`, `models.py`, `baselines.py`, `uncertainty.py`, `final_evaluation.py`; `final_evaluation.verify_freeze()` passed, so these files are byte-identical to the D-42 freeze).
+2. Inputs: the three Phase 6 feature tables matched their Phase 7 fingerprints (`input_fingerprints.csv`), and the registry matched the D-42 freeze.
+3. Separate freeze `Processed_Data/modelling/phase08/holdout_2023/holdout_freeze_manifest.csv` (SHA-256 `79e4d0484f2144d12fcc38c6f5e40eea186372b184902d337fce090be49c0938`): the five frozen Phase 8 files, the registry, the runner (`4263617a…`), the LF-normalised §P text (`82f5b793…`), the approaches and the `hgb_conservative` settings.
+4. Run-once guard: `RUN_LOCK.json` created exclusively and fsynced before scoring (2026-10-29 16:09:06 UTC); `RUN_COMPLETED.json` records the output hashes. Any lock, completion record or result refuses a second run. Explicit confirmation `--confirm-single-holdout-run P`.
+5. Scope: target Sundays 2023-01-01 → 2024-01-28 (the runner refuses any other last complete Sunday), eligible at origin (D-41), primary experiment, `no_weather` configuration (the runner refuses any `wx_*` column), leakage checks `validate_examples` on every crop × horizon.
+6. Synthetic tests `Code/tests/test_phase08_holdout.py` (8) passed before the real run.
+**Training rule as specified**: `training_examples(ex, refit)` at the latest quarterly refit ≤ origin (2022-10-02 … 2024-01-07): every target that ended by the refit date, so later refits include 2023 targets already in the past (686 → 37,160 rows; `holdout_refit_log.csv`). No target after a refit date entered its fit.
+**Result** (`holdout_results.csv`, `holdout_bootstrap.csv`; run 58.7 s, exit 0; Rs/quintal):
+| Crop | h | Rows (2023 + 2024-01) | Persistence MAE | MAPE % |
+|---|---|---|---|---|
+| Onion | 1 / 2 / 4 | 38,607 / 38,182 / 37,629 | 212.6 / 320.3 / 488.8 | 9.7 / 14.4 / 21.7 |
+| Potato | 1 / 2 / 4 | 36,094 / 35,680 / 35,159 | 84.4 / 119.7 / 174.4 | 6.8 / 10.1 / 15.9 |
+| Wheat | 1 / 2 / 4 | 33,075 / 32,681 / 32,209 | 63.7 / 86.9 / 120.8 | 2.6 / 3.6 / 5.0 |
+- **Onion h = 1 comparison, `hgb_conservative` no_weather:** MAE 189.4 vs persistence 212.6, **+10.9 %** [95% series-cluster 10.0, 11.9; market-cluster 9.9, 11.9], 904 series / 820 markets; 2023 +11.1 % [10.1, 12.1]; 2024-01 +8.9 % [6.4, 11.3] (4 target weeks). Better after Bonferroni in every period.
+- Onion h = 4 in 2024-01 (persistence MAE 918.7, MAPE 42.0 %) rests on 4 target weeks.
+**Interpretation and limits**:
+- §P: "It cannot change D-42." **D-42 is unchanged.** Its selected Onion h = 1 *weather* model cannot run after 2022-12-31; the no-weather variant is a comparison, never a replacement, and is not promoted by this record.
+- This is the third out-of-time regime in which the Onion h = 1 learned model beat persistence (validation 2019–2020, test 2021–2022, holdout 2023). It is evidence for a future, separately pre-registered Onion h = 1 experiment, not a selection.
+- These numbers are on the old dataset (AGMARKNET copy to 2024-02-02). They are **not comparable** with the D-53 candidate numbers (different source version, period, grades and market mix).
+**Retirement of 2023**:
+1. 2023-01-01 → 2024-02-02 is **no longer untouched**. No future result may describe it as an untouched or held-out test period.
+2. It may be used as ordinary history (lags, eligibility, identity bridging, training) by future experiments under their own protocols.
+3. The D-50 guard `CANDIDATE_START = '2024-02-03'` and everything built under D-50 / D-52 / D-53 stay **unchanged**: those artefacts and their freezes are bound to it. A future dataset that reads 2023 must be a new version with its own contract.
+4. D-40, D-42, D-45, D-50, D-52, D-53 and D-54 are not edited.
+**Code revision**: runner added on top of `7ce7f05` (committed with this record). **Tests**: full suite after the run (see the commit).
+**Phase**: Phase 8 §P close-out (not a new phase).
