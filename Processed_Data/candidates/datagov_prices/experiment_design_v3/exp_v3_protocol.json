@@ -1,0 +1,43 @@
+{
+ "experiment": "exp-v3-prices",
+ "decision": "D-58",
+ "design": "faq_only",
+ "population": "eligible_d41 at origin",
+ "methods": [
+  "persistence",
+  "trailing_median_4w",
+  "ewma_a05",
+  "drift_4w"
+ ],
+ "baseline": "persistence",
+ "horizons": [
+  1,
+  2,
+  4
+ ],
+ "validation_target_sundays": [
+  "2025-03-02",
+  "2026-06-28"
+ ],
+ "consumed_never_compared": [
+  "2026-07-05",
+  "2026-10-18"
+ ],
+ "test_target_sundays": [
+  "2026-11-01",
+  "2027-04-25"
+ ],
+ "metric": "MAE (Rs/quintal) primary; RMSE, MAPE reported",
+ "skill": "1 - MAE(method) / MAE(persistence), identical rows",
+ "bootstrap": {
+  "cluster": "market (canonical_id)",
+  "replicates": 10000,
+  "seed": 20261022,
+  "statistic": "skill (ratio of summed absolute errors)"
+ },
+ "selection": "per crop x horizon, lowest validation MAE among ['trailing_median_4w', 'ewma_a05', 'drift_4w']; advances only if its market-cluster skill interval at level 1 - 0.05/27 has lower bound > 0; else persistence-only",
+ "acceptance": "an advanced method is accepted for a cell only if, on the test window: (1) market-cluster skill interval at level 1 - 0.05/k (k = number of advanced cells) has lower bound > 0; (2) the state-cluster 95% interval has lower bound > 0; (3) the skill stays > 0 when any one state is left out. Otherwise persistence remains the forecast",
+ "test_gate": "run once, only when the dataset covers the last test target week and was retrieved >= 10 days after it (late records, D-56 revision log); RUN_LOCK.json is created before any test row is read",
+ "data": "candidate-prices-v1.2 or a later version built with unchanged rules; versions are named in the run manifest",
+ "registered_utc": "2026-10-29T16:48:09+00:00"
+}
