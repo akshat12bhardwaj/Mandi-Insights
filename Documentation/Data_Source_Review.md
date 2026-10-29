@@ -2025,3 +2025,11 @@ Open-Meteo has revised archived values since Phase 3. **The original panel and t
 - no model training;
 - no dashboard changes;
 - no commits.
+
+## 10. Licence check, increment S4 and `candidate-prices-v1.2` (2026-10-29; Decision Log D-56)
+
+- **Licence:** the resource's own licence field is empty; only the portal-wide footer names GODL-India. Treated as **not verified for this resource**: local analysis and the local application only, with attribution; no record-level or derived value table is committed.
+- **S4:** 2026-10-21 → 2026-10-25, 15 / 15 crop-days pass, 61 calls, partition exact. Separate manifest in `datagov_prices/increments/`.
+- **Revisions:** re-fetching 2026-10-18 → 20 found +0–5 late records per crop-day and no removals (`increments/revision_log.csv`).
+- **v1.2:** v1.1 rules plus S4, weeks to 2026-10-19; byte-identical rebuild; v1.1 cells unchanged; D-52 freeze verifies.
+- **Recent state prices:** archive 2020-07-06 → 2024-01-22 and data.gov.in FAQ 2024-02-05 → 2026-10-19 (`reporting_v1/`), with the Kerala / Keralam double-reporting rule. Served at `/api/v2/markets/*`.

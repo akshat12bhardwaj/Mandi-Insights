@@ -1,0 +1,84 @@
+{
+ "version": "candidate-prices-v1.2",
+ "decision": "D-50",
+ "crop_days": 2988,
+ "stages": [
+  "S1",
+  "S2",
+  "S3",
+  "S4"
+ ],
+ "inputs": {
+  "crop_day_manifest": "e9b96b5c7e99fcf3d7d95d71b222787cb483c494d4edd7ce15b5be9a773e0f8c",
+  "mapping_decisions": "74fa253aef05a6f5f137a577b7302a1e34a21d41da4ff381d439015f0d5f0929",
+  "contract_sha256": "da5907072dbd7fff6f781b785128e7fa55c9ca668689952fa179e64d649ecc4d",
+  "increments_crop_day_manifest": "c4656c37809e2d6b080db673993e4223638a11c01caea62591442094dd3a1268"
+ },
+ "outputs": {
+  "model_table_faq_local.parquet": {
+   "rows": 977590,
+   "sha256": "5808a6f33b948275731e6525fefe418e9505f0cbe5e1ef6928c79116eaad7766"
+  },
+  "model_table_faq_only.parquet": {
+   "rows": 787472,
+   "sha256": "fc0196ecdea32bbf5b07c45267ab9a8c119278dc9963ed4276bd0a105291938e"
+  },
+  "model_table_pooled.parquet": {
+   "rows": 1092878,
+   "sha256": "c7171015f23ff267eaacdca36fac61c5936f4801d0b3db0fb122f51d32988a2b"
+  },
+  "records_onion.parquet": {
+   "rows": 686628,
+   "sha256": "4f1969994155489c77cd06f8af963b5e369858c4fc8b0a40a02e2a3c4b72fd78"
+  },
+  "records_potato.parquet": {
+   "rows": 650067,
+   "sha256": "2e168e4b1d7e7b5084ce2f77db78e6070acec971719e03b9825b8951cc61972c"
+  },
+  "records_wheat.parquet": {
+   "rows": 661857,
+   "sha256": "45c646aa4ece2115ef3c5cd97b363e21302de956e698730da8a2b94d35238126"
+  },
+  "weekly_faq_local.parquet": {
+   "rows": 387390,
+   "sha256": "1d29e7564fa38e709bc48a27bd2ab5adac42569324f89cefb464bc2bce6d6ac6"
+  },
+  "weekly_faq_only.parquet": {
+   "rows": 314601,
+   "sha256": "d642551eecc7bab80c83a05a85733b081725a115ecf33aa83bd3eef3cba9be82"
+  },
+  "weekly_pooled.parquet": {
+   "rows": 430777,
+   "sha256": "163dae3895a4640e653ac5cc99fd03316750e64ec735d4705d58f03c2cfce2eb"
+  }
+ },
+ "r09u_approved": false,
+ "candidate_start": "2024-02-03",
+ "changes_from_v1": [
+  "A1: n_usable_dates_to_origin counts every usable date <= origin (D-41), including the partial first week 2024-02-03/04 that v1 skipped; weekly cells still use complete weeks only",
+  "A2: records identical in all 11 source fields as text (string- vs number-typed JSON copies from the feed) are type_variant_duplicate: the string-typed copy is kept, the other excluded, before R03; they were mislabelled key_conflict in v1",
+  "B1 (D-56): adds the accepted increment stages after S3 (S4: 2026-10-21 .. 2026-10-25), fetched and accepted with the S1-S3 rule into their own manifest; weekly cells extend to the last complete week. No rule, threshold, identity or grade decision changed. Late-arriving records are not back-filled into held days (revision_log.csv)"
+ ],
+ "source": {
+  "resource_id": "35985678-0d79-46b4-9ed6-6f13308a1d24",
+  "title": "Variety-wise Daily Market Prices Data of Commodity",
+  "publisher": "Directorate of Marketing and Inspection (DMI), Department of Agriculture and Farmers Welfare, MoA&FW",
+  "portal": "data.gov.in (Open Government Data Platform India)",
+  "licence_evidence": "resource page field_data_licence is empty; the portal footer states \"Content is owned by the respective Ministries/Departments/Organizations and licensed under the Government Open Data License-India.\" (page retrieved 2026-10-29, Dataset_Candidates/datagov_licence/2026-10-29/)",
+  "licence_status": "portal-level GODL-India statement only; no resource-specific licence stated. Local analysis and the local application only; record-level and derived tables are not committed or redistributed (D-56)"
+ },
+ "source_breaks": [
+  {
+   "date": "2024-02-03",
+   "what": "source changes from the archived AGMARKNET copy to data.gov.in retrievals"
+  },
+  {
+   "date": "2025-11-07",
+   "what": "Agmarknet 2.0 relaunch: market renaming and a new grade taxonomy; most market histories are not linked across it"
+  }
+ ],
+ "weeks": [
+  "2024-02-05",
+  "2026-10-19"
+ ]
+}

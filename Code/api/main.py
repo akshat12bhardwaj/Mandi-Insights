@@ -19,12 +19,14 @@ from fastapi import FastAPI, HTTPException, Query
 from pydantic import BaseModel
 
 from Code.api.logistics import router as logistics
+from Code.api.v2 import router as v2
 from Code.app import data as d
 from Code.bigdata.mapreduce_demo import LABEL as MR_LABEL
 
 app = FastAPI(title="Mandi Insights API", version="1.0.0",
               description="Read-only access to validated BDA outputs. Historical data only; nothing is live.")
 app.include_router(logistics)            # /api/routes*, /api/warehouses* (Phase 11 outputs)
+app.include_router(v2)                   # /api/v2/markets/* (recent observed prices, D-56)
 
 Crop = Literal["Onion", "Potato", "Wheat"]
 YEAR = r"^\d{4}-\d{4}$"

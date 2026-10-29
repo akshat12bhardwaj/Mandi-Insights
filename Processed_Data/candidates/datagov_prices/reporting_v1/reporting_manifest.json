@@ -1,0 +1,45 @@
+{
+ "table": "weekly_state.parquet",
+ "sha256": "fe005a79650a856159fae65517811c7a7455fef8d66881e027e9b19fb458b871",
+ "rows": 18827,
+ "inputs": {
+  "candidate_prices_v1_2_build_manifest": "1d656dd2f93cba81dd956e431978e7de7d396da80f960b9d241ce97771a4a2e5"
+ },
+ "segments": {
+  "agmarknet_archive": [
+   "2020-07-06",
+   "2024-01-22"
+  ],
+  "datagov": [
+   "2024-02-05",
+   "2026-10-19"
+  ]
+ },
+ "state_aliases": {
+  "Keralam": "Kerala",
+  "Uttarakhand": "Uttrakhand"
+ },
+ "grade": "FAQ (datagov); the archive carries no grade field",
+ "source": {
+  "resource_id": "35985678-0d79-46b4-9ed6-6f13308a1d24",
+  "title": "Variety-wise Daily Market Prices Data of Commodity",
+  "publisher": "Directorate of Marketing and Inspection (DMI), Department of Agriculture and Farmers Welfare, MoA&FW",
+  "portal": "data.gov.in (Open Government Data Platform India)",
+  "licence_evidence": "resource page field_data_licence is empty; the portal footer states \"Content is owned by the respective Ministries/Departments/Organizations and licensed under the Government Open Data License-India.\" (page retrieved 2026-10-29, Dataset_Candidates/datagov_licence/2026-10-29/)",
+  "licence_status": "portal-level GODL-India statement only; no resource-specific licence stated. Local analysis and the local application only; record-level and derived tables are not committed or redistributed (D-56)"
+ },
+ "source_breaks": [
+  {
+   "date": "2024-02-03",
+   "what": "source changes from the archived AGMARKNET copy to data.gov.in retrievals"
+  },
+  {
+   "date": "2025-11-07",
+   "what": "Agmarknet 2.0 relaunch: market renaming and a new grade taxonomy; most market histories are not linked across it"
+  }
+ ],
+ "retrieved_utc_range": [
+  "2026-10-23T23:49:39+00:00",
+  "2026-10-29T16:19:49+00:00"
+ ]
+}
