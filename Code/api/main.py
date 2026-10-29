@@ -22,6 +22,7 @@ from Code.api.logistics import router as logistics
 from Code.api.v2 import router as v2
 from Code.app import data as d
 from Code.bigdata.mapreduce_demo import LABEL as MR_LABEL
+from Code.weather import forecast as fc
 
 app = FastAPI(title="Mandi Insights API", version="1.0.0",
               description="Read-only access to validated BDA outputs. Historical data only; nothing is live.")
@@ -272,6 +273,43 @@ def location_climate(location_id: int) -> dict[str, Any]:
     r = locs.iloc[location_id]
     return {"state": r["state"], "district": r["district"], "kind": "historical", "period": "2001-2022",
             "source": "Open-Meteo historical archive (CC BY 4.0)", "months": records(d.location_climate(r["weather_file"]))}
+
+
+def point_key(state: str, district: str) -> str:
+    """Cache name of a verified point, shared by the location and route forecasts."""
+    return "".join(ch if ch.isalnum() else "_" for ch in f"{state}_{district}")
+
+
+@app.get("/api/locations/{location_id}/forecast")
+def location_forecast(location_id: int) -> dict[str, Any]:
+    """Seven-day forecast at a verified district reference point (D-57). Approximate for the district; not a warning."""
+    locs = locations()
+    if not 0 <= location_id < len(locs):
+        raise HTTPException(404, "unknown location id")
+    r = locs.iloc[location_id]
+    f = fc.forecast(point_key(r["state"], r["district"]), float(r["latitude"]), float(r["longitude"]))
+    return {"state": r["state"], "district": r["district"], "location_meaning": "district reference point (approximate for the district)",
+            **f, "heavy_rain_days": fc.flags(f["days"])}
+
+
+@app.get("/api/capabilities")
+def capabilities() -> list[dict[str, Any]]:
+    """What the application serves, one entry per kind of information, with its honest status."""
+    return [
+        {"capability": "Historical market prices and arrivals", "status": "available", "live": False, "detail": f"to {d.SPARK_END.date()}"},
+        {"capability": "Recent observed prices", "status": "available" if v2_built() else "not_built", "live": False,
+         "detail": "weekly state prices from retrieved records, updated in batches"},
+        {"capability": "Weather forecast at verified district points", "status": "available" if fc.enabled() else "disabled",
+         "live": fc.enabled(), "detail": "7 days, Open-Meteo, refreshed at most every 3 hours"},
+        {"capability": "Official weather warnings", "status": "missing_data", "live": False, "detail": "no verified access to IMD warnings"},
+        {"capability": "Price forecasts", "status": "historical_evaluation_only", "live": False,
+         "detail": "evaluated on past periods; no operational forecast is published"},
+    ]
+
+
+def v2_built() -> bool:
+    from Code.app import data_v2
+    return data_v2.manifest() is not None
 
 
 @app.get("/api/about")

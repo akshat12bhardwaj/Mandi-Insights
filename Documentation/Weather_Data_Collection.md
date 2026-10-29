@@ -131,3 +131,9 @@ Weather for the 11 new or corrected points was collected with the unchanged Phas
 - Phase 6 — Feature Engineering: **[COMPLETED]** (trailing weather windows from the Phase 4 panel; same-day weather not a predictor)
 - Phase 7 — EDA: **[COMPLETED]** (weather associations analysed on the covered subset only; likely seasonal confounding)
 - Phases 8–14: **[FUTURE]**
+
+## Seven-day forecasts (2026-10-29, D-57)
+
+- Separate from everything above: a short-lived forecast cache, not a historical dataset. It is never merged with the 2001–2022 panel or the 2026-10-24 candidate vintage, and is never a model input.
+- `Code/weather/forecast.py`: Open-Meteo forecast API, 46 verified points, rain mm / rain probability % / max °C, 3-hour cache, stale fallback, unavailable state, CC BY 4.0 attribution.
+- Endpoints: `/api/locations/{id}/forecast`, `/api/routes/weather` (start and end points only).

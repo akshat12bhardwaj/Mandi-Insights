@@ -46,3 +46,6 @@ Dataset_Candidates/
 /Processed_Data/candidates/datagov_prices/review_packs/r09u_v1/r09u_review_sample.csv
 /Processed_Data/candidates/weather_comparison_2022.csv
 /Processed_Data/candidates/weather_v1/imd_validation.csv
+
+# Weather forecast cache (D-57): short-lived provider responses, regenerated on demand
+Processed_Data/weather_forecast/

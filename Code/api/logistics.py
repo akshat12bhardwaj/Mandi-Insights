@@ -16,6 +16,7 @@ from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel
 
 from Code.routing import nodes as nd, osm, pipeline as pl, storage as st
+from Code.weather import forecast as fc
 
 router = APIRouter(prefix="/api")
 Objective = Literal["shortest", "fastest"]
@@ -88,7 +89,9 @@ def _routing_capabilities(ready: bool) -> list[Capability]:
         Capability(capability="Market coordinates", status="planned", detail="2,657 markets listed, none geocoded yet"),
         Capability(capability="Transport cost", status="missing_data", detail="no sourced Rs per tonne-km"),
         Capability(capability="Live traffic, closures, road condition", status="missing_data", detail="no free India-wide feed"),
-        Capability(capability="Weather along the route", status="planned", detail="historical climatology is available for the 46 points only"),
+        Capability(capability="Weather at the start and end points", status="available" if fc.enabled() else "planned",
+                   detail="7-day forecast at the two verified district points; the road in between is not checked"),
+        Capability(capability="Weather along the route", status="planned", detail="no verified sampling of the road line yet"),
     ]
 
 
@@ -152,6 +155,26 @@ def route(origin: str, dest: str, objective: Objective = "shortest") -> dict[str
         else:
             body["geometry"] = json.loads(g.loc[(origin, dest, objective), "coordinates"])
     return body
+
+
+@router.get("/routes/weather")
+def route_weather(origin: str, dest: str) -> dict[str, Any]:
+    """Forecast at the route's two verified end points only (D-57). Says nothing about the road between them."""
+    from Code.api.main import point_key
+    n = routing_nodes().set_index("node_id")
+    for nid in (origin, dest):
+        if nid not in n.index:
+            raise HTTPException(404, f"unknown or unverified node '{nid}'")
+    ends = {}
+    for role, nid in (("origin", origin), ("dest", dest)):
+        r = n.loc[nid]
+        f = fc.forecast(point_key(r["state"], r["district"]), float(r["latitude"]), float(r["longitude"]))
+        ends[role] = {"node_id": nid, "name": r["name"], "state": r["state"], **f, "heavy_rain_days": fc.flags(f["days"])}
+    heavy = [(role, x["date"]) for role, e in ends.items() for x in e["heavy_rain_days"]]
+    msg = (None if not heavy else "Heavy rain is forecast near the " + " and ".join(w for w, role in (("start", "origin"), ("end", "dest")) if any(r == role for r, _ in heavy))
+           + " of this route. Check current road conditions before dispatch.")
+    return {"coverage": "start and end district points only; the road between them is not checked", "message": msg,
+            "official_warning": False, "heavy_rain_threshold_mm": fc.HEAVY_RAIN_MM, **ends}
 
 
 # ---------------------------------------------------------------- warehouses
