@@ -6,6 +6,8 @@ CSE 3712 Big Data Analytics project. It integrates Indian open government data (
 - **Prices are highly persistent.** No learned model beat "next week = this week" in a one-time test: neither on the original data (Phase 8, 2021–2022) nor on the 2024–2026 candidate data (two pre-registered models failed on validation; D-51).
 - **Arrivals forecasting works modestly.** The Phase 9 model beat persistence in all 18 test cell-years (2.3–13.5% lower log MAE; D-45).
 - **The final persistence test** (D-52, recorded in D-53) puts one-week error at about 32 / 41 / 231 Rs/quintal for Potato / Wheat / Onion (MAPE 3.5% / 1.5% / 7.6%), with wider uncertainty across states than across markets.
+- **The 2023 holdout** (Phase 8 §P) was evaluated once on 2026-10-29 (D-55). Persistence one-week MAE was 212.6 / 84.4 / 63.7 Rs/quintal for Onion / Potato / Wheat. The Onion no-weather comparison model was 10.9% better, but this does not change D-42, and 2023 is no longer an untouched period.
+- **Simple smoothers do not help** (`exp-v3-prices`, D-58/D-59). A 4-week median, EWMA and drift were all worse than persistence in every crop × horizon on validation. The untouched final test, 2026-11-01 → 2027-04-25, will run once after the window closes.
 
 ## Notebook sequence
 
@@ -27,7 +29,7 @@ Read in this order. Every notebook is saved fully executed.
 | 9 | Final one-time persistence test (D-52) and its uncertainty | [`Extension_03`](Notebooks/Research_Extension_03_Final_Persistence_Test.ipynb) |
 | 10 | Conclusions, usefulness, limitations, future work | [`Extension_04`](Notebooks/Research_Extension_04_Conclusions_and_Project_Guide.ipynb) |
 
-**Production vs candidate.** Phases 1–10 are the production pipeline behind the application. The extensions describe a separately versioned **candidate** experiment (`candidate-prices-v1.1`, D-50); none of it is a production model or feeds the application.
+**Production vs candidate.** Phases 1–10 are the production pipeline behind the application. The extensions describe a separately versioned **candidate** experiment (`candidate-prices-v1.1`, D-50; extended as `candidate-prices-v1.2`, D-56); none of it is a production model. Only its observed weekly state prices reach the application (Markets → Recent prices, `/api/v2/markets/*`).
 
 ## Repository map
 
@@ -55,7 +57,7 @@ This README is the entry point. The files stay in one flat `Documentation/` fold
 | Group | Documents |
 |---|---|
 | Project context and architecture | [`Master_Project_Context.md`](Documentation/Master_Project_Context.md) (full history and status) · [`BigData_and_Dashboard_Spec.md`](Documentation/BigData_and_Dashboard_Spec.md) (Spark component) · [`Data_Lineage.md`](Documentation/Data_Lineage.md) · [`Assumptions.md`](Documentation/Assumptions.md) · [`Future_Work_Roadmap.md`](Documentation/Future_Work_Roadmap.md) |
-| Decisions | [`Decision_Log.md`](Documentation/Decision_Log.md) (D-01 – D-54) |
+| Decisions | [`Decision_Log.md`](Documentation/Decision_Log.md) (D-01 – D-59) |
 | Phase plans and protocols | [`Weather_Data_Collection.md`](Documentation/Weather_Data_Collection.md) · [`Phase_08_Modelling_Plan.md`](Documentation/Phase_08_Modelling_Plan.md) · [`Phase_09_Arrivals_Plan.md`](Documentation/Phase_09_Arrivals_Plan.md) · [`Phase_09_Integration_Plan.md`](Documentation/Phase_09_Integration_Plan.md) · [`Phase_09_Model_Protocol.md`](Documentation/Phase_09_Model_Protocol.md) (D-45 frozen) · [`Phase_10_Production_Context_Plan.md`](Documentation/Phase_10_Production_Context_Plan.md) · [`Phase_11_Routing_Plan.md`](Documentation/Phase_11_Routing_Plan.md) |
 | Data contracts | [`Forecast_Output_Contract.md`](Documentation/Forecast_Output_Contract.md) · [`Arrivals_Forecast_Contract.md`](Documentation/Arrivals_Forecast_Contract.md) · [`Warehouse_Data_Contract.md`](Documentation/Warehouse_Data_Contract.md) |
 | Research findings | [`Crop_Feasibility_Audit.md`](Documentation/Crop_Feasibility_Audit.md) · [`EDA_Findings.md`](Documentation/EDA_Findings.md) · [`Modelling_Readiness_Report.md`](Documentation/Modelling_Readiness_Report.md) · [`Data_Source_Review.md`](Documentation/Data_Source_Review.md) (candidate data and experiments, D-50 – D-53) · [`Final_Evaluation_and_Revamp_Plan.md`](Documentation/Final_Evaluation_and_Revamp_Plan.md) (D-52 preparation and revamp record) |
@@ -146,6 +148,11 @@ A route can be shared as a link: `/routes?from=D:Maharashtra|Nashik&to=D:Maharas
 | Node table (11a) | `C:\Python313\python.exe -B -m Code.routing.nodes build` (then `check`) | 46 verified nodes; byte-identical rebuild |
 | Warehouse table (11e) | `C:\Python313\python.exe -B -m Code.routing.storage build` (then `check`) | 168 OSM-reported facilities, validated against `Warehouse_Data_Contract.md` |
 | Routes (11b/11c) | `C:\Python313\python.exe -B -m Code.routing.pipeline build` (then `check`) | about 10 minutes; `check` reproduces the CSVs byte for byte |
+| New price days (D-56) | add a stage to `INCREMENTS` in `Code/candidates/datagov_increment.py`, then `python -B -m Code.candidates.datagov_increment S<n>` | needs the git-ignored data.gov.in key; S4 = 2026-10-21 → 25 |
+| Price dataset v1.2 (D-56) | `python -B -m Code.candidates.build_prices_v1_2`, then `python -B -m Code.candidates.recent_prices build` | byte-identical rebuild; v1.1 untouched |
+| Price experiment (D-58) | `python -B -m Code.candidates.exp_v3 validate` | the `test` command refuses until the 2027 window is complete |
+
+Weather forecasts (D-57) call Open-Meteo at most once per point every 3 hours; set `BDA_WEATHER_FORECAST=0` to switch them off.
 
 ### Tests
 
