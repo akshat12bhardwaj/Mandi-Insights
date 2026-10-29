@@ -1,0 +1,21 @@
+{
+ "experiment": "exp-v3-prices",
+ "stage": "validation",
+ "protocol_sha256": "6aa2d771fe8c5e9dcd04cab6ed61054106669ea6220278954d8ec48ec9e3a3e1",
+ "dataset_build_manifest_sha256": "1d656dd2f93cba81dd956e431978e7de7d396da80f960b9d241ce97771a4a2e5",
+ "target_sundays": [
+  "2025-03-02",
+  "2026-06-28"
+ ],
+ "latest_cell_read": "2026-06-15",
+ "bootstrap": {
+  "replicates": 10000,
+  "seed": 20261022
+ },
+ "code_sha256": "3c562deedd1eac18eb3ebad50c33848c76604391a200ed2aed49952c1f97753f",
+ "outputs_sha256": {
+  "by_crop.csv": "a7408f2e200cf9d62f723357d990346110890b4db9e079ffd79a644669f03f2e",
+  "by_crop_quarter.csv": "f5f6d38f9e3f8a883f291122314c452f4906eae17715b4a13264a1cd7883f751",
+  "selection.csv": "378091bc777c676da760e1f6a598ee685aa08bdf25a5e3977332099043c5239b"
+ }
+}
