@@ -1,6 +1,6 @@
 """
 Execute a project notebook end-to-end with the SAME interpreter that runs this script, from the project root:
-    C:\\Python313\\python.exe Code/utils/run_notebook.py Notebooks/<name>.ipynb
+    C:\\Python313\\python.exe Code/utils/run_notebook.py Notebook/<name>.ipynb
 
 Why: this machine has two Pythons. A plain `jupyter ...` command resolves to Anaconda's launcher (JupyterLab 4.2.5,
 Python 3.12 kernel, scikit-learn 1.5). Here nbconvert runs as a module of sys.executable, and a temporary `python3`
@@ -36,5 +36,5 @@ def run(notebook: Path) -> int:
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        sys.exit("usage: python Code/utils/run_notebook.py Notebooks/<name>.ipynb")
+        sys.exit("usage: python Code/utils/run_notebook.py Notebook/<name>.ipynb")
     sys.exit(run(Path(sys.argv[1])))

@@ -1,0 +1,77 @@
+{
+  "protocol": {
+    "version": "agricultural-factors-v1",
+    "train_end": "2016-12-31",
+    "selection_year": 2017,
+    "confirmation_year": 2018,
+    "market_reporting_lag_assumption_days": 3,
+    "production_lag_agricultural_years": 2,
+    "comparison": "Matched complete-case cohort for price, price+arrivals, price+arrivals+production; all targets before 2019.",
+    "weather": "Excluded: original availability vintages missing; no guessed historical publication timestamps.",
+    "serving_promotion": false,
+    "reason": "Historical lag assumptions are not verified original publication vintages; current daily arrivals are absent."
+  },
+  "metrics_sha256": "1c9514432e1bba8c12d899f2f2c9fee0c47e70b59ac0e414df50cccd128b40d0",
+  "coverage": [
+    {
+      "crop": "Onion",
+      "scheduled_examples": 4234,
+      "training_rows": 1316,
+      "matched_validation_rows": 346,
+      "markets_selected": 12
+    },
+    {
+      "crop": "Potato",
+      "scheduled_examples": 4575,
+      "training_rows": 1818,
+      "matched_validation_rows": 503,
+      "markets_selected": 12
+    },
+    {
+      "crop": "Wheat",
+      "scheduled_examples": 3259,
+      "training_rows": 2534,
+      "matched_validation_rows": 516,
+      "markets_selected": 12
+    }
+  ],
+  "models": [
+    {
+      "path": "onion-price.joblib",
+      "sha256": "ed27302505567542139ecc0b8218e4b93311a0ca084010c06e7d0ead2244fdf7"
+    },
+    {
+      "path": "onion-price_arrivals.joblib",
+      "sha256": "7a381c67b53183ab7c81a2f62057fc5389742ca9122e9c56b409ab3f28e52aa7"
+    },
+    {
+      "path": "onion-price_arrivals_production.joblib",
+      "sha256": "6cdc973565b5e44f6970861171fb54c3de2e7a07e21773e66d1514d9ae2d6ef2"
+    },
+    {
+      "path": "potato-price.joblib",
+      "sha256": "de661e75f4042798d9c7d6c2613c39a9cf317a3c8c77eb60af213340b6f2f7d3"
+    },
+    {
+      "path": "potato-price_arrivals.joblib",
+      "sha256": "bae20be1c70b7517af487d3e97e1ca109ca361d903c133cef609a749042192e8"
+    },
+    {
+      "path": "potato-price_arrivals_production.joblib",
+      "sha256": "8bee72e052a6373b49174b1b90c872ef7999020f73ebbca218c251a783d21699"
+    },
+    {
+      "path": "wheat-price.joblib",
+      "sha256": "1cfc2bf525212fb626468cb11ea4889bd0c5d2afadfd03574683c49e6ba0ea82"
+    },
+    {
+      "path": "wheat-price_arrivals.joblib",
+      "sha256": "3aa919fc91ff592f666eaa31538d5239b81ac3d8fac5fb4a3cd4fb7e3a1e382a"
+    },
+    {
+      "path": "wheat-price_arrivals_production.joblib",
+      "sha256": "6ff6c0fe434a9b0013f4ace78ac02d9b68a9de90efc1e574f48747068283e0eb"
+    }
+  ],
+  "operational_gate": "No new covariates deployed; prospective source availability and current arrival/weather inputs are required."
+}

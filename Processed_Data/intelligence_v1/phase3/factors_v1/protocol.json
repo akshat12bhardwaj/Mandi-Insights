@@ -1,0 +1,12 @@
+{
+  "version": "agricultural-factors-v1",
+  "train_end": "2016-12-31",
+  "selection_year": 2017,
+  "confirmation_year": 2018,
+  "market_reporting_lag_assumption_days": 3,
+  "production_lag_agricultural_years": 2,
+  "comparison": "Matched complete-case cohort for price, price+arrivals, price+arrivals+production; all targets before 2019.",
+  "weather": "Excluded: original availability vintages missing; no guessed historical publication timestamps.",
+  "serving_promotion": false,
+  "reason": "Historical lag assumptions are not verified original publication vintages; current daily arrivals are absent."
+}

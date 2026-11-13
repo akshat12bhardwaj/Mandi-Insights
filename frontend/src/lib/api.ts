@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQueries, useQuery } from "@tanstack/react-query";
 
 // Shapes returned by the read-only FastAPI service (Code/api/main.py).
 export type Crop = "Onion" | "Potato" | "Wheat";
@@ -68,11 +68,23 @@ export interface PriceMetric { crop: Crop; horizon_weeks: number; approach?: str
 export interface PriceSummary { baseline_kept: number; cases: number; onion_1w_test_change_pct: number; test: PriceMetric[]; validation: PriceMetric[] }
 export interface ArrivalMetric { crop: Crop; horizon_weeks: number; period: string; rel_log_mae_improvement_pct: number; wape_pct: number; persistence_wape_pct: number }
 export interface ArrivalsSummary { cells: number; cells_better: number; min_improvement_pct: number; max_improvement_pct: number; test: ArrivalMetric[] }
-export interface About {
-  sources: { data: string; source: string; coverage: string }[];
-  spark: { version: string; java: string; window: string; note: string; mapreduce_label: string; rows_read: number; last_run_seconds: number;
-    parity: { column: string; rows_compared: number; mismatches: number }[] };
-  reserved_production: { message: string; counts: ReservedCount[] };
+
+export interface RecentMeta {
+  available: boolean; message?: string; kind?: "observed"; live?: boolean; retrieved?: string; attribution?: string; grade?: string;
+  segments?: { source: string; label: string; first_week: string; last_week: string }[];
+  breaks?: { date: string; what: string }[]; states_by_crop?: Record<Crop, string[]>;
+}
+export interface RecentWeek { week_start: string; source: "agmarknet_archive" | "datagov"; records: number; markets: number; modal_price_median: number }
+
+export interface ForecastDay { date: string; rain_mm: number | null; tmax_c: number | null; rain_probability_pct: number | null }
+export interface Forecast {
+  available: boolean; stale: boolean; retrieved_utc: string | null; days: ForecastDay[]; reason: string | null; official_warning: false;
+  provider: string; attribution: { text: string; licence: string; link: string }; heavy_rain_days: { date: string; rain_mm: number }[];
+}
+export interface PointForecast extends Forecast { state: string; district: string; location_meaning: string }
+export interface RouteWeather {
+  coverage: string; message: string | null; official_warning: false; heavy_rain_threshold_mm: number;
+  origin: Forecast & { node_id: string; name: string; state: string }; dest: Forecast & { node_id: string; name: string; state: string };
 }
 
 export class ApiError extends Error {
@@ -93,6 +105,7 @@ export async function getJson<T>(path: string, params: Record<string, string | n
 const q = <T,>(key: unknown[], path: string, params?: Record<string, string | number | undefined>, enabled = true) =>
   useQuery<T, ApiError>({ queryKey: [path, ...key], queryFn: () => getJson<T>(path, params), enabled, staleTime: Infinity, retry: false });
 
+export const useHealth = () => q<{ market_history_end: string; live_data: boolean }>([], "/health");
 export const useMeta = () => q<Meta>([], "/meta");
 export const useOverview = (crop: Crop, state?: string) => q<Overview>([crop, state], "/overview", { crop, state });
 export const useWeekly = (crop: Crop, state?: string) => q<Week[]>([crop, state], "/markets/weekly", { crop, state }, !!state);
@@ -121,4 +134,15 @@ export const useWarehousesMeta = () => q<WarehouseMeta>([], "/warehouses");
 export const useWarehouseList = (p: { q?: string; operator?: string; near?: string; radius_km?: number }) =>
   q<{ records: WarehouseRow[]; note: string | null }>([p], "/warehouses/list", p);
 export const useWarehouse = (id?: string) => q<WarehouseDetail>([id], `/warehouses/${encodeURIComponent(id ?? "")}`, undefined, !!id);
-export const useAbout = () => q<About>([], "/about");
+// Forecasts change during the day: refetch after 30 minutes instead of caching for the session.
+const fresh = <T,>(key: unknown[], path: string, params: Record<string, string | number | undefined> | undefined, enabled: boolean) =>
+  useQuery<T, ApiError>({ queryKey: [path, ...key], queryFn: () => getJson<T>(path, params), enabled, staleTime: 30 * 60_000, retry: false });
+export const useForecast = (id?: number) => fresh<PointForecast>([id], `/locations/${id}/forecast`, undefined, id !== undefined);
+export const useRouteWeather = (origin?: string, dest?: string) =>
+  fresh<RouteWeather>([origin, dest], "/routes/weather", { origin, dest }, !!origin && !!dest);
+export const useRecentMeta = () => q<RecentMeta>([], "/v2/markets/meta");
+export const useRecentWeekly = (crop: Crop, state?: string, enabled = true) =>
+  q<RecentWeek[]>([crop, state], "/v2/markets/weekly", { crop, state }, !!state && enabled);
+/** Weekly series for several states at once; shares the cache with useWeekly. */
+export const useWeeklyMany = (crop: Crop, states: string[]) =>
+  useQueries({ queries: states.map((state) => ({ queryKey: ["/markets/weekly", crop, state], queryFn: () => getJson<Week[]>("/markets/weekly", { crop, state }), staleTime: Infinity, retry: false })) });

@@ -1,0 +1,520 @@
+{
+  "rows": [
+    {
+      "node_id": "G:Gujarat|Navsari",
+      "name": "Navsari",
+      "state": "Gujarat",
+      "district": "Navsari",
+      "latitude": 20.94237,
+      "longitude": 72.92467,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1261653,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:08.756720+05:30",
+      "source_admin1": "Gujarat",
+      "source_admin2": "Navsari"
+    },
+    {
+      "node_id": "G:Haryana|Kaithal",
+      "name": "Kaithal",
+      "state": "Haryana",
+      "district": "Kaithal",
+      "latitude": 29.80153,
+      "longitude": 76.39959,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1268593,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:11.346200+05:30",
+      "source_admin1": "Haryana",
+      "source_admin2": "Kaithal"
+    },
+    {
+      "node_id": "G:Haryana|Panchkula",
+      "name": "Panchkula",
+      "state": "Haryana",
+      "district": "Panchkula",
+      "latitude": 30.69461,
+      "longitude": 76.8504,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 6690108,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:13.677033+05:30",
+      "source_admin1": "Haryana",
+      "source_admin2": "Panchkula district"
+    },
+    {
+      "node_id": "G:Haryana|Panipat",
+      "name": "Panipat",
+      "state": "Haryana",
+      "district": "Panipat",
+      "latitude": 29.38747,
+      "longitude": 76.96825,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1260476,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:14.164949+05:30",
+      "source_admin1": "Haryana",
+      "source_admin2": "Panipat District"
+    },
+    {
+      "node_id": "G:Haryana|Sirsa",
+      "name": "Sirsa",
+      "state": "Haryana",
+      "district": "Sirsa",
+      "latitude": 29.53489,
+      "longitude": 75.02898,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1256052,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:15.192748+05:30",
+      "source_admin1": "Haryana",
+      "source_admin2": "Sirsa"
+    },
+    {
+      "node_id": "G:Haryana|Sonipat",
+      "name": "Sonipat",
+      "state": "Haryana",
+      "district": "Sonipat",
+      "latitude": 28.99478,
+      "longitude": 77.01937,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1255744,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:15.681289+05:30",
+      "source_admin1": "Haryana",
+      "source_admin2": "Sonipat"
+    },
+    {
+      "node_id": "G:Himachal Pradesh|Kullu",
+      "name": "Kullu",
+      "state": "Himachal Pradesh",
+      "district": "Kullu",
+      "latitude": 31.95835,
+      "longitude": 77.10823,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1265709,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:17.359489+05:30",
+      "source_admin1": "Himachal Pradesh",
+      "source_admin2": "Kullu"
+    },
+    {
+      "node_id": "G:Himachal Pradesh|Solan",
+      "name": "Solan",
+      "state": "Himachal Pradesh",
+      "district": "Solan",
+      "latitude": 30.90908,
+      "longitude": 77.10869,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1255850,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:17.849304+05:30",
+      "source_admin1": "Himachal Pradesh",
+      "source_admin2": "Solan"
+    },
+    {
+      "node_id": "G:Karnataka|Haveri",
+      "name": "Haveri",
+      "state": "Karnataka",
+      "district": "Haveri",
+      "latitude": 14.79354,
+      "longitude": 75.40448,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1270171,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:18.821462+05:30",
+      "source_admin1": "Karnataka",
+      "source_admin2": "Haveri"
+    },
+    {
+      "node_id": "G:Karnataka|Kolar",
+      "name": "Kolar",
+      "state": "Karnataka",
+      "district": "Kolar",
+      "latitude": 13.13768,
+      "longitude": 78.12999,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1266305,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:19.310176+05:30",
+      "source_admin1": "Karnataka",
+      "source_admin2": "Kolar district"
+    },
+    {
+      "node_id": "G:Madhya Pradesh|Alirajpur",
+      "name": "Alirajpur",
+      "state": "Madhya Pradesh",
+      "district": "Alirajpur",
+      "latitude": 22.30393,
+      "longitude": 74.35568,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1258815,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:19.794055+05:30",
+      "source_admin1": "Madhya Pradesh",
+      "source_admin2": "Alirajpur"
+    },
+    {
+      "node_id": "G:Madhya Pradesh|Bhind",
+      "name": "Bhind",
+      "state": "Madhya Pradesh",
+      "district": "Bhind",
+      "latitude": 26.56671,
+      "longitude": 78.78728,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1275926,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:20.281977+05:30",
+      "source_admin1": "Madhya Pradesh",
+      "source_admin2": "Bhind"
+    },
+    {
+      "node_id": "G:Madhya Pradesh|Indore",
+      "name": "Indore",
+      "state": "Madhya Pradesh",
+      "district": "Indore",
+      "latitude": 22.71792,
+      "longitude": 75.8333,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1269743,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:23.703945+05:30",
+      "source_admin1": "Madhya Pradesh",
+      "source_admin2": "Indore district"
+    },
+    {
+      "node_id": "G:Madhya Pradesh|Khargone",
+      "name": "Khargone",
+      "state": "Madhya Pradesh",
+      "district": "Khargone",
+      "latitude": 21.82292,
+      "longitude": 75.61394,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1266928,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:25.664265+05:30",
+      "source_admin1": "Madhya Pradesh",
+      "source_admin2": "Khargone"
+    },
+    {
+      "node_id": "G:Madhya Pradesh|Narsinghpur",
+      "name": "Narsinghpur",
+      "state": "Madhya Pradesh",
+      "district": "Narsinghpur",
+      "latitude": 24.67658,
+      "longitude": 81.97341,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 10533092,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:26.152145+05:30",
+      "source_admin1": "Madhya Pradesh",
+      "source_admin2": "Rewa"
+    },
+    {
+      "node_id": "G:Madhya Pradesh|Panna",
+      "name": "Panna",
+      "state": "Madhya Pradesh",
+      "district": "Panna",
+      "latitude": 24.72094,
+      "longitude": 80.18772,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1260454,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:54:26.641819+05:30",
+      "source_admin1": "Madhya Pradesh",
+      "source_admin2": "Panna"
+    },
+    {
+      "node_id": "G:Odisha|Dhenkanal",
+      "name": "Dhenkanal",
+      "state": "Odisha",
+      "district": "Dhenkanal",
+      "latitude": 20.65744,
+      "longitude": 85.59693,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1272780,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:56:39.710775+05:30",
+      "source_admin1": "Odisha",
+      "source_admin2": "Dhenkānāl District"
+    },
+    {
+      "node_id": "G:Punjab|Amritsar",
+      "name": "Amritsar",
+      "state": "Punjab",
+      "district": "Amritsar",
+      "latitude": 31.62234,
+      "longitude": 74.87534,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1278710,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:56:40.688314+05:30",
+      "source_admin1": "Punjab",
+      "source_admin2": "Amritsar"
+    },
+    {
+      "node_id": "G:Telangana|Hyderabad",
+      "name": "Hyderabad",
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "latitude": 17.38405,
+      "longitude": 78.45636,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1269843,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:56:41.181450+05:30",
+      "source_admin1": "Telangana",
+      "source_admin2": "Hyderabad District"
+    },
+    {
+      "node_id": "G:Uttar Pradesh|Amroha",
+      "name": "Amroha",
+      "state": "Uttar Pradesh",
+      "district": "Amroha",
+      "latitude": 28.90314,
+      "longitude": 78.46984,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1278708,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:56:42.163536+05:30",
+      "source_admin1": "Uttar Pradesh",
+      "source_admin2": "Amroha district"
+    },
+    {
+      "node_id": "G:Uttarakhand|Haridwar",
+      "name": "Haridwar",
+      "state": "Uttarakhand",
+      "district": "Haridwar",
+      "latitude": 29.94791,
+      "longitude": 78.16025,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1270351,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:56:42.654824+05:30",
+      "source_admin1": "Uttarakhand",
+      "source_admin2": "Haridwar"
+    },
+    {
+      "node_id": "G:West Bengal|Darjeeling",
+      "name": "Darjeeling",
+      "state": "West Bengal",
+      "district": "Darjeeling",
+      "latitude": 27.03333,
+      "longitude": 88.26667,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1273467,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:56:43.634781+05:30",
+      "source_admin1": "West Bengal",
+      "source_admin2": "Darjeeling"
+    },
+    {
+      "node_id": "G:West Bengal|Kolkata",
+      "name": "Kolkata",
+      "state": "West Bengal",
+      "district": "Kolkata",
+      "latitude": 22.56263,
+      "longitude": 88.36304,
+      "verification": "geocoded_locality",
+      "location_meaning": "GeoNames locality reference, approximate for district; not a market entrance",
+      "source": "Open-Meteo geocoding / GeoNames",
+      "source_id": 1275004,
+      "source_url": "https://geocoding-api.open-meteo.com/v1/search",
+      "retrieved_at": "2026-11-12T21:56:44.123556+05:30",
+      "source_admin1": "West Bengal",
+      "source_admin2": "Kolkata"
+    }
+  ],
+  "rejected": [
+    {
+      "state": "Andhra Pradesh",
+      "district": "Chittor",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Goa",
+      "district": "North Goa",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Gurgaon",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Hissar",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Jhajar",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Mahendragarh-Narnaul",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Palwal",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Rewari",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Himachal Pradesh",
+      "district": "Kangra",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Himachal Pradesh",
+      "district": "Una",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Bhopal",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Burhanpur",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Chhatarpur",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Chhindwara",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Damoh",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Datia",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Jabalpur",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Katni",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Madhya Pradesh",
+      "district": "Khandwa",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Andhra Pradesh",
+      "district": "Chittor",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Gurgaon",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Hissar",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Mahendragarh-Narnaul",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Haryana",
+      "district": "Rewari",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Odisha",
+      "district": "Mayurbhanja",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "Telangana",
+      "district": "Ranga Reddy",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "West Bengal",
+      "district": "Dakshin Dinajpur",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "West Bengal",
+      "district": "North 24 Parganas",
+      "reason": "No unambiguous exact locality/state match"
+    },
+    {
+      "state": "West Bengal",
+      "district": "Paschim Bardhaman",
+      "reason": "No unambiguous exact locality/state match"
+    }
+  ],
+  "attribution": "Location data: GeoNames via Open-Meteo geocoding; approximate locality references"
+}

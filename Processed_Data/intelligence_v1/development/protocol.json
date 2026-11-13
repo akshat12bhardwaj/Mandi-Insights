@@ -1,0 +1,33 @@
+{
+  "version": "daily-development-simulation-v1",
+  "train_end": "2016-12-31",
+  "development_start": "2017-01-01",
+  "development_end": "2018-12-31",
+  "reporting_delay_days": 3,
+  "market_cap_per_crop": 12,
+  "selection": "highest pre-2017 usable date count, round-robin states; >=365 training dates",
+  "target_schedule": "Wednesdays; no-report days counted, never imputed",
+  "models": [
+    "persistence",
+    "seasonal_naive_7d",
+    "moving_average_7obs",
+    "ridge",
+    "hist_gradient_boosting"
+  ],
+  "feature_names": [
+    "lag2_ratio",
+    "lag7_ratio",
+    "mean7_ratio",
+    "mean30_ratio",
+    "volatility30",
+    "momentum",
+    "age_days",
+    "weekday_sin",
+    "weekday_cos",
+    "month_sin",
+    "month_cos"
+  ],
+  "interpretation": "Retrospective development simulation on revised archive. Publication vintages unknown; three-day delay is an assumption, not verified availability.",
+  "promotion": "persistence operational default only; no learned promotion without fresh prospective evidence",
+  "protected_windows": "No scoring on 2019+ or any frozen evaluation artifact. Existing decisions unchanged."
+}

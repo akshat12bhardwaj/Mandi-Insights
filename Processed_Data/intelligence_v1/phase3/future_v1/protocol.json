@@ -1,0 +1,32 @@
+{
+  "version": "future-price-v1",
+  "train_target_cutoff": "2016-12-28",
+  "training_issue_cutoff": "2016-12-31",
+  "selection_year": 2017,
+  "confirmation_year": 2018,
+  "horizons": [
+    7,
+    14,
+    30
+  ],
+  "features": [
+    "lag2_ratio",
+    "lag7_ratio",
+    "mean7_ratio",
+    "mean30_ratio",
+    "volatility30",
+    "momentum",
+    "age_days",
+    "weekday_sin",
+    "weekday_cos",
+    "month_sin",
+    "month_cos"
+  ],
+  "reporting_delay_days": 3,
+  "series_per_crop": 12,
+  "origins": "Eligible Wednesday origins with an observed origin-day report; future targets must have an exact reported price.",
+  "seasonal_baseline": "Price on target minus 364 days, only if known before origin minus three days; otherwise persistence.",
+  "selection": "Select on 2017; confirm the selected candidate on 2018. Learned serving promotion also requires current-regime availability-vintage evidence, which is absent.",
+  "interpretation": "Retrospective validation on revised archives with assumed publication delay, not live calibrated confidence.",
+  "protected_boundary": "No 2019+ target or protected research output is read/scored."
+}

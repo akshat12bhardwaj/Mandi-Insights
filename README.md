@@ -1,187 +1,93 @@
-# Agricultural Market Decision Support — Onion, Potato, Wheat
+# Mandi Insights
 
-CSE 3712 Big Data Analytics project. It integrates Indian open government data (mandi prices and arrivals, district crop production, weather), forecasts weekly prices and arrivals 1, 2 and 4 weeks ahead, evaluates the forecasts honestly against persistence, processes the raw data with PySpark / Spark SQL, and serves the results in a read-only React + FastAPI application.
+Compare Indian wholesale market prices, plan crop trades, and see how transport and storage affect the margin.
 
-**Headline findings**
-- **Prices are highly persistent.** No learned model beat "next week = this week" in a one-time test: neither on the original data (Phase 8, 2021–2022) nor on the 2024–2026 candidate data (two pre-registered models failed on validation; D-51).
-- **Arrivals forecasting works modestly.** The Phase 9 model beat persistence in all 18 test cell-years (2.3–13.5% lower log MAE; D-45).
-- **The final persistence test** (D-52, recorded in D-53) puts one-week error at about 32 / 41 / 231 Rs/quintal for Potato / Wheat / Onion (MAPE 3.5% / 1.5% / 7.6%), with wider uncertainty across states than across markets.
-- **The 2023 holdout** (Phase 8 §P) was evaluated once on 2026-10-29 (D-55). Persistence one-week MAE was 212.6 / 84.4 / 63.7 Rs/quintal for Onion / Potato / Wheat. The Onion no-weather comparison model was 10.9% better, but this does not change D-42, and 2023 is no longer an untouched period.
-- **Simple smoothers do not help** (`exp-v3-prices`, D-58/D-59). A 4-week median, EWMA and drift were all worse than persistence in every crop × horizon on validation. The untouched final test, 2026-11-01 → 2027-04-25, will run once after the window closes.
+![Mandi Insights Strategies dashboard with a populated trading recommendation](docs/assets/screenshots/strategies-dashboard.webp)
 
-## Notebook sequence
+![Python](https://img.shields.io/badge/Python-3.13-245b43) ![FastAPI](https://img.shields.io/badge/FastAPI-backend-245b43) ![React](https://img.shields.io/badge/React-TypeScript-245b43) ![Jupyter](https://img.shields.io/badge/Jupyter-14_notebooks-245b43)
 
-Read in this order. Every notebook is saved fully executed.
-- **Safe to re-run:** the Overview, Phase 08, Phase 10 and the four Research Extensions are read-only (the extensions read saved summary files only).
-- **Do not re-run casually:** Phases 01–07 and 09 regenerate figures or outputs when re-run, and Phase 03 calls the weather API.
+## Explore the application
 
-| # | Story step | Notebook |
-|---|---|---|
-| 0 | Guided overview for a live demonstration | [`Overview_00_Project_Demonstration`](Notebooks/Overview_00_Project_Demonstration.ipynb) |
-| 1 | Problem, objectives and data understanding | [`Phase_01`](Notebooks/Phase_01_Project_and_Data_Understanding.ipynb) |
-| 2 | Data sources, collection, integration, cleaning, quality | [`Phase_02`](Notebooks/Phase_02_Crop_Feasibility_Audit_and_Selection.ipynb) · [`Phase_03`](Notebooks/Phase_03_Weather_Data_Collection.ipynb) · [`Phase_04`](Notebooks/Phase_04_Data_Integration.ipynb) · [`Phase_05`](Notebooks/Phase_05_Data_Cleaning.ipynb) · [`Phase_06`](Notebooks/Phase_06_Feature_Engineering.ipynb) |
-| 3 | Exploratory analysis | [`Phase_07`](Notebooks/Phase_07_EDA.ipynb) |
-| 4 | Targets, evaluation method, persistence baselines, learned price models | [`Phase_08`](Notebooks/Phase_08_Price_Forecasting.ipynb) |
-| 5 | Arrivals forecasting | [`Phase_09`](Notebooks/Phase_09_Arrivals_Model_Experiments.ipynb) |
-| 6 | District production context | [`Phase_10`](Notebooks/Phase_10_Production_Context.ipynb) |
-| 7 | Candidate price data 2024-02 → 2026-10 (data.gov.in) | [`Extension_01`](Notebooks/Research_Extension_01_Candidate_Price_Data.ipynb) |
-| 8 | Candidate baselines, failed learned model, failed weather model | [`Extension_02`](Notebooks/Research_Extension_02_Candidate_Forecast_Experiments.ipynb) |
-| 9 | Final one-time persistence test (D-52) and its uncertainty | [`Extension_03`](Notebooks/Research_Extension_03_Final_Persistence_Test.ipynb) |
-| 10 | Conclusions, usefulness, limitations, future work | [`Extension_04`](Notebooks/Research_Extension_04_Conclusions_and_Project_Guide.ipynb) |
+**Strategies** finds eligible markets by crop and purchase region. Compare intrastate and interstate plans, then inspect the route, timing, and costs.
 
-**Production vs candidate.** Phases 1–10 are the production pipeline behind the application. The extensions describe a separately versioned **candidate** experiment (`candidate-prices-v1.1`, D-50; extended as `candidate-prices-v1.2`, D-56); none of it is a production model. Only its observed weekly state prices reach the application (Markets → Recent prices, `/api/v2/markets/*`).
+![Strategies with Tomato and Telangana selected](docs/assets/screenshots/crop-and-region.webp)
 
-## Repository map
+![Route map, truck marker, and financial breakdown for a trade](docs/assets/screenshots/route-and-finances.webp)
 
-| Path | Contents |
-|---|---|
-| `Code/` | one package per phase (`integration/`, `cleaning/`, `features/`, `eda/`, `modelling/`, `production/`), `bigdata/` (Spark), `candidates/` (candidate data and experiments), `routing/`, `api/`, `app/`, `utils/` (notebook builders and runner), `tests/` |
-| `Notebooks/` | executed notebooks (table above); each is generated by `Code/utils/build_*.py` |
-| `Processed_Data/` | pipeline outputs; parquet tables are not in Git |
-| `Documentation/` | decision log, plans and protocols, data contracts, data-source review (map below) |
-| `frontend/` | React + TypeScript application |
-| `Dataset/`, `Dataset_Candidates/` | raw data, read-only and not in Git |
+**Markets** lets you search mandis, compare crop prices, and inspect reported varieties and grades.
 
-## Architecture
+![Market map and reported crop inventory](docs/assets/screenshots/market-discovery.webp)
 
-- **Storage:** local files. Raw CSV / Excel in `Dataset/` (read-only); derived CSV and parquet in `Processed_Data/`.
-- **Big Data processing:** PySpark / Spark SQL in local mode on one machine (`Code/bigdata/`), with parity against the pandas pipeline. Its outputs are tracked CSVs, so only rerunning it needs PySpark.
-- **Analysis and models:** pandas, numpy and scikit-learn pipelines, and executed notebooks.
-- **Application:** the React frontend (`frontend/`) calls the read-only FastAPI service (`Code/api/`). `Code/api/main.py` serves market, forecast, production and Spark outputs through the data layer `Code/app/data.py` (loaders plus data-boundary checks). `Code/api/logistics.py` serves routes and warehouses from `Code/routing/` and `Processed_Data/routing/`.
-- **Not in scope:** Hadoop / HDFS. It is not mandatory for this course project, and it was not implemented or benchmarked (D-54).
+**Warehouses** shows facility locations, compatible crops, nearby markets, and modeled storage capacity.
 
-## Documentation map
+![Warehouse map and selected facility profile](docs/assets/screenshots/warehouse-explorer.webp)
 
-This README is the entry point. The files stay in one flat `Documentation/` folder because frozen code and evidence cite them by path. For example, the D-52 runner reads `Decision_Log.md`, and the D-45 freeze hashes `Phase_09_Model_Protocol.md`.
+## Run locally
 
-| Group | Documents |
-|---|---|
-| Project context and architecture | [`Master_Project_Context.md`](Documentation/Master_Project_Context.md) (full history and status) · [`BigData_and_Dashboard_Spec.md`](Documentation/BigData_and_Dashboard_Spec.md) (Spark component) · [`Data_Lineage.md`](Documentation/Data_Lineage.md) · [`Assumptions.md`](Documentation/Assumptions.md) · [`Future_Work_Roadmap.md`](Documentation/Future_Work_Roadmap.md) |
-| Decisions | [`Decision_Log.md`](Documentation/Decision_Log.md) (D-01 – D-59) |
-| Phase plans and protocols | [`Weather_Data_Collection.md`](Documentation/Weather_Data_Collection.md) · [`Phase_08_Modelling_Plan.md`](Documentation/Phase_08_Modelling_Plan.md) · [`Phase_09_Arrivals_Plan.md`](Documentation/Phase_09_Arrivals_Plan.md) · [`Phase_09_Integration_Plan.md`](Documentation/Phase_09_Integration_Plan.md) · [`Phase_09_Model_Protocol.md`](Documentation/Phase_09_Model_Protocol.md) (D-45 frozen) · [`Phase_10_Production_Context_Plan.md`](Documentation/Phase_10_Production_Context_Plan.md) · [`Phase_11_Routing_Plan.md`](Documentation/Phase_11_Routing_Plan.md) |
-| Data contracts | [`Forecast_Output_Contract.md`](Documentation/Forecast_Output_Contract.md) · [`Arrivals_Forecast_Contract.md`](Documentation/Arrivals_Forecast_Contract.md) · [`Warehouse_Data_Contract.md`](Documentation/Warehouse_Data_Contract.md) |
-| Research findings | [`Crop_Feasibility_Audit.md`](Documentation/Crop_Feasibility_Audit.md) · [`EDA_Findings.md`](Documentation/EDA_Findings.md) · [`Modelling_Readiness_Report.md`](Documentation/Modelling_Readiness_Report.md) · [`Data_Source_Review.md`](Documentation/Data_Source_Review.md) (candidate data and experiments, D-50 – D-53) · [`Final_Evaluation_and_Revamp_Plan.md`](Documentation/Final_Evaluation_and_Revamp_Plan.md) (D-52 preparation and revamp record) |
-| Open requests | [`Requests/DMI_Arrivals_Access_Request_DRAFT.md`](Documentation/Requests/DMI_Arrivals_Access_Request_DRAFT.md) (draft, not sent) |
-
-The former `Documentation/Final/` folder was removed on 2026-10-25. It held the report, slides, setup guide, demo script, checklist and screenshots. Its setup guide is merged into this README, and the rest remains in Git history at `498e677`.
-
-## Setup (Windows, Python 3.13)
-
-Run everything from the project root. No paid service or API key is needed.
+Use Python 3.13 and Node.js 22.12+ or 24+. The project uses FastAPI, Pandas, Parquet, and SQLite on the backend, with React, TypeScript, Vite, and Leaflet on the frontend.
 
 ```powershell
-C:\Python313\python.exe -m pip install -r requirements.txt
-# tests (the Spark tests skip without the optional PySpark venv below)
-C:\Python313\python.exe -B -m pytest -q -p no:cacheprovider Code/tests
-# re-execute a notebook with the same interpreter
-C:\Python313\python.exe Code/utils/run_notebook.py Notebooks/Research_Extension_03_Final_Persistence_Test.ipynb
+git clone https://github.com/akshat12bhardwaj/BDA.git
+cd BDA
+python -m pip install -r requirements.txt
+npm ci --prefix frontend
 ```
 
-`requirements.txt` covers the pipelines, notebooks, routing, the API and the tests. Node.js 20+ is needed for the frontend. PySpark and a JDK are **optional**: they are needed only to rerun the Spark ETL and `Code/tests/test_bigdata_spark.py`.
-
-### Data missing from a fresh clone
-
-`Dataset/` (about 4.5 GB), every `*.parquet` table and the OSM snapshot are not stored in Git.
-
-| Missing | How to get it back | Notes |
-|---|---|---|
-| `Dataset/` | copy the source files in | read-only (D-01) |
-| Phase 4–6 parquet tables (`Processed_Data/integration`, `cleaned`, `features`) | rerun the Phase 4 → 6 pipelines (`Code/<phase>/pipeline.py`) | needed by the models, notebooks and `Code.routing.nodes` |
-| `Processed_Data/modelling/phase08/hgb_conservative_validation_predictions.parquet` (Prices chart) | rerun the Phase 8 validation runs (`Code/modelling/models.py`) | validation only; heavy |
-| `Processed_Data/modelling/phase09_models/candidate_predictions.parquet` (Arrivals chart) | rerun the D-44 validation experiments (Phase 09 notebook) | validation only; heavy |
-| `Processed_Data/modelling/phase09_models/test_2021_2022/test_predictions.parquet` (Arrivals chart) | **cannot be regenerated**: the one-time test's run-once guard refuses a second run | copy it from the original machine, or accept metrics only |
-| OSM snapshot (`%USERPROFILE%\bda-env\osm\`, or `BDA_OSM_DIR`; about 6 GB) | `python -B -m Code.routing.osm fetch`, `fetch-storage`, `fetch-buildings` | hash-checked; only a routing rebuild needs it |
-| `Processed_Data/routing/route_geometry_v1.parquet` (route lines) | `python -B -m Code.routing.pipeline build` (about 10 minutes) | without it, routes show distance and time with a notice |
-
-Without the three prediction files the application still starts: the Price Outlook charts show a notice, and every other page works from tracked CSVs.
-
-### Optional: Spark environment (no global PATH or Java change)
-
-`<ENV>` is a folder outside OneDrive and the repository, for example `C:\Users\<you>\bda-env`.
+Copy the [local data bundle](Documentation/Local_Data_Bundle.md) into the checkout. Then run these in separate terminals from the project root:
 
 ```powershell
-# JDK 21 (verify SHA-256 F9D6E191AB098C0D416E7D588A24420A8621CD2F4720DAB2459B8B7B2D2D8B4E)
-Invoke-WebRequest -Uri "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_windows_hotspot_21.0.12.1_1.zip" -OutFile <ENV>\jdk21.zip
-(Get-FileHash <ENV>\jdk21.zip -Algorithm SHA256).Hash
-Expand-Archive <ENV>\jdk21.zip -DestinationPath <ENV>; Remove-Item <ENV>\jdk21.zip
-# venv with PySpark (inherits everything in requirements.txt)
-C:\Python313\python.exe -m venv --system-site-packages <ENV>\venv
-<ENV>\venv\Scripts\python.exe -m pip install --no-cache-dir pyspark==4.2.0
-# per PowerShell window, for that process only
-$env:JAVA_HOME = "<ENV>\jdk-21.0.12.1+1"; $env:PYTHONDONTWRITEBYTECODE = "1"
+python -B -m uvicorn Code.api.main:app --host 127.0.0.1 --port 8000
 ```
-
-- **Spark ETL and parity:** `<ENV>\venv\Scripts\python.exe -B -m Code.bigdata.mandi_spark`. It takes about 110 s on `local[8]`, and parity shows 0 mismatches on 16,673 district-years.
-- **Spark tests:** `<ENV>\venv\Scripts\python.exe -B -m pytest -q -p no:cacheprovider Code/tests/test_bigdata_spark.py`. The real-data parity check (about 2 minutes) needs `$env:BDA_SPARK_REAL = "1"`.
-- **Windows warning:** "Did not find winutils.exe" is expected and harmless, because Spark never writes files (pandas does).
-
-To remove the environment, delete `<ENV>`.
-
-### Frontend dependencies (outside OneDrive)
-
-`frontend\node_modules` is a junction to `<ENV>\frontend_pkg\node_modules`, because `npm install` would replace the junction. The script copies `package.json` and `package-lock.json` to `<ENV>\frontend_pkg`, runs `npm ci` there and creates the junction:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File frontend\scripts\install-deps.ps1 -Env <ENV>
+npm run dev --prefix frontend
 ```
 
-To add, upgrade or remove a package, run npm inside `<ENV>\frontend_pkg`, then copy its `package.json` and `package-lock.json` back to `frontend\`.
+Open [Mandi Insights locally](http://127.0.0.1:5173/). For the notebook walkthrough, run `python -m jupyterlab --notebook-dir=Notebook` and start with the [project overview](Notebook/01_Project_Overview.ipynb).
 
-### Run the application
+## Data and forecasts
+
+AGMARKNET and data.gov.in supply mandi reports. The daily persistence model carries forward the last eligible report in INR per quintal. Exact future quotes cover 7, 14, and 30 days from issuance. The planner screens up to 12 direct-ranked pairs per mode and three compatible warehouses per pair. Storage availability, charges, and some route distances are modeled.
+
+The Windows refresh and publication schedules are 22:30 and 00:05 IST. Existing local data can be published for the current date without a source download:
 
 ```powershell
-# window 1: API (docs at http://127.0.0.1:8000/docs)
-C:\Python313\python.exe -m uvicorn Code.api.main:app --host 127.0.0.1 --port 8000
-# window 2: frontend, proxies /api to port 8000
-cd frontend; npm run dev          # http://127.0.0.1:5173
-# or the production build
-cd frontend; npm run build; npm run preview     # http://127.0.0.1:4173
+python -B -m Code.intelligence.refresh --batch-only
 ```
 
-A route can be shared as a link: `/routes?from=D:Maharashtra|Nashik&to=D:Maharashtra|Pune&objective=fastest`.
+For a bounded source refresh, configure `DATAGOV_API_KEY` or the local `.secrets/datagov_api_key` file and run `powershell -NoProfile -ExecutionPolicy Bypass -File Code/intelligence/run_refresh.ps1 -Execute`. The [implementation notes](Documentation/Mandi_Insights_Revamp.md) describe publication and logistics.
 
-### Pipelines
-
-| What | Command | Observed |
-|---|---|---|
-| Phase 10 rebuild | `C:\Python313\python.exe -B -m Code.production.pipeline build` | byte-identical outputs |
-| Node table (11a) | `C:\Python313\python.exe -B -m Code.routing.nodes build` (then `check`) | 46 verified nodes; byte-identical rebuild |
-| Warehouse table (11e) | `C:\Python313\python.exe -B -m Code.routing.storage build` (then `check`) | 168 OSM-reported facilities, validated against `Warehouse_Data_Contract.md` |
-| Routes (11b/11c) | `C:\Python313\python.exe -B -m Code.routing.pipeline build` (then `check`) | about 10 minutes; `check` reproduces the CSVs byte for byte |
-| New price days (D-56) | add a stage to `INCREMENTS` in `Code/candidates/datagov_increment.py`, then `python -B -m Code.candidates.datagov_increment S<n>` | needs the git-ignored data.gov.in key; S4 = 2026-10-21 → 25 |
-| Price dataset v1.2 (D-56) | `python -B -m Code.candidates.build_prices_v1_2`, then `python -B -m Code.candidates.recent_prices build` | byte-identical rebuild; v1.1 untouched |
-| Price experiment (D-58) | `python -B -m Code.candidates.exp_v3 validate` | the `test` command refuses until the 2027 window is complete |
-
-Weather forecasts (D-57) call Open-Meteo at most once per point every 3 hours; set `BDA_WEATHER_FORECAST=0` to switch them off.
-
-### Tests
+## Verify
 
 ```powershell
-C:\Python313\python.exe -B -m pytest -q -p no:cacheprovider Code/tests            # Spark tests skip
-C:\Python313\python.exe -B -m pytest -q -p no:cacheprovider Code/tests/test_app.py Code/tests/test_api.py Code/tests/test_api_logistics.py Code/tests/test_routing.py
-cd frontend; npm test             # Vitest, mocked API
+python -B -m pytest -q -p no:cacheprovider Code/tests -k "not test_real_freeze_verifies_without_reading_records"
+npm test --prefix frontend -- --maxWorkers=2
+npm run build --prefix frontend
 ```
 
-## Data sources and licences
+The D-52 exclusion is the historical pre-run assertion that expects an absent lock. The completed-run integrity check stays in the suite. Full research integrity checks require Git history and the local research artifacts. Spark is optional.
 
-The raw data is not redistributed here. The repository holds derived outputs, which are credited to these sources:
+- `Code/` — API, data pipelines, research, routing, and tests
+- `frontend/` — React application
+- [`Notebook/`](Notebook/) — 14 executable notebooks
+- [`Documentation/`](Documentation/) — data lineage, assumptions, and research decisions
 
-| Source | Used for | Licence |
-|---|---|---|
-| Agricultural mandi prices and arrivals, district crop production (APY) | Phases 1–10 (`Dataset/`, not in Git) | not recorded in this repository; the raw files are not published |
-| Variety-wise Daily Market Prices (DMI / AGMARKNET via [data.gov.in](https://www.data.gov.in/resource/variety-wise-daily-market-prices-data-commodity)) | candidate price data (`Processed_Data/candidates/`) | Government Open Data License – India (portal-level; assumed, `Data_Source_Review.md`) |
-| [Open-Meteo](https://open-meteo.com/) historical weather | Phase 3 weather, candidate weather experiment | CC BY 4.0 |
-| NASA POWER | weather comparison | open, no restriction |
-| UPAg APY via India Data Portal | candidate production comparison | ODC-By |
-| © [OpenStreetMap](https://www.openstreetmap.org/copyright) contributors (Geofabrik extracts, 2026-10-22) | roads, routes and warehouses (`Processed_Data/routing/`) | ODbL 1.0; the derived routing tables are offered under ODbL |
+<details>
+<summary>All 14 notebooks</summary>
 
-## Evaluation integrity
+- [Project Overview](Notebook/01_Project_Overview.ipynb)
+- [Data Collection](Notebook/02_Data_Collection.ipynb)
+- [Exploratory Data Analysis](Notebook/03_Exploratory_Data_Analysis.ipynb)
+- [Data Cleaning](Notebook/04_Data_Cleaning.ipynb)
+- [Feature Engineering](Notebook/05_Feature_Engineering.ipynb)
+- [Feature Selection](Notebook/06_Feature_Selection.ipynb)
+- [Model Development](Notebook/07_Model_Development.ipynb)
+- [Model Comparison](Notebook/08_Model_Comparison.ipynb)
+- [Forecasting](Notebook/09_Forecasting.ipynb)
+- [Trading Strategies](Notebook/10_Trading_Strategies.ipynb)
+- [Logistics And Storage](Notebook/11_Logistics_And_Storage.ipynb)
+- [Multi Day Planning](Notebook/12_Multi_Day_Planning.ipynb)
+- [Application Integration](Notebook/13_Application_Integration.ipynb)
+- [Results And Conclusions](Notebook/14_Results_And_Conclusions.ipynb)
 
-- Every test window was evaluated **once**, behind a freeze manifest and a run-once guard: Phase 8 (D-42), Phase 9 (D-45), and the candidate persistence test (D-52). The guards refuse a second run; their lock and completion files are evidence and must not be removed.
-- The **2023 holdout** (Phase 8 §P) has never been read.
-- The candidate test window (2026-07-05 → 2026-10-18) is **consumed**: its results are for reporting only, and any new model needs data after 2026-10-20.
-- Negative results are kept as findings, not tuned away.
-
-**Tests (2026-10-25, project interpreter):** 454 passed, 1 skipped (Spark, without the venv), 1 known failure. In the Spark venv, `test_bigdata_spark.py` gives 9 passed and 1 skipped (the opt-in real-data parity).
-
-**Known test failure:** `test_real_freeze_verifies_without_reading_records` (in the frozen `Code/tests/test_persistence_test_candidate.py`) asserts that no D-52 lock exists, which was true only before the authorised run. It is left unchanged because the file is bound by the D-52 freeze. The post-run invariant is tested in `Code/tests/test_persistence_test_postrun.py` (D-53 item 10).
+</details>

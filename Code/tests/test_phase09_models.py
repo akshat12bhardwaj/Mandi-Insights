@@ -18,7 +18,6 @@ from Code.modelling import dataset as m
 from Code.tests.test_phase09_arrivals import daily_arr
 from Code.tests.test_phase09_arrivals_quality import series
 
-NOTEBOOK = Path("Notebooks/Phase_09_Arrivals_Model_Experiments.ipynb")
 
 
 def two_series(n=1820):
@@ -168,19 +167,3 @@ def test_selection_requires_all_four_criteria():
 
 def test_exploratory_baseline_is_never_a_candidate():
     assert not set(am.EXPLORATORY) & set(am.CANDIDATES) and am.BASELINE not in am.CANDIDATES
-
-
-# ---------------------------------------------------------------- notebook contract
-def test_notebook_contract():
-    nb = json.loads(NOTEBOOK.read_text(encoding="utf-8"))
-    src = "\n".join("".join(c["source"]) for c in nb["cells"] if c["cell_type"] == "code")
-    assert nb["metadata"]["kernelspec"]["name"] == "python3"
-    assert "from Code.modelling import arrivals_models as am" in src and "PROJECT_ROOT" in src
-    assert "am.PROTOCOL_STATUS" in src and "require_approved" not in src.replace("am.require_approved", "")
-    assert "C:\\\\" not in src and "C:/" not in src                                  # no absolute paths
-    assert "2021" not in src and "holdout" not in src.lower().replace("holdout_accessed", "")  # no reserved periods
-    assert "reproduce_persistence" in src and "leakage_probe" in src and "select(" in src
-    assert "run_test(" not in src and "af.verify_freeze()" in src      # reads the one-time test outputs, never re-runs it
-    for cell in nb["cells"]:
-        if cell["cell_type"] == "code":
-            assert not any(o.get("output_type") == "error" for o in cell.get("outputs", []))

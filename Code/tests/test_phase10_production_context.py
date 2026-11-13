@@ -361,21 +361,3 @@ def test_real_decision_log_accepts_d46_to_d48_only():
     text = pc.DECISION_LOG.read_text(encoding="utf-8")
     assert pc.decisions_accepted()
     assert not re.search(r"^### D-49 — \[ACCEPTED", text, re.M)
-
-
-def test_phase10_notebook_is_read_only_and_shows_reserved_years_as_counts_only():
-    import json
-    from Code.tests.test_notebooks import FORBIDDEN
-    nb = json.loads(pc.Path("Notebooks/Phase_10_Production_Context.ipynb").read_text(encoding="utf-8"))
-    code = [c for c in nb["cells"] if c["cell_type"] == "code"]
-    assert nb["metadata"]["language_info"]["version"].startswith("3.13") and all(c.get("execution_count") for c in code)
-    assert not any(o.get("output_type") == "error" for c in code for o in c.get("outputs", []))
-    src = "\n".join("".join(c["source"]) for c in code)
-    assert "PROJECT_ROOT" in src and "C:/" not in src
-    assert not [f for f in FORBIDDEN + ["build_full(", "run_design(", "write_csv("] if f in src.replace("verify_freeze(", "")]
-    assert "BUILD_END" not in src and "read_csv(OUT / \"production_context_v1.csv\"" not in src   # design rows only
-    for c in code:
-        out = "".join("".join(o.get("text", "")) + "".join(o.get("data", {}).get("text/plain", "")) for o in c.get("outputs", []))
-        assert not re.search(r"[A-Za-z]:[\/]|Users|AppData", out)
-        if re.search(r"20(19|20|21)-20(20|21|22)", out):                  # reserved labels: constants or counts only
-            assert "reserved rows in the product" in out or "design window: source years" in out

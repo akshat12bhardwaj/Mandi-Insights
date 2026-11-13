@@ -1,6 +1,6 @@
 # EDA Findings — Phase 7
 
-**Status: [COMPLETED].** Source: `Notebooks/Phase_07_EDA.ipynb`, computed by `Code/eda/analysis.py` into `Processed_Data/eda/` (15 tables) from the Phase 6 feature tables. Figures are in `Outputs/Figures/phase07_*.png`.
+**Status: [COMPLETED].** Source: the historical exploratory analysis, computed by `Code/eda/analysis.py` into `Processed_Data/eda/` (15 tables) from the Phase 6 feature tables. Figures are in `Outputs/Figures/phase07_*.png`.
 
 **How to read these findings**
 - **Prices are nominal Rs/quintal, with no inflation adjustment.** Seasonal patterns are measured relative to each series' own year (price ÷ that series-year's median), so they are not distorted by long-run inflation.

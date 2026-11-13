@@ -69,7 +69,7 @@ Hadoop/HDFS is **outside the implementation scope** (D-54, 2026-10-25): it is no
 
 This machine has two Pythons. A plain `jupyter lab` starts Anaconda's JupyterLab 4.2.5 with a Python 3.12 kernel (scikit-learn 1.5). The project uses `C:\Python313\python.exe` (scikit-learn 1.8).
 
-- **Interactive:** `cd <project root>`, then `C:\Python313\python.exe -m jupyterlab`. Its `python3` kernel resolves to `C:\Python313\python.exe`. Open `Notebooks/Overview_00_Project_Demonstration.ipynb`.
+- **Interactive:** `cd <project root>`, then `C:\Python313\python.exe -m jupyterlab`. Its `python3` kernel resolves to `C:\Python313\python.exe`. Open `Notebook/01_Project_Overview.ipynb`.
 - **Execute from a clean kernel:** `C:\Python313\python.exe Code\utils\run_notebook.py Notebooks\<name>.ipynb`.
 - **Regenerate a notebook:** `C:\Python313\python.exe Code\utils\build_phase08_notebook.py`, `build_phase09_notebook.py`, `build_phase10_notebook.py` or `build_demo_notebook.py`.
 
@@ -146,7 +146,7 @@ BDA/
 │       ├── location_mapper.py                        (Open-Meteo Geocoding API wrapper)
 │       ├── collector.py                              (Open-Meteo Archive API collector, caching + retries)
 │       └── validator.py                              (weather dataset validation checks)
-├── Notebooks/
+├── Notebook/
 │   ├── Phase_01_Project_and_Data_Understanding.ipynb (executed, 0 errors)
 │   ├── Phase_02_Crop_Feasibility_Audit_and_Selection.ipynb (executed, 0 errors, all validation checks passed)
 │   ├── Phase_03_Weather_Data_Collection.ipynb        (executed, 0 errors, all validation checks passed)
@@ -308,7 +308,7 @@ Phase 4 (Data Integration) needs: (a) `Processed_Data/weather/weather_location_m
 
 ## 8d. Phase 4 Outcome (completed)
 
-Built `Code/integration/pipeline.py` (`run_pipeline()`) and `Notebooks/Phase_04_Data_Integration.ipynb`. Outputs are in `Processed_Data/integration/`, each at its own verified grain (Decision Log D-15 to D-24):
+Built `Code/integration/pipeline.py` (`run_pipeline()`). Outputs are in `Processed_Data/integration/`, each at its own verified grain (Decision Log D-15 to D-24):
 
 | Output | Rows | Grain |
 |---|---|---|
@@ -332,7 +332,7 @@ Phase 5 (Data Cleaning) starts from the three `mandi_integrated_<crop>.parquet` 
 
 ## 8f. Phase 5 Outcome (completed)
 
-Built `Code/cleaning/pipeline.py` (`run_cleaning()`, rules R01–R14) and `Notebooks/Phase_05_Data_Cleaning.ipynb`. The Phase 4 tables are read-only inputs; their content hashes still equal the Phase 4 manifest. Decision Log D-25 to D-31; Assumptions A-16 to A-18.
+Built `Code/cleaning/pipeline.py` (`run_cleaning()`, rules R01–R14). The Phase 4 tables are read-only inputs; their content hashes still equal the Phase 4 manifest. Decision Log D-25 to D-31; Assumptions A-16 to A-18.
 
 | Crop | Phase 4 rows | Identical copies removed | Cleaned rows | Prices set missing (zero placeholders) | Conflicting rows kept + flagged | usable_modal_price | usable_arrivals |
 |---|---|---|---|---|---|---|---|
@@ -356,7 +356,7 @@ Phase 6 (Feature Engineering) starts from `Processed_Data/cleaned/mandi_cleaned_
 
 ## 8h. Phase 6 Outcome (completed)
 
-Built `Code/features/pipeline.py` (`run_features()`, `feature_registry()`) and `Notebooks/Phase_06_Feature_Engineering.ipynb`. Outputs: `Processed_Data/features/features_{onion,potato,wheat}.parquet`, with the same rows as Phase 5 (2,623,671 / 2,764,417 / 2,593,279) and 85 columns, plus `Processed_Data/features_audit/`. Decisions D-32 to D-37; assumptions A-19 to A-21.
+Built `Code/features/pipeline.py` (`run_features()`, `feature_registry()`). Outputs: `Processed_Data/features/features_{onion,potato,wheat}.parquet`, with the same rows as Phase 5 (2,623,671 / 2,764,417 / 2,593,279) and 85 columns, plus `Processed_Data/features_audit/`. Decisions D-32 to D-37; assumptions A-19 to A-21.
 
 - **Series**: crop × market × variety, keyed as (crop, state, district, market, variety) per D-33; no feature crosses a series.
 - **Information cutoff**: every history feature uses only eligible (`usable_*`) rows dated strictly before t. No imputation.
@@ -373,7 +373,7 @@ Phase 7 (EDA) starts from the feature tables and the registry. It should:
 
 ## 8j. Phase 7 Outcome (completed)
 
-Built `Code/eda/analysis.py` (`run_eda()`) and `Notebooks/Phase_07_EDA.ipynb`. The outputs are `Processed_Data/eda/` (15 tables), six figures, `Documentation/EDA_Findings.md` and `Documentation/Modelling_Readiness_Report.md`. All analysis uses nominal prices and registry roles, and every table states its sample.
+Built `Code/eda/analysis.py` (`run_eda()`). The outputs are `Processed_Data/eda/` (15 tables), six figures, `Documentation/EDA_Findings.md` and `Documentation/Modelling_Readiness_Report.md`. All analysis uses nominal prices and registry roles, and every table states its sample.
 
 - **Onion** is the most volatile crop (CV 0.79): cheapest in April–June, dearest in October–November, with spring arrival peaks.
 - **Potato** is cheapest in February–March and dearest in October–November.

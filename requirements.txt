@@ -24,6 +24,8 @@ httpx==0.28.1            # FastAPI TestClient in the API tests
 nbformat==5.10.4
 nbconvert==7.17.1
 ipykernel==7.3.0
+jupyterlab==4.5.8
+ipywidgets==8.1.8
 pytest==9.1.1
 
 # Optional, Big Data component only (rerunning Code.bigdata.mandi_spark): install separately in the venv with JDK 21

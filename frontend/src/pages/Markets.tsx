@@ -4,6 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import { Legend, Lines, SERIES, ThinBars } from "../components/charts";
 import { PageHeader, useCrop, Workspace } from "../components/Layout";
 import { MapView, type MapPoint } from "../components/MapView";
+import { RecentPrices } from "../components/RecentPrices";
 import { AnalyticsCard, Card, Chip, Dot, Empty, ErrorState, KpiStat, Loading, Meter, Pill, Q, SearchBox, Segmented, Select } from "../components/ui";
 import { useActivity, useMeta, useProduction, useReserved, useStates, useTopDistricts, useYearly } from "../lib/api";
 import { cn, compact, int, rs, yr } from "../lib/format";
@@ -32,9 +33,9 @@ export default function Markets() {
 
   const panel = (
     <Card glass className="flex h-full max-h-[560px] flex-col overflow-hidden lg:max-h-none">
-      <div className="border-b border-line/70 px-5 pt-4 pb-3">
-        <h2 className="text-[17px]">States</h2>
-        <p className="text-[11px] text-muted">{crop} mandi arrivals · {yr(year)} · ranked</p>
+      <div className="border-b border-line px-5 pt-4 pb-3">
+        <h2 className="text-[15px] font-semibold">States</h2>
+        <p className="text-[12px] text-muted">Ranked by {crop.toLowerCase()} arrivals · {yr(year)}</p>
       </div>
       <div className="px-4 pt-3"><SearchBox value={query} onChange={setQuery} placeholder="Search state" /></div>
       <div className="thin-scroll mt-3 min-h-0 flex-1 overflow-y-auto px-4 pb-4" data-testid="state-list">
@@ -46,10 +47,10 @@ export default function Markets() {
               {list.map((r) => (
                 <li key={r.state}>
                   <button type="button" onClick={() => setState(r.state)} aria-current={r.state === state}
-                    className={cn("w-full rounded-xl px-3 py-2 text-left transition", r.state === state ? "bg-white shadow-soft" : "bg-white/40 hover:bg-white/70")}>
+                    className={cn("w-full rounded-xl px-3 py-2 text-left transition", r.state === state ? "bg-ok-soft ring-1 ring-ok/30" : "bg-white hover:bg-subtle")}>
                     <div className="flex items-center justify-between gap-2 text-[13px]"><span className="truncate">{r.state}</span><span className="text-ink/80 tabular-nums">{compact(r.arrivals_tonnes)} t</span></div>
                     <div className="mt-1.5 h-px bg-line"><div className="h-px bg-ok" style={{ width: `${(r.arrivals_tonnes / d[0].arrivals_tonnes) * 100}%` }} /></div>
-                    <div className="mt-1 flex justify-between text-[11px] text-muted"><span>{rs(r.typical_price)} typical</span><span>{int(r.typical_markets)} markets/wk</span></div>
+                    <div className="mt-1 flex justify-between text-[12px] text-muted"><span>{rs(r.typical_price)} typical</span><span>{int(r.typical_markets)} markets/wk</span></div>
                   </button>
                 </li>
               ))}
@@ -62,12 +63,12 @@ export default function Markets() {
 
   return (
     <>
-      <PageHeader icon={<Store size={18} />} title="Markets" subtitle={<>{crop} · {yr(year)} · historical mandi reports</>}
+      <PageHeader icon={<Store size={18} />} title="Markets" subtitle={<>Which states trade the most {crop.toLowerCase()}, and at what typical price · {yr(year)} agricultural year</>}
         kpis={states.error ? <ErrorState error={states.error} /> : !rows.length ? <Loading label="Loading" /> : (
           <>
             <KpiStat value={int(rows.length)} label="States reporting" />
-            <KpiStat value={compact(total)} label={`India arrivals t · ${yr(year)}`} />
-            <KpiStat value={cur ? rs(cur.typical_price) : "–"} label={`${state} typical / quintal`} />
+            <KpiStat value={`${compact(total)} t`} label={`Arrivals across India · ${yr(year)}`} />
+            <KpiStat value={cur ? rs(cur.typical_price) : "–"} label={`${state}: typical price per quintal`} />
           </>
         )}
         controls={<>
@@ -79,8 +80,8 @@ export default function Markets() {
         map={<MapView points={points} fitKey={`${crop}-${state}`} className="h-full w-full" />}
         floating={state && (
           <Card glass className="p-4">
-            <h3 className="text-[15px]">{state}</h3>
-            <p className="mt-1 text-[11.5px] leading-snug text-muted">
+            <h3 className="text-[15px] font-semibold">{state}</h3>
+            <p className="mt-1 text-[12px] leading-snug text-muted">
               {points.length ? `${points.length} verified district point${points.length > 1 ? "s" : ""} shown.` : "No verified district points in this state yet."} Market coordinates are not geocoded, so individual mandis are not placed on the map.
             </p>
           </Card>
@@ -101,6 +102,7 @@ export default function Markets() {
           </AnalyticsCard>
         </>}
       />
+      <div className="mt-4"><RecentPrices crop={crop} state={state} /></div>
       <div className="mt-4 grid gap-4 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.25fr)]">
         <TopDistricts year={year} />
         <ProductionCard />
@@ -114,14 +116,14 @@ function TopDistricts({ year }: { year: string }) {
   const top = useTopDistricts(crop, year);
   return (
     <Card className="p-5">
-      <h2 className="text-[17px]">Top districts by arrivals</h2>
-      <p className="text-[11px] text-muted">{crop} · {yr(year)} · mandi reports matched to districts</p>
+      <h2 className="text-[15px] font-semibold">Top districts by arrivals</h2>
+      <p className="text-[12px] text-muted">{crop} · {yr(year)} · mandi reports matched to districts</p>
       <div className="mt-3">
         <Q query={top} empty={(d) => d.length === 0}>{(d) => (
           <table className="w-full text-[12.5px]">
-            <thead className="text-[10.5px] text-faint"><tr><th className="py-1.5 text-left font-normal">#</th><th className="text-left font-normal">District</th><th className="text-right font-normal">Arrivals</th><th className="text-right font-normal">Reports</th></tr></thead>
+            <thead className="text-[11.5px] text-faint"><tr><th className="py-1.5 text-left font-normal">#</th><th className="text-left font-normal">District</th><th className="text-right font-normal">Arrivals</th><th className="text-right font-normal">Reports</th></tr></thead>
             <tbody>{d.slice(0, 10).map((r) => (
-              <tr key={`${r.apy_state}-${r.apy_district}`} className="border-t border-line/70">
+              <tr key={`${r.apy_state}-${r.apy_district}`} className="border-t border-line">
                 <td className="py-2 text-muted tabular-nums">{r.arrivals_rank}</td>
                 <td><span className="text-ink">{r.apy_district}</span> <span className="text-muted">· {r.apy_state}</span></td>
                 <td className="text-right tabular-nums">{compact(r.mandi_arrivals_tonnes_sum)} t</td>
@@ -134,6 +136,8 @@ function TopDistricts({ year }: { year: string }) {
     </Card>
   );
 }
+
+const QUALITY: Record<string, string> = { ok: "Checked", annotated: "Checked, with notes", review: "Needs review" };
 
 const BASES = [
   { value: "verified_total", label: "Verified annual total" },
@@ -157,8 +161,8 @@ function ProductionCard() {
     <Card className="p-5" data-testid="production-card">
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h2 className="text-[17px]">District production</h2>
-          <p className="text-[11px] text-muted">{crop} · as published (APY) · values to {yr(years[0] ?? "")} only</p>
+          <h2 className="text-[15px] font-semibold">District production</h2>
+          <p className="text-[12px] text-muted">{crop} · as published by the Directorate of Economics & Statistics · up to {yr(years[0] ?? "")}</p>
         </div>
         <div className="flex flex-wrap gap-2">
           <Select label="Production year" className="w-32" value={year} onChange={setY} options={years.map((y) => ({ value: y, label: yr(y) }))} />
@@ -168,37 +172,37 @@ function ProductionCard() {
       <div className="mt-3 flex flex-wrap items-center gap-1.5" role="group" aria-label="Quality classes">
         {["ok", "annotated", "review"].map((q) => (
           <Pill key={q} className="h-8 px-3" active={quality.includes(q)} aria-pressed={quality.includes(q)} onClick={() => toggle(q)}>
-            <Dot tone={q === "ok" ? "ok" : q === "review" ? "bad" : "muted"} />{q}
+            <Dot tone={q === "ok" ? "ok" : q === "review" ? "bad" : "muted"} />{QUALITY[q]}
           </Pill>
         ))}
-        <span className="ml-1 text-[11px] text-faint">Classes are filtered, never merged.</span>
+        <span className="ml-1 text-[12px] text-muted">Data-quality groups</span>
       </div>
       <div className="thin-scroll mt-3 max-h-[300px] overflow-y-auto">
         {!quality.length ? <Empty title="Select at least one quality class" /> : (
           <Q query={prod}>{(p) => (<>
-            {p.provider_query_pending && <p className="mb-2 rounded-xl bg-bad-soft/60 px-3 py-2 text-[11.5px]">Some rows for this year await a provider query (R13): treat them with caution.</p>}
+            {p.provider_query_pending && <p className="mb-2 rounded-xl bg-bad-soft/60 px-3 py-2 text-[12px]">Some rows for this year have open questions with the publisher: treat them with caution.</p>}
             {!p.rows.length ? <Empty title="No rows for this year, basis and quality" /> : (
               <table className="w-full text-[12.5px]">
-                <thead className="sticky top-0 bg-surface text-[10.5px] text-faint"><tr><th className="py-1.5 text-left font-normal">District</th><th className="text-right font-normal">Production</th><th className="text-right font-normal">Area</th><th className="text-right font-normal">Yield</th><th className="text-right font-normal">Class</th></tr></thead>
+                <thead className="sticky top-0 bg-surface text-[11.5px] text-faint"><tr><th className="py-1.5 text-left font-normal">District</th><th className="text-right font-normal">Production</th><th className="text-right font-normal">Area</th><th className="text-right font-normal">Yield</th><th className="text-right font-normal">Quality</th></tr></thead>
                 <tbody>{p.rows.slice(0, 40).map((r) => (
-                  <tr key={`${r.apy_state}-${r.apy_district}`} className="border-t border-line/70">
+                  <tr key={`${r.apy_state}-${r.apy_district}`} className="border-t border-line">
                     <td className="py-1.5"><span className="text-ink">{r.apy_district}</span> <span className="text-muted">· {r.apy_state}</span></td>
                     <td className="text-right tabular-nums">{compact(r.production_tonnes)} t</td>
                     <td className="text-right tabular-nums text-muted">{compact(r.area_ha)} ha</td>
                     <td className="text-right tabular-nums text-muted">{r.yield_t_per_ha?.toFixed(1) ?? "–"}</td>
-                    <td className="text-right"><Chip tone={r.pq_class === "ok" ? "ok" : r.pq_class === "review" ? "bad" : "muted"}>{r.pq_class}</Chip></td>
+                    <td className="text-right"><Chip tone={r.pq_class === "ok" ? "ok" : r.pq_class === "review" ? "warn" : "muted"}>{QUALITY[r.pq_class] ?? r.pq_class}</Chip></td>
                   </tr>))}
                 </tbody>
               </table>)}
           </>)}</Q>
         )}
       </div>
-      <div className="mt-4 rounded-xl bg-white/70 p-3" data-testid="reserved-notice">
-        <p className="text-[12px] text-ink">Reserved years: counts only</p>
+      <div className="mt-4 rounded-xl bg-subtle p-3" data-testid="reserved-notice">
+        <p className="text-[12px] font-medium text-ink">Later years: row counts only</p>
         {reserved.error ? <ErrorState error={reserved.error} /> : (
-          <p className="mt-1 text-[11.5px] leading-relaxed text-muted">
+          <p className="mt-1 text-[12px] leading-relaxed text-muted">
             {(reserved.data?.counts ?? []).filter((c) => c.crop === crop).map((c) => `${yr(c.source_apy_year)}: ${c.ok + c.annotated + c.review + c.unusable} rows`).join(" · ")}
-            {" "}— values are withheld so they cannot leak into evaluation.
+            {" "}— figures for these years are not published here yet.
           </p>
         )}
       </div>

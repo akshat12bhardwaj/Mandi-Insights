@@ -1,0 +1,821 @@
+{
+  "version": "future-price-v1",
+  "created_at": "2026-11-12T22:27:46.633853+05:30",
+  "protocol": {
+    "version": "future-price-v1",
+    "train_target_cutoff": "2016-12-28",
+    "training_issue_cutoff": "2016-12-31",
+    "selection_year": 2017,
+    "confirmation_year": 2018,
+    "horizons": [
+      7,
+      14,
+      30
+    ],
+    "features": [
+      "lag2_ratio",
+      "lag7_ratio",
+      "mean7_ratio",
+      "mean30_ratio",
+      "volatility30",
+      "momentum",
+      "age_days",
+      "weekday_sin",
+      "weekday_cos",
+      "month_sin",
+      "month_cos"
+    ],
+    "reporting_delay_days": 3,
+    "series_per_crop": 12,
+    "origins": "Eligible Wednesday origins with an observed origin-day report; future targets must have an exact reported price.",
+    "seasonal_baseline": "Price on target minus 364 days, only if known before origin minus three days; otherwise persistence.",
+    "selection": "Select on 2017; confirm the selected candidate on 2018. Learned serving promotion also requires current-regime availability-vintage evidence, which is absent.",
+    "interpretation": "Retrospective validation on revised archives with assumed publication delay, not live calibrated confidence.",
+    "protected_boundary": "No 2019+ target or protected research output is read/scored."
+  },
+  "choices": [
+    {
+      "crop": "Onion",
+      "horizon_days": 7,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "cc278ed65b2d-7d.joblib"
+    },
+    {
+      "crop": "Onion",
+      "horizon_days": 14,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "cc278ed65b2d-14d.joblib"
+    },
+    {
+      "crop": "Onion",
+      "horizon_days": 30,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "cc278ed65b2d-30d.joblib"
+    },
+    {
+      "crop": "Potato",
+      "horizon_days": 7,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "6d61374da4b4-7d.joblib"
+    },
+    {
+      "crop": "Potato",
+      "horizon_days": 14,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "6d61374da4b4-14d.joblib"
+    },
+    {
+      "crop": "Potato",
+      "horizon_days": 30,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "6d61374da4b4-30d.joblib"
+    },
+    {
+      "crop": "Tomato",
+      "horizon_days": 7,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "8289a9844fd5-7d.joblib"
+    },
+    {
+      "crop": "Tomato",
+      "horizon_days": 14,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "8289a9844fd5-14d.joblib"
+    },
+    {
+      "crop": "Tomato",
+      "horizon_days": 30,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "8289a9844fd5-30d.joblib"
+    },
+    {
+      "crop": "Green Chilli",
+      "horizon_days": 7,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "cbe4f9ee1f7c-7d.joblib"
+    },
+    {
+      "crop": "Green Chilli",
+      "horizon_days": 14,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "cbe4f9ee1f7c-14d.joblib"
+    },
+    {
+      "crop": "Green Chilli",
+      "horizon_days": 30,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "cbe4f9ee1f7c-30d.joblib"
+    },
+    {
+      "crop": "Brinjal",
+      "horizon_days": 7,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "0576c51a2f92-7d.joblib"
+    },
+    {
+      "crop": "Brinjal",
+      "horizon_days": 14,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "0576c51a2f92-14d.joblib"
+    },
+    {
+      "crop": "Brinjal",
+      "horizon_days": 30,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "0576c51a2f92-30d.joblib"
+    },
+    {
+      "crop": "Cauliflower",
+      "horizon_days": 7,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "f0eb3ff1d427-7d.joblib"
+    },
+    {
+      "crop": "Cauliflower",
+      "horizon_days": 14,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "f0eb3ff1d427-14d.joblib"
+    },
+    {
+      "crop": "Cauliflower",
+      "horizon_days": 30,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "f0eb3ff1d427-30d.joblib"
+    },
+    {
+      "crop": "Cabbage",
+      "horizon_days": 7,
+      "selected_on_2017": "ridge",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "d37db9788605-7d.joblib"
+    },
+    {
+      "crop": "Cabbage",
+      "horizon_days": 14,
+      "selected_on_2017": "ridge",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "d37db9788605-14d.joblib"
+    },
+    {
+      "crop": "Cabbage",
+      "horizon_days": 30,
+      "selected_on_2017": "ridge",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "d37db9788605-30d.joblib"
+    },
+    {
+      "crop": "Wheat",
+      "horizon_days": 7,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "cca303e99f5f-7d.joblib"
+    },
+    {
+      "crop": "Wheat",
+      "horizon_days": 14,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "cca303e99f5f-14d.joblib"
+    },
+    {
+      "crop": "Wheat",
+      "horizon_days": 30,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "cca303e99f5f-30d.joblib"
+    },
+    {
+      "crop": "Banana",
+      "horizon_days": 7,
+      "selected_on_2017": "ridge",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "f9782dd7999d-7d.joblib"
+    },
+    {
+      "crop": "Banana",
+      "horizon_days": 14,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "f9782dd7999d-14d.joblib"
+    },
+    {
+      "crop": "Banana",
+      "horizon_days": 30,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "f9782dd7999d-30d.joblib"
+    },
+    {
+      "crop": "Cucumbar(Kheera)",
+      "horizon_days": 7,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "c92d903d669e-7d.joblib"
+    },
+    {
+      "crop": "Cucumbar(Kheera)",
+      "horizon_days": 14,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "c92d903d669e-14d.joblib"
+    },
+    {
+      "crop": "Cucumbar(Kheera)",
+      "horizon_days": 30,
+      "selected_on_2017": "seasonal_naive_7d",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "c92d903d669e-30d.joblib"
+    },
+    {
+      "crop": "Paddy(Dhan)(Common)",
+      "horizon_days": 7,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "6496e21b6192-7d.joblib"
+    },
+    {
+      "crop": "Paddy(Dhan)(Common)",
+      "horizon_days": 14,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "6496e21b6192-14d.joblib"
+    },
+    {
+      "crop": "Paddy(Dhan)(Common)",
+      "horizon_days": 30,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "6496e21b6192-30d.joblib"
+    },
+    {
+      "crop": "Pumpkin",
+      "horizon_days": 7,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "c6c5211a5079-7d.joblib"
+    },
+    {
+      "crop": "Pumpkin",
+      "horizon_days": 14,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "c6c5211a5079-14d.joblib"
+    },
+    {
+      "crop": "Pumpkin",
+      "horizon_days": 30,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "c6c5211a5079-30d.joblib"
+    },
+    {
+      "crop": "Carrot",
+      "horizon_days": 7,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "9e87ba4dd07d-7d.joblib"
+    },
+    {
+      "crop": "Carrot",
+      "horizon_days": 14,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "9e87ba4dd07d-14d.joblib"
+    },
+    {
+      "crop": "Carrot",
+      "horizon_days": 30,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "9e87ba4dd07d-30d.joblib"
+    },
+    {
+      "crop": "Bottle gourd",
+      "horizon_days": 7,
+      "selected_on_2017": "ridge",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "21ad158673ef-7d.joblib"
+    },
+    {
+      "crop": "Bottle gourd",
+      "horizon_days": 14,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "21ad158673ef-14d.joblib"
+    },
+    {
+      "crop": "Bottle gourd",
+      "horizon_days": 30,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "21ad158673ef-30d.joblib"
+    },
+    {
+      "crop": "Apple",
+      "horizon_days": 7,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "f223faa96f22-7d.joblib"
+    },
+    {
+      "crop": "Apple",
+      "horizon_days": 14,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "f223faa96f22-14d.joblib"
+    },
+    {
+      "crop": "Apple",
+      "horizon_days": 30,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "f223faa96f22-30d.joblib"
+    },
+    {
+      "crop": "Ginger(Green)",
+      "horizon_days": 7,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "87827c6fc203-7d.joblib"
+    },
+    {
+      "crop": "Ginger(Green)",
+      "horizon_days": 14,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "87827c6fc203-14d.joblib"
+    },
+    {
+      "crop": "Ginger(Green)",
+      "horizon_days": 30,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "87827c6fc203-30d.joblib"
+    },
+    {
+      "crop": "Rice",
+      "horizon_days": 7,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "1b9bc7b7376e-7d.joblib"
+    },
+    {
+      "crop": "Rice",
+      "horizon_days": 14,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "1b9bc7b7376e-14d.joblib"
+    },
+    {
+      "crop": "Rice",
+      "horizon_days": 30,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "1b9bc7b7376e-30d.joblib"
+    },
+    {
+      "crop": "Bhindi(Ladies Finger)",
+      "horizon_days": 7,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "5c4a89b15f87-7d.joblib"
+    },
+    {
+      "crop": "Bhindi(Ladies Finger)",
+      "horizon_days": 14,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "5c4a89b15f87-14d.joblib"
+    },
+    {
+      "crop": "Bhindi(Ladies Finger)",
+      "horizon_days": 30,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "5c4a89b15f87-30d.joblib"
+    },
+    {
+      "crop": "Raddish",
+      "horizon_days": 7,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "969748f1ffaf-7d.joblib"
+    },
+    {
+      "crop": "Raddish",
+      "horizon_days": 14,
+      "selected_on_2017": "hist_gradient_boosting",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "969748f1ffaf-14d.joblib"
+    },
+    {
+      "crop": "Raddish",
+      "horizon_days": 30,
+      "selected_on_2017": "ridge",
+      "confirmed_2018": true,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "969748f1ffaf-30d.joblib"
+    },
+    {
+      "crop": "Bitter gourd",
+      "horizon_days": 7,
+      "selected_on_2017": "persistence",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "1173d36a7afa-7d.joblib"
+    },
+    {
+      "crop": "Bitter gourd",
+      "horizon_days": 14,
+      "selected_on_2017": "moving_average_7obs",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "1173d36a7afa-14d.joblib"
+    },
+    {
+      "crop": "Bitter gourd",
+      "horizon_days": 30,
+      "selected_on_2017": "ridge",
+      "confirmed_2018": false,
+      "serving_model": "persistence",
+      "serving_reason": "Historically evaluated baseline; no current-regime learned promotion evidence",
+      "artifact": "1173d36a7afa-30d.joblib"
+    }
+  ],
+  "metrics_sha256": "663a56957669cb4be2b80497a23ad88f6bcb3a686dcbb4c0e1fbe7f917557cf8",
+  "artifacts": [
+    {
+      "path": "0576c51a2f92-14d.joblib",
+      "sha256": "581d825c1027bc05cf15669f3237a385b494d9aacdb78074097e87f9b6e1298b"
+    },
+    {
+      "path": "0576c51a2f92-30d.joblib",
+      "sha256": "e1eeabd02fdc1f6927ca444415dc8b6cfd40c165aa96b852c23faa89e88728ee"
+    },
+    {
+      "path": "0576c51a2f92-7d.joblib",
+      "sha256": "0ec5dd5407c01de1c65d813fa8d79f802640443b79a38538a7cdf75945198944"
+    },
+    {
+      "path": "1173d36a7afa-14d.joblib",
+      "sha256": "541efcfeea51bc36b2a4970179d67ca56cdd6a201cfb08e2f16d04a4dcdf46e3"
+    },
+    {
+      "path": "1173d36a7afa-30d.joblib",
+      "sha256": "a9c4e6e057b2475a6b58381841a4b98e15d8a7db3d631c55b57180784eae4815"
+    },
+    {
+      "path": "1173d36a7afa-7d.joblib",
+      "sha256": "ba2e7f95f7ebd257a2fcb7adbe01debb4f71f180d88102f900a70b8b5d1168d3"
+    },
+    {
+      "path": "1b9bc7b7376e-14d.joblib",
+      "sha256": "87f04fffedbac6702841b6eb28bcd919f595273301062c42288dd88a542e0009"
+    },
+    {
+      "path": "1b9bc7b7376e-30d.joblib",
+      "sha256": "f61a20a8ed0a3e977e9ef7df313019240d037e46b7435cbb5303df3e657d5010"
+    },
+    {
+      "path": "1b9bc7b7376e-7d.joblib",
+      "sha256": "00364fb079453014804310c7252013ba8c96fe83992e1d9f089c16f089dc9fb1"
+    },
+    {
+      "path": "21ad158673ef-14d.joblib",
+      "sha256": "0790996a2207026d56a5f8f3ec0883954a96500e747e21ff610cdfe72afd03e8"
+    },
+    {
+      "path": "21ad158673ef-30d.joblib",
+      "sha256": "1957b15e1fb3e77c3d3b29fd384449eafa7c208b0ed89c5f444a7a1b21b38a8f"
+    },
+    {
+      "path": "21ad158673ef-7d.joblib",
+      "sha256": "74c7b2d95b803819369dcfc51d8284e92fbbda869149f079b76996d363bd6bdf"
+    },
+    {
+      "path": "5c4a89b15f87-14d.joblib",
+      "sha256": "8fc16a9b8437c85df51bf5a2358335cb0d2b20e2614f8bc96899446df9b09434"
+    },
+    {
+      "path": "5c4a89b15f87-30d.joblib",
+      "sha256": "8aaa4a763eae32f9e996d4c05d4137c3df288a956ca44d5019a4d411bfbbf4ef"
+    },
+    {
+      "path": "5c4a89b15f87-7d.joblib",
+      "sha256": "05aff38d754f3772d859f6ab8b3272cff3f298b071d66ef837df251fae2728fb"
+    },
+    {
+      "path": "6496e21b6192-14d.joblib",
+      "sha256": "3dd200194a36df0f84f01c054161f16f4fd58ce6581fbec228d3f846dbd18461"
+    },
+    {
+      "path": "6496e21b6192-30d.joblib",
+      "sha256": "6c3501f6fe70bc9d0e44fa95a7e9d58ce7511ac7b40bef6676f99bdae36ba846"
+    },
+    {
+      "path": "6496e21b6192-7d.joblib",
+      "sha256": "5983a78832d7f8bdb9cb0971c01bcdb7364bddabf26841cf53a614591c808ce7"
+    },
+    {
+      "path": "6d61374da4b4-14d.joblib",
+      "sha256": "a35dfc6dd41bb502a295b277b1a64ca7d0929b23678051717eced25a4d1abe55"
+    },
+    {
+      "path": "6d61374da4b4-30d.joblib",
+      "sha256": "02e869e8c7ebef395d1f1646f78f6a445b14a2b47df34b7c0d10641011671f9a"
+    },
+    {
+      "path": "6d61374da4b4-7d.joblib",
+      "sha256": "7ddef27bb644172c4a19bc7db882a7c573cc2b3c8acf2b90e692e53b4b02418e"
+    },
+    {
+      "path": "8289a9844fd5-14d.joblib",
+      "sha256": "e857bc2854b7fd1ec19570d6ce0c5752db24994e880f676b7e0bd051212beb1d"
+    },
+    {
+      "path": "8289a9844fd5-30d.joblib",
+      "sha256": "584a06881fbaabba4ac3e5f1c23305ceca4cdac7f98be42ed08019a61d6066c3"
+    },
+    {
+      "path": "8289a9844fd5-7d.joblib",
+      "sha256": "fbf09326d05f6a8cd039cb1975e9cf467120ac1f3ba61aacbf29c2b237b9da7d"
+    },
+    {
+      "path": "87827c6fc203-14d.joblib",
+      "sha256": "71838556115c46ae0eaa9f38907884469f5668db76b26331518d81cf5b498d62"
+    },
+    {
+      "path": "87827c6fc203-30d.joblib",
+      "sha256": "5d5d02477e1dc563b769f79544164ec6d694432bd9c74f570b66a2539f987e13"
+    },
+    {
+      "path": "87827c6fc203-7d.joblib",
+      "sha256": "545fa725804a78eef98a1f3dbd4a5ec91eaa1592e00fd62a1d7125a183462418"
+    },
+    {
+      "path": "969748f1ffaf-14d.joblib",
+      "sha256": "dff8ad21094cae89cdf7fffea310790bfbd7755189493c135f9b68d8133daf40"
+    },
+    {
+      "path": "969748f1ffaf-30d.joblib",
+      "sha256": "1aca54c6b33941145c57185e33cf32ff71838d6b71a6335e15e6d176fd9e59e3"
+    },
+    {
+      "path": "969748f1ffaf-7d.joblib",
+      "sha256": "5ce718cd9fab63b7f6d147c4fc1b3a2749e3ba907616c9025a8e362eadf0b5c7"
+    },
+    {
+      "path": "9e87ba4dd07d-14d.joblib",
+      "sha256": "6afc1c384b21cbf7466f1389cdec86d37762126012ed7da0bac6af150028070c"
+    },
+    {
+      "path": "9e87ba4dd07d-30d.joblib",
+      "sha256": "a709f9f6ba5853ccecb1d6767707251b5c06ce31687e61275c83d34ce76c8898"
+    },
+    {
+      "path": "9e87ba4dd07d-7d.joblib",
+      "sha256": "ffc3f3453fc938b01ea4548661321739f031c0bc214c54806565ed13bb4fe90f"
+    },
+    {
+      "path": "c6c5211a5079-14d.joblib",
+      "sha256": "adca7d092251317ab582c804428d7044a6296a8fa2654c50fb0e0565ba7d8a12"
+    },
+    {
+      "path": "c6c5211a5079-30d.joblib",
+      "sha256": "a3f3ba4c2c1e85df334e02ffc1002e2369cedaca1120a882913550ac31dab533"
+    },
+    {
+      "path": "c6c5211a5079-7d.joblib",
+      "sha256": "123c35751ae54f5e574d3ec2e96ac0ac42644ad3a81e9104284c7304906666b0"
+    },
+    {
+      "path": "c92d903d669e-14d.joblib",
+      "sha256": "8f5a9686abac92831d52fef4db0eaffacd7ce3f8ceb85e49f6ddcc8c75beec21"
+    },
+    {
+      "path": "c92d903d669e-30d.joblib",
+      "sha256": "95e6606341727b7b91200922b7742b14eb997aa4910e3a50ab257b1c5fbaf584"
+    },
+    {
+      "path": "c92d903d669e-7d.joblib",
+      "sha256": "a74839fbbd1ba7d3a48617dbe08066947929c38d7c3cb7d40c32892b46234239"
+    },
+    {
+      "path": "cbe4f9ee1f7c-14d.joblib",
+      "sha256": "fa9685f4dcb4c2b68737fe8cdb6633dab2b0c82833fc5c1807775fccfeb2a575"
+    },
+    {
+      "path": "cbe4f9ee1f7c-30d.joblib",
+      "sha256": "aa301debfa495e5cee830d6a4f445974985c8cb004cd7a6e1c86fd63d78af0b4"
+    },
+    {
+      "path": "cbe4f9ee1f7c-7d.joblib",
+      "sha256": "ba824a521a39dffa55b00dde86c2484f1d95bb5ba2f87a9adda66f69386969e9"
+    },
+    {
+      "path": "cc278ed65b2d-14d.joblib",
+      "sha256": "46e5d65cbfb861d86df81aec1c3966346b552aee3e5986892115aef66ea574c8"
+    },
+    {
+      "path": "cc278ed65b2d-30d.joblib",
+      "sha256": "7ffb1d0c4269d9a6613d34f0c901a18860fea06fe2273f7e3327f667eb5eea0e"
+    },
+    {
+      "path": "cc278ed65b2d-7d.joblib",
+      "sha256": "72e92ee9a9b10f789b8a2f9396e3a6b9307014ce8ea77d5a86585bc3da282953"
+    },
+    {
+      "path": "cca303e99f5f-14d.joblib",
+      "sha256": "0e79a24b3ba41b7162f0abe2a426aaac61502b8fd5cb93789a7d9af6af3508a7"
+    },
+    {
+      "path": "cca303e99f5f-30d.joblib",
+      "sha256": "8257f075c8f4a0a4dfead9fb1538b1e7c65a93f7ecddb2be9a47f7051f5184d0"
+    },
+    {
+      "path": "cca303e99f5f-7d.joblib",
+      "sha256": "a084def00b6180da7e5100551c43c31e01084839e3585e71bae5fd690c93f550"
+    },
+    {
+      "path": "d37db9788605-14d.joblib",
+      "sha256": "98b92aeecfdcc87067d6a587ff26508b110db8ee2fdb76c16f58b43a92c90a9e"
+    },
+    {
+      "path": "d37db9788605-30d.joblib",
+      "sha256": "4766c099d1ece43907b1690de15984589a48d648d982264db92a1833956ceeee"
+    },
+    {
+      "path": "d37db9788605-7d.joblib",
+      "sha256": "53dc26b56563ca0ec038079ab057c1a078a51b70b2e52c9f3942abf7dc8a1a3d"
+    },
+    {
+      "path": "f0eb3ff1d427-14d.joblib",
+      "sha256": "f6f7a1dd0314e7d785272a6d27cb72c0e029d60ddb3a1c472af88e4c320b2212"
+    },
+    {
+      "path": "f0eb3ff1d427-30d.joblib",
+      "sha256": "fefc74c41136c6352e5afc5cf52f32f27e516481d10992463fb74d47ffab2623"
+    },
+    {
+      "path": "f0eb3ff1d427-7d.joblib",
+      "sha256": "a3c0579c0fe5a50479f78960af23af96af8f39065afa210dbb151a6057f058a9"
+    },
+    {
+      "path": "f223faa96f22-14d.joblib",
+      "sha256": "67ab1472374c1c9b28ca98ccf99b3a343bdfa26b25a2640491886f009ec290ac"
+    },
+    {
+      "path": "f223faa96f22-30d.joblib",
+      "sha256": "4c501b285abc8c55e6d0d82e6f6dd050bb01ec96c41b94f6523b6d27e4517983"
+    },
+    {
+      "path": "f223faa96f22-7d.joblib",
+      "sha256": "adaf8b1defc070be1a896413c4e56b8f43048213f3c53cfa1e168fe969f4cd7b"
+    },
+    {
+      "path": "f9782dd7999d-14d.joblib",
+      "sha256": "a7c53086462271f869072667124c1e3c45d1ead7ea8acd37fe0eebc3ef9bf1f5"
+    },
+    {
+      "path": "f9782dd7999d-30d.joblib",
+      "sha256": "450d1ef01de8c464978de67aee8ba78dec246d503fe23c9769da632bb237a3b9"
+    },
+    {
+      "path": "f9782dd7999d-7d.joblib",
+      "sha256": "653bb203cfe665dcfbcac961f34b4c0f889c8433f92b96ae80e1c909a0102533"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "version": "intelligence-v1",
+  "basis": "Project simulation assumptions; INR, km, quintals (100 kg), tonnes (10 quintals). Not official tariffs.",
+  "vehicles": {
+    "Light truck": {"capacity_q": 40, "rs_km": 22, "km_litre": 8},
+    "Medium truck": {"capacity_q": 100, "rs_km": 35, "km_litre": 5},
+    "Heavy truck": {"capacity_q": 160, "rs_km": 48, "km_litre": 3.5}
+  },
+  "storage": {
+    "dry": {"capacity_t": 2500, "rs_q_day": 0.6, "max_days": 90, "daily_loss_pct": 0.015},
+    "ventilated": {"capacity_t": 500, "rs_q_day": 1.2, "max_days": 30, "daily_loss_pct": 0.2},
+    "cold": {"capacity_t": 1500, "rs_q_day": 3, "max_days": 30, "daily_loss_pct": 0.08}
+  },
+  "quantity_q": 100,
+  "planning": {"horizon_days": 32, "loading_minutes": 30, "unloading_minutes": 30, "storage_pairs_per_mode": 12, "warehouse_limit": 3},
+  "handling_rs_q": 18,
+  "access_km_per_endpoint": 5,
+  "road_detour_factor": 1.3,
+  "handling_loss_pct": 1,
+  "decision": {"stale_day_multiplier": 0.1, "approximate_freight_reserve": 0.15, "tie_absolute_rs": 100, "tie_score_fraction": 0.01, "unknown_error_fraction": 0.1},
+  "warehouse_access_km": 1,
+  "market_context": {"nearby_radius_km":100,"rain_caution_mm_day":40,"wind_caution_kmh":50,"terrain_relief_caution_m":200,"terrain_sample_offset_degrees":0.03},
+  "warehouse_handling_rs_q": 6,
+  "crop_handling_loss_pct": {"Onion": 1.5, "Potato": 1, "Wheat": 0.5, "Tomato": 2.5, "Green Chilli": 2, "Brinjal": 2, "Cauliflower": 2.5, "Cabbage": 1.5, "Banana": 2, "Cucumbar(Kheera)": 2, "Paddy(Dhan)(Common)": 0.5, "Pumpkin": 1, "Carrot": 1.5, "Bottle gourd": 2, "Apple": 1.5, "Ginger(Green)": 1, "Rice": 0.5, "Bhindi(Ladies Finger)": 2.5, "Raddish": 2, "Bitter gourd": 2},
+  "references": [
+    "https://www.nabard.org/auth/writereaddata/ModelBankProject/2009165817Model_SchemeforOnionStorage.pdf",
+    "https://nhb.gov.in/documents/cs1.pdf",
+    "https://nhb.gov.in/guideline/ENGINEERINGGUIDELINES2025.pdf"
+  ],
+  "reference_scope": "Storage classes informed by NABARD/NHB guidance. All numerical operating defaults are project assumptions, not values quoted from these references. No cold room is assumed to have a verified crop-specific temperature setting."
+}

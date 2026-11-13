@@ -1,0 +1,883 @@
+{
+  "accepted": [
+    {
+      "market_key": "Telangana|Hyderabad|Gudimalkapur APMC",
+      "node_id": "M:osm:8315262230",
+      "state": "Telangana",
+      "district": "Hyderabad",
+      "name": "Gudimalkapur APMC",
+      "latitude": 17.3835626,
+      "longitude": 78.4353476,
+      "precision": "Reported OSM market location, not verified entrance",
+      "verification": "reported_unverified",
+      "evidence": {
+        "osm_id": "8315262230",
+        "name": "Gudimalkapur vegetable market",
+        "lat": 17.3835626,
+        "lng": 78.4353476,
+        "method": "OSM point",
+        "source": "Geofabrik southern 261022 pois"
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "market_key": "Himachal Pradesh|Kangra|SMY Nagrota Bagwan",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Moga|Nihal Singh Wala APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Sonipat|Ganaur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Kolkata|Bara Bazar (Posta Bazar) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Gujarat|Navsari|Bilimora APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Uttar Dinajpur|Islampur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Hissar|Hansi APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Nawanshahr|Nawan Shahar(Subzi Mandi) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Kaithal|Pundri APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Odisha|Mayurbhanja|Udala APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Kapurthala|Phagwara APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Purba Bardhaman|Burdwan APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Khandwa|Khandwa APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Himachal Pradesh|Kullu|PMY Kullu",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Rajasthan|Sikar|Sikar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Birbhum|Sainthia APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Ludhiana|Sahnewal APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Sonipat|Sonepat APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Darjeeling|Karsiyang(Matigara) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Medinipur(E)|Tamluk (Medinipur E) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Purba Bardhaman|Kalna APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Rajasthan|Hanumangarh|Bhadara APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Paschim Bardhaman|Durgapur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Birbhum|Bolpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Ambala|Shahzadpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Hoshiarpur|Garh Shankar(Mahalpur) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Himachal Pradesh|Kullu|SMY Bhuntar",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Jalpaiguri|Dhupguri APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttarakhand|Garhwal (Pauri)|Kotadwara APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Medinipur(W)|Medinipur(West) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Dakshin Dinajpur|Gangarampur(Dakshin Dinajpur) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Fatehgarh|Sirhind APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Jalpaiguri|Jalpaiguri Sadar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Panipat|Madlauda APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Hooghly|Sheoraphuly APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Kaithal|Siwan APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Bhopal|Bhopal APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Birbhum|Birbhum APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|North 24 Parganas|Barasat APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Mansa|Mansa APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Himachal Pradesh|Kangra|PMY Kangra",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Himachal Pradesh|Una|PMY Una",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Jhajar|Bahadurgarh APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Himachal Pradesh|Kangra|SMY Palampur",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Rewari|Kosli APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Bankura|Bankura Sadar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttarakhand|Nanital|Haldwani APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Rajasthan|Hanumangarh|Rawatsar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Jalandhar|Jalandhar City(Jalandhar) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Manipur|Imphal East|Lamlong Bazaar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Darjeeling|Siliguri APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Sounth 24 Parganas|Baruipur(Canning) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Sirsa|Sirsa APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Paschim Bardhaman|Asansol APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Himachal Pradesh|Kangra|SMY Jaisinghpur",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Goa|North Goa|Mapusa APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Hooghly|Pandua APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Tripura|North Tripura|Dasda APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Murshidabad|Jangipur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Palwal|Hodal APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Panchkula|Barwala APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Jalpaiguri|Belacoba APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Telangana|Warangal|Warangal APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Amritsar|Rayya APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Kaithal|Cheeka APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Medinipur(E)|Egra/contai APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Purba Bardhaman|Guskara APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Dakshin Dinajpur|Balurghat APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Coochbehar|Dinhata APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|North 24 Parganas|Habra APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Bankura|Indus(Bankura Sadar) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Murshidabad|Kandi APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Medinipur(E)|Kolaghat APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Jalpaiguri|Moynaguri APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Coochbehar|Toofanganj APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Hoshiarpur|GarhShankar (Kotfatuhi) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Tripura|Khowai|Kalyanpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Yamuna Nagar|Jagadhri APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Murshidabad|Beldanga APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Coochbehar|Mekhliganj APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Telangana|Hyderabad|Bowenpally APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Andhra Pradesh|Chittor|Palamaner APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Purba Bardhaman|Memari APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Odisha|Jagatsinghpur|Jagatsinghpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Purba Bardhaman|Katwa APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Darjeeling|Darjeeling APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Manipur|Kakching|Kakching Market APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Odisha|Dhenkanal|Kamakhyanagar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Rajasthan|Hanumangarh|Goluwala APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Kurukshetra|Shahabad APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Telangana|Ranga Reddy|Chevella APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Himachal Pradesh|Solan|SMY Nalagarh",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "West Bengal|Kolkata|Sealdah Koley Market APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttarakhand|Haridwar|Roorkee APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Karnataka|Kolar|Bangarpet APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Amroha|Amroha APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Punjab|Bhatinda|Rampuraphul(Nabha Mandi) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Mahendragarh-Narnaul|Narnaul APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Odisha|Dhenkanal|Hindol APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Gurgaon|Farukh Nagar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Odisha|Mayurbhanja|Baripada APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Karnataka|Haveri|Ranebennur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Panipat|Panipat APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Haryana|Rewari|Rewari APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Panna|Panna APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Rajgarh|Pachaur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Dhar|Manawar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Raisen|Silvani APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Ujjain|Unhel APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Alirajpur|Jobat APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Datia|Datia APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Rewa|Rewa APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Deoria|Devariya APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Indore|Gautampura APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Satna|Nagod APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Sagar|Khurai APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Shajapur|Shajapur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Tikamgarh|Khargapur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Pratapgarh|Pratapgarh APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Katni|Katni APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Narsinghpur|Gadarwada APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Gorakhpur|Gorakhpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Rajgarh|Chhapiheda APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Bhind|Lahar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Indore|Sanwer APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Raebarelli|Jayas APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Lakhimpur|Paliakala APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Ratlam|A lot APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Shivpuri|Karera APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Barabanki|Safdarganj APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Rewa|Chaakghat APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Sagar|Kesli APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Umariya|Umariya APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Vidisha|Ganjbasoda APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Khandwa|Harsood APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Raisen|Bareli APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Ambedkarnagar|Akbarpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Ratlam|Ratlam APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Dhar|Dhar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Rajgarh|Khilchipur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Chhindwara|Chaurai APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Azamgarh|Azamgarh APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Chhatarpur|Harpalpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Raisen|Udaipura APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Rajgarh|Sarangpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Sheopur|Sheopurbadod APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Rajgarh|Khujner APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Raebarelli|Raibareilly APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Rajgarh|Biaora APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Damoh|Patharia APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Narsinghpur|Gotegaon APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Narsinghpur|Narsinghpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Satna|Satna APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Jabalpur|Sehora APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Dhar|Gandhwani APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Sagar|Sagar APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Dhar|Rajgarh APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Vidisha|Shamshabad APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Dhar|Dhamnod APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Dewas|Dewas APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Tikamgarh|Tikamgarh APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Burhanpur|Burhanpur APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Uttar Pradesh|Lucknow|Banthara APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Chhatarpur|LavKush Nagar(Laundi) APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Dhar|Kukshi APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Sagar|Bina APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Khargone|Khargone APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Khandwa|Mundi APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Shehdol|Beohari APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Dewas|Loharda APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    },
+    {
+      "market_key": "Madhya Pradesh|Raisen|Obedullaganj APMC",
+      "candidate_count": 0,
+      "reason": "No unique name and 30 km reference match"
+    }
+  ],
+  "candidates": 5,
+  "rule": "Exact normalized core name, explicit market/mandi/APMC label, unique OSM identity within 30 km of known district/locality reference; no fuzzy matches.",
+  "attribution": "© OpenStreetMap contributors, ODbL; Geofabrik pinned 2026-10-22 extracts"
+}

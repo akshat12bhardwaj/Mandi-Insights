@@ -1,0 +1,18 @@
+{
+  "version": "directed-operational-roads-v1",
+  "snapshot": "2026-10-22",
+  "endpoints": 17,
+  "directed_route_options": 544,
+  "route_sha256": "6af0f47fb909cc0625dad7d4e730830617957d81fe06cd4b32d5ace874cd8b30",
+  "graph": {
+    "lines": 875877,
+    "vertices": 23127157,
+    "directed_edges": 44084125,
+    "core_vertices": 22855216,
+    "major_road_km": 1206064.9244423117,
+    "edges_with_maxspeed_tag_pct": 5.233576306060677,
+    "two_way_core_vertices": 20375692
+  },
+  "precision": "Road network between snapped references; access gaps are not verified entrance roads",
+  "attribution": "© OpenStreetMap contributors, ODbL; Geofabrik extracts"
+}

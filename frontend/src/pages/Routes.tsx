@@ -2,6 +2,7 @@ import { ArrowDownUp, ChevronDown, Route as RouteIcon, Warehouse, X } from "luci
 import { useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { PageHeader, Workspace } from "../components/Layout";
+import { RouteWeather } from "../components/Forecast";
 import { MapView, type MapPoint } from "../components/MapView";
 import { AnalyticsCard, Card, Chip, Dot, Empty, ErrorState, IconButton, Loading, Pill, Q, SearchBox, Segmented, Select } from "../components/ui";
 import {
@@ -38,8 +39,8 @@ function Capabilities({ items }: { items: Capability[] }) {
       {open && (
         <ul className="mt-2 space-y-1.5" aria-label="Capabilities">
           {items.map((c) => (
-            <li key={c.capability} className="flex items-center gap-3 rounded-xl bg-white/50 px-3 py-2">
-              <div className="min-w-0 flex-1"><div className="truncate text-[12.5px] text-ink">{c.capability}</div><div className="truncate text-[11px] text-muted">{c.detail}</div></div>
+            <li key={c.capability} className="flex items-center gap-3 rounded-xl bg-subtle px-3 py-2">
+              <div className="min-w-0 flex-1"><div className="truncate text-[12.5px] text-ink">{c.capability}</div><div className="truncate text-[12px] text-muted">{c.detail}</div></div>
               <Chip tone={STATUS[c.status].tone}>{STATUS[c.status].label}</Chip>
             </li>))}
         </ul>
@@ -49,18 +50,18 @@ function Capabilities({ items }: { items: Capability[] }) {
 }
 
 const Stat = ({ label, value, note }: { label: string; value: string; note?: string }) => (
-  <div className="rounded-xl bg-white/60 px-3 py-2">
-    <div className="text-[11px] text-faint">{label}</div>
-    <div className="mt-0.5 text-[18px] font-light text-ink tabular-nums">{value}</div>
-    {note && <div className="text-[10.5px] leading-snug text-muted">{note}</div>}
+  <div className="rounded-xl bg-subtle px-3 py-2">
+    <div className="text-[12px] text-faint">{label}</div>
+    <div className="mt-0.5 text-[18px] font-semibold text-ink tabular-nums">{value}</div>
+    {note && <div className="text-[11.5px] leading-snug text-muted">{note}</div>}
   </div>
 );
 
 function NearbyList({ title, items }: { title: string; items: NearbyWarehouse[] }) {
   return (
     <div>
-      <div className="mb-1 text-[11px] text-muted">{title}</div>
-      {!items.length ? <p className="text-[11.5px] text-faint">No mapped storage facility within 150 km by road.</p> : (
+      <div className="mb-1 text-[12px] text-muted">{title}</div>
+      {!items.length ? <p className="text-[12px] text-faint">No mapped storage facility within 150 km by road.</p> : (
         <ul className="space-y-1">
           {items.map((w) => (
             <li key={w.warehouse_id} className="flex items-center justify-between gap-2 text-[12px]">
@@ -93,16 +94,17 @@ function RouteSummary({ r, nodes }: { r: RouteResult; nodes: Map<string, RouteNo
         <Stat label="Road distance" value={km(r.road_distance_km)} note="on the OSM road network (motorway to tertiary)" />
         <Stat label="Travel time (estimate)" value={hours(r.travel_time_h)} note="assumed speeds; no traffic or stops" />
       </div>
-      <dl className="space-y-1 text-[11.5px]">
+      <dl className="space-y-1 text-[12px]">
         <div className="flex justify-between gap-2"><dt className="text-muted">Straight line (not a road distance)</dt><dd className="tabular-nums">{km(r.straight_line_km)}</dd></div>
         <div className="flex justify-between gap-2"><dt className="text-muted">Access gap, {o.name} / {d.name}</dt><dd className="tabular-nums">{km(r.origin_access_gap_km)} / {km(r.dest_access_gap_km)}</dd></div>
         <div className="flex justify-between gap-2"><dt className="text-muted">On motorway or trunk roads</dt><dd className="tabular-nums">{r.motorway_trunk_share_pct?.toFixed(0)}%</dd></div>
         {alt && <div className="flex justify-between gap-2"><dt className="text-muted">{other === "fastest" ? "Fastest" : "Shortest"} route instead</dt><dd className="tabular-nums">{km(alt.road_distance_km)} · {hours(alt.travel_time_h)}</dd></div>}
         <div className="flex justify-between gap-2"><dt className="text-muted">Transport cost</dt><dd className="text-bad">not available</dd></div>
       </dl>
-      {r.geometry_note && <p className="text-[11px] text-muted">{r.geometry_note}</p>}
+      {r.geometry_note && <p className="text-[12px] text-muted">{r.geometry_note}</p>}
+      <RouteWeather origin={r.origin_id} dest={r.dest_id} />
       <NearbyList title={`Storage near ${d.name} (road distance)`} items={r.nearby_warehouses.dest} />
-      <p className="text-[10.5px] leading-snug text-faint">No buy–store–sell recommendation: transport cost, storage capacity and charges are not sourced.</p>
+      <p className="text-[11.5px] leading-snug text-faint">No buy–store–sell recommendation: transport cost, storage capacity and charges are not sourced.</p>
     </div>
   );
 }
@@ -131,9 +133,9 @@ export function Routes() {
 
   const panel = (
     <Card glass className="flex h-full max-h-[620px] flex-col overflow-hidden lg:max-h-none">
-      <div className="border-b border-line/70 px-5 pt-4 pb-3">
-        <h2 className="text-[17px]">Plan a route</h2>
-        <p className="text-[11px] text-muted">Between verified district points · road network</p>
+      <div className="border-b border-line px-5 pt-4 pb-3">
+        <h2 className="text-[15px] font-semibold">Plan a route</h2>
+        <p className="text-[12px] text-muted">Between verified district points · road network</p>
       </div>
       <div className="thin-scroll min-h-0 flex-1 space-y-4 overflow-y-auto p-4">
         {nodesQ.isLoading ? <Loading /> : nodesQ.error ? <ErrorState error={nodesQ.error} /> : (
@@ -144,22 +146,22 @@ export function Routes() {
             setParams({ from, to, objective }, { replace: true });
           }}>
             <div className="flex items-center gap-2">
-              <span className="w-10 text-[11px] text-muted">From</span>
+              <span className="w-10 text-[12px] text-muted">From</span>
               <Select label="From" placeholder="Choose a district" className="flex-1" value={from ?? ""} onChange={(v) => { setFrom(v); reset(); }} options={opts} />
             </div>
             <div className="flex items-center gap-2">
-              <span className="w-10 text-[11px] text-muted">To</span>
+              <span className="w-10 text-[12px] text-muted">To</span>
               <Select label="To" placeholder="Choose a district" className="flex-1" value={to ?? ""} onChange={(v) => { setTo(v); reset(); }} options={opts.filter((o) => o.value !== from)} />
             </div>
             <Segmented label="Objective" value={objective} onChange={setObjective} options={[{ value: "shortest", label: "Shortest" }, { value: "fastest", label: "Fastest (est.)" }]} />
             <div className="flex gap-2 pt-1">
               <IconButton label="Swap endpoints" disabled={!from || !to} onClick={() => { setFrom(to); setTo(from); reset(); }}><ArrowDownUp size={15} /></IconButton>
               <button type="submit" disabled={!from || !to || !meta.data?.available}
-                className={cn("h-9 flex-1 rounded-xl text-[13px] font-medium transition", from && to ? "bg-ink text-white hover:bg-ink/90" : "bg-[#e6e9eb] text-muted")}>Find route</button>
+                className={cn("h-9 flex-1 rounded-lg text-[13px] font-medium transition", from && to ? "bg-ok text-white hover:bg-ok/90" : "bg-subtle text-muted")}>Find route</button>
             </div>
           </form>
         )}
-        {meta.data && !meta.data.available && <p role="status" className="rounded-xl bg-white/70 p-3 text-[12px] text-muted">{meta.data.message}</p>}
+        {meta.data && !meta.data.available && <p role="status" className="rounded-xl bg-subtle p-3 text-[12px] text-muted">{meta.data.message}</p>}
         {asked && (route.isLoading ? <Loading label="Loading route" /> : route.error ? <ErrorState error={route.error} /> :
           route.data && <RouteSummary r={route.data} nodes={byId} />)}
         <Q query={meta}>{(m) => <Capabilities items={m.capabilities} />}</Q>
@@ -174,16 +176,16 @@ export function Routes() {
         map={<MapView points={points} line={line} selectedId={to ? index.get(to) : undefined}
           fitKey={line ? `${asked?.from}-${asked?.to}-${objective}` : "all"} bottomCards={false} className="h-full w-full" />}
         floating={meta.data?.available && (
-          <Card glass className="p-4 text-[11.5px]" data-testid="route-provenance">
+          <Card glass className="p-4 text-[12px]" data-testid="route-provenance">
             <p className="text-[13px] text-ink">How routes are computed</p>
-            <p className="mt-1 leading-snug text-muted">Dijkstra on OSM motorway, trunk, primary, secondary and tertiary roads (one-way respected). Points join the network at the nearest two-way road vertex.</p>
+            <p className="mt-1 leading-snug text-muted">Routes follow OpenStreetMap motorway, trunk, primary, secondary and tertiary roads, respecting one-way streets. Each district point joins the nearest two-way road.</p>
             <table className="mt-2 w-full">
-              <caption className="pb-1 text-left text-[10.5px] text-faint">Assumed speeds, km/h (not observed)</caption>
+              <caption className="pb-1 text-left text-[11.5px] text-faint">Assumed speeds, km/h (not observed)</caption>
               <tbody>{meta.data.speed_assumptions.filter((s) => !s.road_class.endsWith("_link")).map((s) => (
                 <tr key={s.road_class}><td className="text-muted capitalize">{s.road_class}</td><td className="text-right tabular-nums">{s.assumed_kmh}</td></tr>))}
               </tbody>
             </table>
-            <p className="mt-2 text-[10px] text-faint">{meta.data.attribution}</p>
+            <p className="mt-2 text-[11px] text-faint">{meta.data.attribution}</p>
           </Card>
         )} />
     </>
@@ -198,8 +200,8 @@ function WarehouseCard({ id, onClose }: { id: string; onClose: () => void }) {
       <Q query={q} loading="Loading facility">{(w) => (<>
         <div className="flex items-start justify-between gap-2">
           <div className="min-w-0">
-            <h3 className="text-[16px] leading-snug">{w.name}</h3>
-            <p className="flex items-center gap-1.5 text-[11px] text-muted"><Dot tone="ink" />{OPERATORS[w.operator_class]} · {w.coord_method}</p>
+            <h3 className="text-[15px] leading-snug font-semibold">{w.name}</h3>
+            <p className="flex items-center gap-1.5 text-[12px] text-muted"><Dot tone="ink" />{OPERATORS[w.operator_class]} · {w.coord_method}</p>
           </div>
           <IconButton label="Close details" onClick={onClose} className="size-8"><X size={14} /></IconButton>
         </div>
@@ -208,12 +210,12 @@ function WarehouseCard({ id, onClose }: { id: string; onClose: () => void }) {
             ["Storage charges", "charges"], ["Availability", "availability"]].map(([label, k]) => {
             const f = w.fields[k];
             return (
-              <li key={k} className="flex items-center justify-between gap-2 rounded-xl bg-white/60 px-3 py-1.5">
+              <li key={k} className="flex items-center justify-between gap-2 rounded-xl bg-subtle px-3 py-1.5">
                 <span className="text-muted">{label}</span><Chip tone={FIELD[f.status].tone}>{FIELD[f.status].label}</Chip>
               </li>);
           })}
         </ul>
-        <p className="mt-3 text-[10.5px] leading-snug text-faint">{w.source} · {w.source_record} · {w.licence}. Operator and type are derived from the name; capacity, charges and suitability have no source.</p>
+        <p className="mt-3 text-[11.5px] leading-snug text-faint">{w.source} · {w.source_record} · {w.licence}. Operator and type are derived from the name; capacity, charges and suitability have no source.</p>
       </>)}</Q>
     </Card>
   );
@@ -235,9 +237,9 @@ export function Warehouses() {
 
   const panel = (
     <Card glass className="flex h-full max-h-[620px] flex-col overflow-hidden lg:max-h-none">
-      <div className="border-b border-line/70 px-5 pt-4 pb-3">
-        <h2 className="text-[17px]">Storage facilities</h2>
-        <p className="text-[11px] text-muted">{m ? `${m.records} mapped · 0 verified` : "…"} · OpenStreetMap</p>
+      <div className="border-b border-line px-5 pt-4 pb-3">
+        <h2 className="text-[15px] font-semibold">Storage facilities</h2>
+        <p className="text-[12px] text-muted">{m ? `${m.records} mapped · 0 verified` : "…"} · OpenStreetMap</p>
       </div>
       <div className="space-y-3 px-4 pt-3">
         <SearchBox value={query} onChange={setQuery} placeholder="Search facilities" />
@@ -258,16 +260,16 @@ export function Warehouses() {
           <Empty title={m?.available ? "No facility matches" : "No warehouse data yet"}>{list.data?.note ?? (near ? `None within ${radius} km by road.` : m?.message)}</Empty>
         ) : rows.slice(0, 300).map((w) => (
           <button key={w.warehouse_id} type="button" onClick={() => setSel(w.warehouse_id === sel ? undefined : w.warehouse_id)} aria-pressed={w.warehouse_id === sel}
-            className={cn("flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left transition", w.warehouse_id === sel ? "bg-white shadow-soft" : "bg-white/45 hover:bg-white/70")}>
-            <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-[#e9ecee] text-ink/60"><Warehouse size={14} /></span>
+            className={cn("flex w-full items-center gap-3 rounded-xl px-3 py-2 text-left transition", w.warehouse_id === sel ? "bg-ok-soft ring-1 ring-ok/30" : "bg-white hover:bg-subtle")}>
+            <span className="grid size-8 shrink-0 place-items-center rounded-lg bg-ok-soft text-ok"><Warehouse size={14} /></span>
             <span className="min-w-0 flex-1">
               <span className="block truncate text-[13px]">{w.name}</span>
-              <span className="block truncate text-[11px] text-muted">{OP_SHORT[w.operator_class]} · location reported, unverified</span>
+              <span className="block truncate text-[12px] text-muted">{OP_SHORT[w.operator_class]} · location reported, unverified</span>
             </span>
-            {w.road_distance_km !== undefined && <span className="shrink-0 text-[11.5px] text-muted tabular-nums">{km(w.road_distance_km)}</span>}
+            {w.road_distance_km !== undefined && <span className="shrink-0 text-[12px] text-muted tabular-nums">{km(w.road_distance_km)}</span>}
           </button>
         ))}
-        {rows.length > 300 && <p className="px-2 text-[11px] text-faint">Showing 300 of {rows.length}; refine the search.</p>}
+        {rows.length > 300 && <p className="px-2 text-[12px] text-faint">Showing 300 of {rows.length}; refine the search.</p>}
       </div>
     </Card>
   );
@@ -289,7 +291,7 @@ export function Warehouses() {
                   <span className="h-1.5 flex-1 rounded-full bg-line"><span className="block h-1.5 rounded-full bg-ink/70" style={{ width: `${(n / m.records) * 100}%` }} /></span>
                   <span className="w-10 text-right tabular-nums">{n}</span>
                 </li>))}
-              <li className="pt-1 text-[11px] text-faint">With known capacity: {known("capacity")} · known charges: {known("charges")}</li>
+              <li className="pt-1 text-[12px] text-faint">With known capacity: {known("capacity")} · known charges: {known("charges")}</li>
             </ul>
           </AnalyticsCard>
           <AnalyticsCard title="Storage charges" value="–" unit="₹ per tonne-month">

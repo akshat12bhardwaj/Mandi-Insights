@@ -1,0 +1,42 @@
+{
+  "dataset_version": "daily-prices-v1",
+  "protocol_sha256": "53cf3da73abbe891b40f56aa6302322c52e42c559a31084ef66cc46bcc06f7c4",
+  "status": "development_only_not_prospective_validation",
+  "selected_model": "persistence",
+  "model_version": "daily-persistence-v1",
+  "crops_evaluated": 20,
+  "results_sha256": "58769c0e756b0da604c4e9b64f2d271d174acbb7e17c22410fb05311b57d6c1b",
+  "protocol": {
+    "version": "daily-development-simulation-v1",
+    "train_end": "2016-12-31",
+    "development_start": "2017-01-01",
+    "development_end": "2018-12-31",
+    "reporting_delay_days": 3,
+    "market_cap_per_crop": 12,
+    "selection": "highest pre-2017 usable date count, round-robin states; >=365 training dates",
+    "target_schedule": "Wednesdays; no-report days counted, never imputed",
+    "models": [
+      "persistence",
+      "seasonal_naive_7d",
+      "moving_average_7obs",
+      "ridge",
+      "hist_gradient_boosting"
+    ],
+    "feature_names": [
+      "lag2_ratio",
+      "lag7_ratio",
+      "mean7_ratio",
+      "mean30_ratio",
+      "volatility30",
+      "momentum",
+      "age_days",
+      "weekday_sin",
+      "weekday_cos",
+      "month_sin",
+      "month_cos"
+    ],
+    "interpretation": "Retrospective development simulation on revised archive. Publication vintages unknown; three-day delay is an assumption, not verified availability.",
+    "promotion": "persistence operational default only; no learned promotion without fresh prospective evidence",
+    "protected_windows": "No scoring on 2019+ or any frozen evaluation artifact. Existing decisions unchanged."
+  }
+}

@@ -23,3 +23,5 @@ export function agriYear(iso: string): string {
   return m >= 7 ? `${y}-${y + 1}` : `${y - 1}-${y}`;
 }
 export const shortDate = (iso: string) => new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "2-digit" });
+/** "2020-06-29" -> "29 Jun 2020"; read as a calendar date so the time zone never shifts the day. */
+export const longDate = (iso: string) => new Date(Date.parse(iso.slice(0, 10))).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });

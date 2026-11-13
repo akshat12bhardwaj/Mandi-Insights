@@ -88,7 +88,7 @@ Open-Meteo's free public tier enforces per-minute and per-hour request limits. D
 ## Reproducibility Instructions
 
 1. Ensure `Code/weather/` is on the Python path (the notebook does this via `sys.path.append`).
-2. Re-running `Notebooks/Phase_03_Weather_Data_Collection.ipynb` will reuse every cached file under `Processed_Data/weather/raw/` and only make new API calls for locations not yet cached.
+2. Re-running the historical weather collector will reuse every cached file under `Processed_Data/weather/raw/` and only make new API calls for locations not yet cached.
 3. To force a fresh fetch for a location, call `collect_weather(..., force_refresh=True)`.
 4. No credentials need to be configured.
 

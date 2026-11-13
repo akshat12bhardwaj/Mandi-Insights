@@ -13,6 +13,8 @@ __pycache__/
 .venv/
 venv/
 .ipynb_checkpoints/
+*.restore.tmp
+*.tsbuildinfo
 
 # Course handout: contains the faculty member's contact details; kept locally, never published
 /BDA_CSE 3712_ProjectBased.pdf
@@ -20,7 +22,6 @@ venv/
 # React frontend: dependencies live outside OneDrive (node_modules is a junction); build output is generated
 frontend/node_modules/
 frontend/dist/
-*.tsbuildinfo
 
 # Third-party design reference frames (Navexa WMS video): local study material, not ours to publish
 Documentation/Reference/
@@ -49,3 +50,24 @@ Dataset_Candidates/
 
 # Weather forecast cache (D-57): short-lived provider responses, regenerated on demand
 Processed_Data/weather_forecast/
+
+# desloppify local state
+.desloppify/
+
+# Daily extension: local price batches and volatile pointers (source redistribution not established).
+/Processed_Data/daily_v1/releases/*/batches/
+/Processed_Data/daily_v1/batch.json
+/Processed_Data/daily_v1/refresh_manifest.json
+/Processed_Data/daily_v1/refresh_usage/
+/Processed_Data/daily_v1/update.lock
+/Processed_Data/daily_v1/update_status.json
+/Processed_Data/daily_v1/*.restore.tmp
+/Processed_Data/daily_v1/phase2_usage/
+/Processed_Data/daily_v1/phase2_rate_limit.json
+/Processed_Data/intelligence_v1/phase2/refresh.jsonl
+/Processed_Data/intelligence_v1/phase2/official_client.js
+/Processed_Data/intelligence_v1/phase3/future_batch.json
+/Processed_Data/daily_v1/serving.json
+/Processed_Data/daily_v1/intelligence_publications/
+/Processed_Data/intelligence_v1/phase5/learning_v1/worker.lock
+/Processed_Data/intelligence_v1/phase5/learning_v1/worker.log

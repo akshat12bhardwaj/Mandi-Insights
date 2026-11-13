@@ -1,0 +1,3540 @@
+{
+  "version": "dynamic-commodities-v1",
+  "ranking_source_sha256": "664bbd1803882b3d1123f560c5b4656b080a8fdefacaee395dd379268cf44b81",
+  "selection_rule": "All available validated archives and accepted exact-identity source commodities; series-level daily eligibility unchanged. No crop-count cap.",
+  "discovery": [
+    {
+      "crop": "Ajwan",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Alasande Gram",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Almond(Badam)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Alsandikai",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Amaranthus",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Ambada Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Amla(Nelli Kai)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Amphophalus",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Antawala",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Anthorium",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Apple",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Apricot(Jardalu-Khumani)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Arecanut(Betelnut-Supari)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Arhar (Tur-Red Gram)(Whole)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Arhar Dal(Tur Dal)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Ashgourd",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Astera",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Avare Dal",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "BOP",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bajra(Pearl Millet-Cumbu)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Balekai",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bamboo",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Banana",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Banana - Green",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Barley (Jau)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Bay leaf (Tejpatta)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Beans",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Beaten Rice",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Beetroot",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bengal Gram Dal (Chana Dal)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bengal Gram(Gram)(Whole)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Ber(Zizyphus-Borehannu)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Betal Leaves",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Betelnuts",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bhindi(Ladies Finger)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Big Gram",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Binoula",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bitter gourd",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Black Gram (Urd Beans)(Whole)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Black Gram Dal (Urd Dal)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Black pepper",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Borehannu",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bottle gourd",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Bran",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Brinjal",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Broken Rice",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Broomstick(Flower Broom)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bull",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bullar",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Bunch Beans",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Butter",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cabbage",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Calf",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Camel Hair",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cane",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Capsicum",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cardamoms",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Carnation",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Carrot",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Cashew Kernnel",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cashewnuts",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Castor Oil",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Castor Seed",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Cauliflower",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Chakotha",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Chapparad Avare",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Chennangi (Whole)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Chennangi Dal",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cherry",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Chikoos(Sapota)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Chili Red",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Chilly Capsicum",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Chow Chow",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Chrysanthemum",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Chrysanthemum(Loose)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cinamon(Dalchini)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cloves",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cluster beans",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Coca",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cock",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cocoa",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Coconut",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Coconut Oil",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Coconut Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Coffee",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Colacasia",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Copra",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Coriander(Leaves)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Corriander seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cotton",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Cotton Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cow",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cowpea (Lobia-Karamani)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cowpea(Veg)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Cucumbar(Kheera)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Cummin Seed(Jeera)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Custard Apple (Sharifa)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Daila(Chandni)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Dal (Avare)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Dalda",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Delha",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Dhaincha",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Drumstick",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Dry Chillies",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Dry Fodder",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Dry Grapes",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Duck",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Duster Beans",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Egg",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Egypian Clover(Barseem)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Elephant Yam (Suran)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Field Pea",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Fig(Anjura-Anjeer)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Firewood",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Fish",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Flower Broom",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Foxtail Millet(Navane)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "French Beans (Frasbean)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Galgal(Lemon)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Garlic",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Ghee",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Gingelly Oil",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Ginger(Dry)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Ginger(Green)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Gladiolus Bulb",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Gladiolus Cut Flower",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Goat",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Goat Hair",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Gram Raw(Chholia)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Gramflour",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Grapes",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Green Avare (W)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Green Chilli",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Green Fodder",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Green Gram (Moong)(Whole)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Green Gram Dal (Moong Dal)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Green Peas",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Ground Nut Oil",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Ground Nut Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Groundnut",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Groundnut (Split)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Groundnut pods (raw)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Guar",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Guar Seed(Cluster Beans Seed)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Guava",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Gur(Jaggery)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Gurellu",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Haralekai",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "He Buffalo",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Hen",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Hippe Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Honey",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Honge seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Hybrid Cumbu",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Indian Beans (Seam)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Indian Colza(Sarson)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Isabgul (Psyllium)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Jack Fruit",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Jaffri",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Jaggery",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Jamamkhan",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Jamun(Narale Hannu)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Jarbara",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Jasmine",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Javi",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Jowar(Sorghum)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Jute",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Jute Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kabuli Chana(Chickpeas-White)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kacholam",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kakada",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kankambra",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Karamani",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Karbuja(Musk Melon)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kartali (Kantola)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kharif Mash",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Khoya",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kinnow",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Knool Khol",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kodo Millet(Varagu)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kuchur",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Kulthi(Horse Gram)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Ladies Finger",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Lak(Teora)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Leafy Vegetable",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Lemon",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Lentil (Masur)(Whole)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Lilly",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Lime",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Linseed",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Lint",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Litchi",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Little gourd (Kundru)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Long Melon(Kakri)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Lotus",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Lotus Sticks",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Lukad",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mace",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mahedi",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mahua",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mahua Seed(Hippe seed)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Maida Atta",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Maize",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Mango",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Mango (Raw-Ripe)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Maragensu",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Marasebu",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Marget",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Marigold(Calcutta)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Marigold(loose)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mash",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mashrooms",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Masur Dal",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mataki",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Methi Seeds",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Methi(Leaves)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Millets",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mint(Pudina)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Moath Dal",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mousambi(Sweet Lime)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Mustard",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Mustard Oil",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Myrobolan(Harad)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Nargasi",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Nearle Hannu",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Neem Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Nelli Kai",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Niger Seed (Ramtil)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Nutmeg",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Onion",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Onion Green",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Orange",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Orchid",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Other Pulses",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Ox",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Paddy(Dhan)(Basmati)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Paddy(Dhan)(Common)",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Papaya",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Papaya (Raw)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Patti Calcutta",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Peach",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Pear(Marasebu)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Peas Wet",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Peas cod",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Peas(Dry)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Pegeon Pea (Arhar Fali)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Pepper garbled",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Pepper ungarbled",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Persimon(Japani Fal)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Pigs",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Pineapple",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Plum",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Pointed gourd (Parval)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Polherb",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Pomegranate",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Potato",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Pumpkin",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Pundi",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Pundi Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Raddish",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Ragi (Finger Millet)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Raibel",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Rajgir",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Ram",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Rat Tail Radish (Mogari)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Raya",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Red Gram",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Resinwood",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Riccbcan",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Rice",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Ridgeguard(Tori)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Rose(Local)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Rose(Loose))",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Rose(Tata)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Round gourd",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Rubber",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Sabu Dan",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Safflower",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Saffron",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sajje",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Same-Savi",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sarasum",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Season Leaves",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Seegu",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Seemebadnekai",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Seetapal",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sesamum(SesameGingellyTil)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "She Buffalo",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "She Goat",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sheep",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Siddota",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Skin And Hide",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Snakeguard",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Soanf",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Soapnut(Antawala-Retha)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Soji",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sompu",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Soyabean",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Spinach",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sponge gourd",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Squash(Chappal Kadoo)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sugar",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sugarcane",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Sunflower",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Sunflower Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sunhemp",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Suram",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Surat Beans (Papadi)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Suva (Dill Seed)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Suvarna Gadde",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Sweet Potato",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Sweet Pumpkin",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "T.V. Cumbu",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Tamarind Fruit",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Tamarind Seed",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Tapioca",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Taramira",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Tea",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Tender Coconut",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Thinai (Italian Millet)",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Thogrikai",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Thondekai",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Tinda",
+      "status": "discovered",
+      "identity_basis": "Local source filename; not yet audited for forecasting"
+    },
+    {
+      "crop": "Tomato",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Wheat",
+      "status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    }
+  ],
+  "discovered_count": 325,
+  "historical_count": 56,
+  "crops": [
+    {
+      "crop": "Apple",
+      "category": "Fruits",
+      "raw_records": 1023687,
+      "usable_records": 943640,
+      "duplicate_records": 2557,
+      "conflicting_records": 63181,
+      "anomalous_records": 15660,
+      "invalid_key_records": 0,
+      "review_records": 5516,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Apple.csv",
+      "source_sha256": "d1d1c42169efdf45e16f8ab2a05d67380fc47f414b187bf8f9b1dd4c5a466987",
+      "storage": "archive\\f223faa96f22",
+      "first_date": "2001-02-08",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 30,
+      "districts": 324,
+      "markets": 807,
+      "varieties": 23,
+      "weekly_observations": 217827,
+      "reference_365_series": 621,
+      "daily_eligible_series": 246,
+      "median_missing_calendar_frequency": 0.7471169686985173,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "26f02d55d4b9d8d14a9ac1600a74aa57d423d466433ca1d8a4843286c16751ed",
+      "rank": 15,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Arhar (Tur-Red Gram)(Whole)",
+      "category": "Pulses and legumes",
+      "raw_records": 726450,
+      "usable_records": 723758,
+      "duplicate_records": 304,
+      "conflicting_records": 20,
+      "anomalous_records": 2371,
+      "invalid_key_records": 0,
+      "review_records": 191,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Arhar (Tur-Red Gram)(Whole).csv",
+      "source_sha256": "55eddac2137669dc494dac8c02d91b30805eeeec59debe82cb0d085f374117b6",
+      "storage": "archive\\0c42d802c63d",
+      "first_date": "2001-05-21",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 24,
+      "districts": 394,
+      "markets": 1332,
+      "varieties": 26,
+      "weekly_observations": 228373,
+      "reference_365_series": 520,
+      "daily_eligible_series": 103,
+      "median_missing_calendar_frequency": 0.8845870760789176,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "74783a7c0ea90d9b58bf260cb372a5c81c29bc4bab95529e2ad573601a435716",
+      "rank": 30,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Bajra(Pearl Millet-Cumbu)",
+      "category": "Cereals and grains",
+      "raw_records": 727510,
+      "usable_records": 721630,
+      "duplicate_records": 317,
+      "conflicting_records": 6,
+      "anomalous_records": 5559,
+      "invalid_key_records": 0,
+      "review_records": 405,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Bajra(Pearl Millet-Cumbu).csv",
+      "source_sha256": "712dc34870b0b34b5e9ba85ffae8a1de000f17abfb16511aaa922f833d6290f1",
+      "storage": "archive\\a60ffc0f81de",
+      "first_date": "2001-03-14",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 23,
+      "districts": 302,
+      "markets": 1062,
+      "varieties": 14,
+      "weekly_observations": 206413,
+      "reference_365_series": 443,
+      "daily_eligible_series": 133,
+      "median_missing_calendar_frequency": 0.8284491274283833,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "e8fb60daba97d192cf8636861fbbf956bb14122621227e289187f532de0c0666",
+      "rank": 27,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Banana",
+      "category": "Fruits",
+      "raw_records": 1257376,
+      "usable_records": 1171971,
+      "duplicate_records": 3127,
+      "conflicting_records": 66688,
+      "anomalous_records": 16235,
+      "invalid_key_records": 0,
+      "review_records": 7124,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Banana.csv",
+      "source_sha256": "34ea8668b2f4fef6accbf4990bdea68a340fdfd613bc9ad8722e2016c9f95dbc",
+      "storage": "archive\\f9782dd7999d",
+      "first_date": "2001-04-02",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 31,
+      "districts": 390,
+      "markets": 1053,
+      "varieties": 25,
+      "weekly_observations": 306564,
+      "reference_365_series": 752,
+      "daily_eligible_series": 339,
+      "median_missing_calendar_frequency": 0.7822123176661264,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "6fad9dacfffea6781173be68aaa157169d36bb5eb83978bdb99ecd4dfdc12c91",
+      "rank": 9,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Barley (Jau)",
+      "category": "Cereals and grains",
+      "raw_records": 337926,
+      "usable_records": 334053,
+      "duplicate_records": 11,
+      "conflicting_records": 0,
+      "anomalous_records": 3863,
+      "invalid_key_records": 0,
+      "review_records": 76,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Barley (Jau).csv",
+      "source_sha256": "f6febb8f1d2c5302f5f2dbfc1c00b077e8fb30c2a992226e474bc77d3b97a664",
+      "storage": "archive\\acb7b364b9bd",
+      "first_date": "2001-04-23",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 24,
+      "districts": 223,
+      "markets": 600,
+      "varieties": 8,
+      "weekly_observations": 96189,
+      "reference_365_series": 221,
+      "daily_eligible_series": 46,
+      "median_missing_calendar_frequency": 0.84858962681597,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "fd14131a38283f9460292e2e0066ce3780368428ac8e23449ed56b1b107e2500",
+      "rank": 41,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Bengal Gram(Gram)(Whole)",
+      "category": "Pulses and legumes",
+      "raw_records": 1165365,
+      "usable_records": 1163763,
+      "duplicate_records": 310,
+      "conflicting_records": 86,
+      "anomalous_records": 1207,
+      "invalid_key_records": 0,
+      "review_records": 407,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Bengal Gram(Gram)(Whole).csv",
+      "source_sha256": "a851f1806aecfc284225f8b3d60e6cdcfc91dae63b2bda6536ebbe68316ea7ee",
+      "storage": "archive\\0365af1a1c8f",
+      "first_date": "2001-05-26",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 24,
+      "districts": 372,
+      "markets": 1410,
+      "varieties": 32,
+      "weekly_observations": 335010,
+      "reference_365_series": 793,
+      "daily_eligible_series": 201,
+      "median_missing_calendar_frequency": 0.8279767370676462,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "ab1910aa52ff472395634e427ed63e9de3464eb01533a98db99af9e32835324b",
+      "rank": 22,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Bhindi(Ladies Finger)",
+      "category": "Vegetables",
+      "raw_records": 1208845,
+      "usable_records": 1198603,
+      "duplicate_records": 214,
+      "conflicting_records": 4,
+      "anomalous_records": 10028,
+      "invalid_key_records": 0,
+      "review_records": 3912,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Bhindi(Ladies Finger).csv",
+      "source_sha256": "cd0c9f921e8c81049b7fa0cb35485e7843e26c9c4321beeb16580f533991dee8",
+      "storage": "archive\\5c4a89b15f87",
+      "first_date": "2001-04-08",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 30,
+      "districts": 420,
+      "markets": 1281,
+      "varieties": 2,
+      "weekly_observations": 288780,
+      "reference_365_series": 799,
+      "daily_eligible_series": 228,
+      "median_missing_calendar_frequency": 0.7345173041894353,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "5de59c3bc30c89d5b117bcd5ce2a95e2355cb3537fca690ecfca0d137cc3ec48",
+      "rank": 18,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Bitter gourd",
+      "category": "Vegetables",
+      "raw_records": 876238,
+      "usable_records": 871836,
+      "duplicate_records": 128,
+      "conflicting_records": 4,
+      "anomalous_records": 4270,
+      "invalid_key_records": 0,
+      "review_records": 3331,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Bitter gourd.csv",
+      "source_sha256": "95570577e5e682072effb22273cf9be698a2cecd46456578d863dd34ea6eb3fb",
+      "storage": "archive\\1173d36a7afa",
+      "first_date": "2001-04-21",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 30,
+      "districts": 394,
+      "markets": 1122,
+      "varieties": 2,
+      "weekly_observations": 225625,
+      "reference_365_series": 622,
+      "daily_eligible_series": 214,
+      "median_missing_calendar_frequency": 0.7869415807560137,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "40f1912e18785564db8beabd088a376e05dc2744e5ba29063f7b0621429fcd5c",
+      "rank": 20,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Black Gram (Urd Beans)(Whole)",
+      "category": "Pulses and legumes",
+      "raw_records": 659374,
+      "usable_records": 655021,
+      "duplicate_records": 169,
+      "conflicting_records": 12,
+      "anomalous_records": 4172,
+      "invalid_key_records": 0,
+      "review_records": 171,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Black Gram (Urd Beans)(Whole).csv",
+      "source_sha256": "ab87a457971ff2bc22af92bc7d849492b9ccc3db48e2fb938eace05d62652875",
+      "storage": "archive\\0f18b7cf0b69",
+      "first_date": "2001-03-13",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 430,
+      "markets": 1480,
+      "varieties": 21,
+      "weekly_observations": 206080,
+      "reference_365_series": 498,
+      "daily_eligible_series": 72,
+      "median_missing_calendar_frequency": 0.8838181092369468,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "00574a820f0d12622e661001bfe5510b0b89a6aa99a525a90ca8a32194c1d8bb",
+      "rank": 34,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Black pepper",
+      "category": "Commercial or cash crops",
+      "raw_records": 62526,
+      "usable_records": 62310,
+      "duplicate_records": 17,
+      "conflicting_records": 4,
+      "anomalous_records": 197,
+      "invalid_key_records": 0,
+      "review_records": 108,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Black pepper.csv",
+      "source_sha256": "5969886380606ed5f2b46982cd5ad5a4cfb67a7b1325e3e9f7e41f28a3378d15",
+      "storage": "archive\\a76090743236",
+      "first_date": "2001-12-19",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 14,
+      "districts": 50,
+      "markets": 120,
+      "varieties": 6,
+      "weekly_observations": 21224,
+      "reference_365_series": 43,
+      "daily_eligible_series": 15,
+      "median_missing_calendar_frequency": 0.8924146267754609,
+      "median_reporting_gap_days": 4.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "19b3ba19cbe2bb2b6ca2bcbba5b122a87660a88c595e817c2204417c476b7c83",
+      "rank": 44,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Bottle gourd",
+      "category": "Vegetables",
+      "raw_records": 937023,
+      "usable_records": 927597,
+      "duplicate_records": 145,
+      "conflicting_records": 14,
+      "anomalous_records": 9267,
+      "invalid_key_records": 0,
+      "review_records": 1200,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Bottle gourd.csv",
+      "source_sha256": "43c4d66ea9ebaaa02b8f776df12a36edd74eb4fa793134cffd6ea2707bcea37e",
+      "storage": "archive\\21ad158673ef",
+      "first_date": "2001-04-12",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 367,
+      "markets": 983,
+      "varieties": 2,
+      "weekly_observations": 207269,
+      "reference_365_series": 591,
+      "daily_eligible_series": 254,
+      "median_missing_calendar_frequency": 0.6562228024369017,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "6c11b14f61c17eb2e2d65a72d91fec95925f5c0fef61338c335a44777491ac8d",
+      "rank": 14,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Brinjal",
+      "category": "Vegetables",
+      "raw_records": 1784077,
+      "usable_records": 1767472,
+      "duplicate_records": 293,
+      "conflicting_records": 38,
+      "anomalous_records": 16275,
+      "invalid_key_records": 0,
+      "review_records": 3794,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Brinjal.csv",
+      "source_sha256": "7268a87f3caa41f1147e5585109cae2e869be018458ca2e919f19db0be5259b5",
+      "storage": "archive\\0576c51a2f92",
+      "first_date": "2001-01-27",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 28,
+      "districts": 430,
+      "markets": 1352,
+      "varieties": 10,
+      "weekly_observations": 412881,
+      "reference_365_series": 1077,
+      "daily_eligible_series": 472,
+      "median_missing_calendar_frequency": 0.6817288801571709,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "758d76c99392ee0c4ec8649811acbc92fc98e169b21c0612a6fe47a462766d9b",
+      "rank": 5,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Cabbage",
+      "category": "Vegetables",
+      "raw_records": 1195665,
+      "usable_records": 1185562,
+      "duplicate_records": 323,
+      "conflicting_records": 4,
+      "anomalous_records": 9776,
+      "invalid_key_records": 0,
+      "review_records": 2713,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Cabbage.csv",
+      "source_sha256": "f69f651b39c31060afbf1836ad809349bf5d4db6b86f97100af6594c3bec883c",
+      "storage": "archive\\d37db9788605",
+      "first_date": "2001-11-22",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 31,
+      "districts": 442,
+      "markets": 1292,
+      "varieties": 2,
+      "weekly_observations": 288640,
+      "reference_365_series": 742,
+      "daily_eligible_series": 388,
+      "median_missing_calendar_frequency": 0.7606492969396195,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "f711ea979f8ac6c1e717a4090299cbc62f37162c197b598edaa377be00e850a2",
+      "rank": 7,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Carrot",
+      "category": "Vegetables",
+      "raw_records": 784247,
+      "usable_records": 775110,
+      "duplicate_records": 209,
+      "conflicting_records": 8,
+      "anomalous_records": 8920,
+      "invalid_key_records": 0,
+      "review_records": 1930,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Carrot.csv",
+      "source_sha256": "66aed83998538b45a295bed3dd0c22a93c5ca35e534026207646b7b134382460",
+      "storage": "archive\\9e87ba4dd07d",
+      "first_date": "2001-11-22",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 389,
+      "markets": 1066,
+      "varieties": 3,
+      "weekly_observations": 194212,
+      "reference_365_series": 567,
+      "daily_eligible_series": 276,
+      "median_missing_calendar_frequency": 0.7877762985419341,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "f84dc7a44c1d9d162a198dcf085852e47ad0ddc120f06929319217a1f1fe510e",
+      "rank": 13,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Castor Seed",
+      "category": "Oilseeds",
+      "raw_records": 274414,
+      "usable_records": 272918,
+      "duplicate_records": 69,
+      "conflicting_records": 4,
+      "anomalous_records": 1423,
+      "invalid_key_records": 0,
+      "review_records": 94,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Castor Seed.csv",
+      "source_sha256": "a43b7a0de146d3277f27cac55cc2e23bc1e519315bc22480f7540e42ee245be3",
+      "storage": "archive\\1f5787159eba",
+      "first_date": "2001-11-21",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 14,
+      "districts": 157,
+      "markets": 529,
+      "varieties": 3,
+      "weekly_observations": 76781,
+      "reference_365_series": 171,
+      "daily_eligible_series": 48,
+      "median_missing_calendar_frequency": 0.9089886491461294,
+      "median_reporting_gap_days": 3.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "8a6bc0b8b941cf28f45bcd60bcb60b4d0f90e1f68de7e588d1b00c77a46027f7",
+      "rank": 39,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Cauliflower",
+      "category": "Vegetables",
+      "raw_records": 1422379,
+      "usable_records": 1406418,
+      "duplicate_records": 234,
+      "conflicting_records": 10,
+      "anomalous_records": 15717,
+      "invalid_key_records": 0,
+      "review_records": 4477,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Cauliflower.csv",
+      "source_sha256": "fc9cf022db245e5bcb499e3d6d56410004ce1e140aaa467ea9652f3d6720adcf",
+      "storage": "archive\\f0eb3ff1d427",
+      "first_date": "2001-01-27",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 31,
+      "districts": 436,
+      "markets": 1279,
+      "varieties": 9,
+      "weekly_observations": 321414,
+      "reference_365_series": 882,
+      "daily_eligible_series": 428,
+      "median_missing_calendar_frequency": 0.7045689089032743,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "f1fe4fca0da8fa2bc4486ba21f98d3c0ae22328a6a74e06814864664fb31aec4",
+      "rank": 6,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Coffee",
+      "category": "Commercial or cash crops",
+      "raw_records": 14964,
+      "usable_records": 14956,
+      "duplicate_records": 0,
+      "conflicting_records": 0,
+      "anomalous_records": 8,
+      "invalid_key_records": 0,
+      "review_records": 10,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Coffee.csv",
+      "source_sha256": "13932a97c2493ac47fa10c52ae508e9db6493ce5ff2d278a50a2cc6b05986cca",
+      "storage": "archive\\b0e1f06cf1e7",
+      "first_date": "2003-01-03",
+      "last_date": "2024-02-02",
+      "reporting_years": 22,
+      "states": 5,
+      "districts": 9,
+      "markets": 20,
+      "varieties": 2,
+      "weekly_observations": 4264,
+      "reference_365_series": 10,
+      "daily_eligible_series": 3,
+      "median_missing_calendar_frequency": 0.8266151297625621,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "286ae96f44008d8de9f1f5b312b282bd4c8f461492ecaef3aef9b92d0ad018aa",
+      "rank": 51,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Cotton",
+      "category": "Commercial or cash crops",
+      "raw_records": 694063,
+      "usable_records": 688430,
+      "duplicate_records": 601,
+      "conflicting_records": 130,
+      "anomalous_records": 4902,
+      "invalid_key_records": 0,
+      "review_records": 274,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Cotton.csv",
+      "source_sha256": "f914b328db5f5a3dc71829a2fcf7927f8182702a186c3113224ad68a5a06f041",
+      "storage": "archive\\38ba21445431",
+      "first_date": "2001-04-27",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 23,
+      "districts": 216,
+      "markets": 985,
+      "varieties": 103,
+      "weekly_observations": 181640,
+      "reference_365_series": 498,
+      "daily_eligible_series": 124,
+      "median_missing_calendar_frequency": 0.8201738868759327,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "8838733d3fb3be6119a0068b58223fec0fb71b8077d418518911959c120ae8f0",
+      "rank": 28,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Cucumbar(Kheera)",
+      "category": "Vegetables",
+      "raw_records": 1110176,
+      "usable_records": 1098954,
+      "duplicate_records": 241,
+      "conflicting_records": 4,
+      "anomalous_records": 10977,
+      "invalid_key_records": 0,
+      "review_records": 3760,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Cucumbar(Kheera).csv",
+      "source_sha256": "bc2ee57ede23ed6f951495dd5a362b1f1946bae8a5c778d07f6c2bf0453ad5c7",
+      "storage": "archive\\c92d903d669e",
+      "first_date": "2001-11-27",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 30,
+      "districts": 403,
+      "markets": 1143,
+      "varieties": 2,
+      "weekly_observations": 270888,
+      "reference_365_series": 700,
+      "daily_eligible_series": 317,
+      "median_missing_calendar_frequency": 0.7532089453486833,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "8e7a5fd2bb2194c82b0bd9bcf6a718e7a9e435136a8b8dbda157eed79ebfd170",
+      "rank": 10,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Dry Chillies",
+      "category": "Commercial or cash crops",
+      "raw_records": 105149,
+      "usable_records": 104855,
+      "duplicate_records": 173,
+      "conflicting_records": 20,
+      "anomalous_records": 101,
+      "invalid_key_records": 0,
+      "review_records": 2150,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Dry Chillies.csv",
+      "source_sha256": "d1abcd9279bd785deccdbb0ead153ce586e936aa9703129f77fbfe9c3c62ec21",
+      "storage": "archive\\f117f5a98c6d",
+      "first_date": "2001-12-11",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 26,
+      "districts": 168,
+      "markets": 319,
+      "varieties": 34,
+      "weekly_observations": 34928,
+      "reference_365_series": 61,
+      "daily_eligible_series": 16,
+      "median_missing_calendar_frequency": 0.8536585365853658,
+      "median_reporting_gap_days": 5.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "fc6abe530a9cd164c6fa256b2af4bff6d76a6dcca2361d00655d894e16bfbb1c",
+      "rank": 43,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Garlic",
+      "category": "Vegetables",
+      "raw_records": 574260,
+      "usable_records": 572635,
+      "duplicate_records": 115,
+      "conflicting_records": 12,
+      "anomalous_records": 1498,
+      "invalid_key_records": 0,
+      "review_records": 5098,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Garlic.csv",
+      "source_sha256": "c5052f793ce7d90cb98e0f61a860df84fb0e9f282e76d505bf689d99158f320c",
+      "storage": "archive\\4e7bcd0c8d5b",
+      "first_date": "2001-03-30",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 375,
+      "markets": 846,
+      "varieties": 9,
+      "weekly_observations": 153955,
+      "reference_365_series": 401,
+      "daily_eligible_series": 172,
+      "median_missing_calendar_frequency": 0.7894736842105263,
+      "median_reporting_gap_days": 1.5,
+      "fresh_series_now": 0,
+      "observations_sha256": "3c477a0cb644b5e6bbf69ab400e5177caf5a4342a2b5e0ae94856fcf5ed0ce45",
+      "rank": 25,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Ginger(Green)",
+      "category": "Vegetables",
+      "raw_records": 682050,
+      "usable_records": 676665,
+      "duplicate_records": 337,
+      "conflicting_records": 8,
+      "anomalous_records": 5040,
+      "invalid_key_records": 0,
+      "review_records": 1042,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Ginger(Green).csv",
+      "source_sha256": "4fef79ba89d1b4e2595b2552ba78a229eb8df2be212acbaf3e62427895505d20",
+      "storage": "archive\\87827c6fc203",
+      "first_date": "2001-09-12",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 31,
+      "districts": 347,
+      "markets": 889,
+      "varieties": 2,
+      "weekly_observations": 174591,
+      "reference_365_series": 486,
+      "daily_eligible_series": 232,
+      "median_missing_calendar_frequency": 0.7614417404506788,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "b1867f9423d8745f6c40c5f16497e1063303d5ddaf485d9017bfe16e8c91f87e",
+      "rank": 16,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Grapes",
+      "category": "Fruits",
+      "raw_records": 315620,
+      "usable_records": 298232,
+      "duplicate_records": 1327,
+      "conflicting_records": 9320,
+      "anomalous_records": 7206,
+      "invalid_key_records": 0,
+      "review_records": 4136,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Grapes.csv",
+      "source_sha256": "da596b5c16c0bb90bf05534d9926e308f7c84f9a181bfc058822b7a510913bc9",
+      "storage": "archive\\d5fab6d3de1d",
+      "first_date": "2001-03-30",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 30,
+      "districts": 286,
+      "markets": 645,
+      "varieties": 10,
+      "weekly_observations": 81881,
+      "reference_365_series": 224,
+      "daily_eligible_series": 61,
+      "median_missing_calendar_frequency": 0.8513312861279452,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "01773f9a467d5ca8801b70052a049e126c3fd6b5cf8206435f136257183dcb1e",
+      "rank": 35,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Green Chilli",
+      "category": "Vegetables",
+      "raw_records": 1673213,
+      "usable_records": 1659783,
+      "duplicate_records": 362,
+      "conflicting_records": 12,
+      "anomalous_records": 13058,
+      "invalid_key_records": 0,
+      "review_records": 4202,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Green Chilli.csv",
+      "source_sha256": "f2643e87fdf40e2381b3d56c58d669280c07f394bff55fab159da6633e09d5a6",
+      "storage": "archive\\cbe4f9ee1f7c",
+      "first_date": "2001-04-10",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 30,
+      "districts": 449,
+      "markets": 1371,
+      "varieties": 2,
+      "weekly_observations": 383915,
+      "reference_365_series": 944,
+      "daily_eligible_series": 483,
+      "median_missing_calendar_frequency": 0.6755043227665707,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "2cebd66fec8edf042bd3de4c4fce53e4ea966b35e1427b55e974224162a4f63b",
+      "rank": 4,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Green Gram (Moong)(Whole)",
+      "category": "Pulses and legumes",
+      "raw_records": 589164,
+      "usable_records": 585230,
+      "duplicate_records": 239,
+      "conflicting_records": 4,
+      "anomalous_records": 3691,
+      "invalid_key_records": 0,
+      "review_records": 226,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Green Gram (Moong)(Whole).csv",
+      "source_sha256": "37b388cba7959c72dc66289a7547042335ecd9ecd64f9b17e51779638f704a34",
+      "storage": "archive\\51b3bac1c798",
+      "first_date": "2001-03-15",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 28,
+      "districts": 394,
+      "markets": 1315,
+      "varieties": 24,
+      "weekly_observations": 190642,
+      "reference_365_series": 427,
+      "daily_eligible_series": 78,
+      "median_missing_calendar_frequency": 0.9010329677246112,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "989f7a4ae5a15630db80127b8ff96dee94fdce8b0ed9315220f494f5ceafd84f",
+      "rank": 31,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Groundnut",
+      "category": "Oilseeds",
+      "raw_records": 494008,
+      "usable_records": 490359,
+      "duplicate_records": 660,
+      "conflicting_records": 22,
+      "anomalous_records": 2968,
+      "invalid_key_records": 0,
+      "review_records": 179,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Groundnut.csv",
+      "source_sha256": "a3bfdd22cb07444f048f5433a1f3be32f472b3da01836614d122946792c7e4b1",
+      "storage": "archive\\6bd78231307a",
+      "first_date": "2001-01-10",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 25,
+      "districts": 324,
+      "markets": 1051,
+      "varieties": 29,
+      "weekly_observations": 147608,
+      "reference_365_series": 314,
+      "daily_eligible_series": 77,
+      "median_missing_calendar_frequency": 0.8804071246819338,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "ea07aae3ccd7119c4ccf1fa32188778a8c62edb96681a18d335f22e3bcc189e3",
+      "rank": 32,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Jack Fruit",
+      "category": "Fruits",
+      "raw_records": 46365,
+      "usable_records": 45504,
+      "duplicate_records": 97,
+      "conflicting_records": 539,
+      "anomalous_records": 231,
+      "invalid_key_records": 0,
+      "review_records": 156,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Jack Fruit.csv",
+      "source_sha256": "202b6fc3b5051a3f79a2201a62f8bdd5327be78d692911185f7d377945905fec",
+      "storage": "archive\\67c7b597208c",
+      "first_date": "2002-05-19",
+      "last_date": "2024-01-31",
+      "reporting_years": 23,
+      "states": 26,
+      "districts": 196,
+      "markets": 323,
+      "varieties": 2,
+      "weekly_observations": 13450,
+      "reference_365_series": 42,
+      "daily_eligible_series": 1,
+      "median_missing_calendar_frequency": 0.8864736347604745,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "6bfe2d1579f17aa44ecef865259058434e5957d408c6c978457ec64d2607c69c",
+      "rank": 52,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Jowar(Sorghum)",
+      "category": "Cereals and grains",
+      "raw_records": 569291,
+      "usable_records": 567215,
+      "duplicate_records": 467,
+      "conflicting_records": 16,
+      "anomalous_records": 1593,
+      "invalid_key_records": 0,
+      "review_records": 158,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Jowar(Sorghum).csv",
+      "source_sha256": "3d57a95e16fc1f241079e287807d44196d30c9d4b5fb34f890e90bbee7d735f7",
+      "storage": "archive\\93414b91e1e8",
+      "first_date": "2001-03-13",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 19,
+      "districts": 273,
+      "markets": 1076,
+      "varieties": 18,
+      "weekly_observations": 199446,
+      "reference_365_series": 381,
+      "daily_eligible_series": 74,
+      "median_missing_calendar_frequency": 0.9126760563380282,
+      "median_reporting_gap_days": 4.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "632a436df9d4c919d84a823dcedfee71a169e93239bddad9928b88bfb0f685e2",
+      "rank": 33,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Jute",
+      "category": "Commercial or cash crops",
+      "raw_records": 107546,
+      "usable_records": 107307,
+      "duplicate_records": 26,
+      "conflicting_records": 2,
+      "anomalous_records": 211,
+      "invalid_key_records": 0,
+      "review_records": 18,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Jute.csv",
+      "source_sha256": "2df40b5acae67dc45cc42f2e1e6eb6eb0dd499cece1b7498c0c1bbb698bc4178",
+      "storage": "archive\\9ea53a1e3370",
+      "first_date": "2001-03-20",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 17,
+      "districts": 67,
+      "markets": 122,
+      "varieties": 5,
+      "weekly_observations": 24158,
+      "reference_365_series": 55,
+      "daily_eligible_series": 11,
+      "median_missing_calendar_frequency": 0.8205676522511693,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "ff4e5aaaaec1824d4e0748c97684d29c9249d91d756d39924c633a3d6c9fb88f",
+      "rank": 45,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Lemon",
+      "category": "Fruits",
+      "raw_records": 521288,
+      "usable_records": 513934,
+      "duplicate_records": 44,
+      "conflicting_records": 220,
+      "anomalous_records": 7092,
+      "invalid_key_records": 0,
+      "review_records": 1558,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Lemon.csv",
+      "source_sha256": "1d4faa42b5963b71a8e903f8a0bcc8df5d19fdeb15a47d3c17d7a52fe9332a8f",
+      "storage": "archive\\6d33a9d4d780",
+      "first_date": "2002-08-26",
+      "last_date": "2024-02-02",
+      "reporting_years": 23,
+      "states": 29,
+      "districts": 277,
+      "markets": 710,
+      "varieties": 2,
+      "weekly_observations": 127744,
+      "reference_365_series": 345,
+      "daily_eligible_series": 154,
+      "median_missing_calendar_frequency": 0.7450850287401434,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "7329da695c2bdf7b7f52d80aacd9b92cf6252301249accaff16dd21f4378d992",
+      "rank": 26,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Lentil (Masur)(Whole)",
+      "category": "Pulses and legumes",
+      "raw_records": 344374,
+      "usable_records": 343237,
+      "duplicate_records": 5,
+      "conflicting_records": 0,
+      "anomalous_records": 1132,
+      "invalid_key_records": 0,
+      "review_records": 54,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Lentil (Masur)(Whole).csv",
+      "source_sha256": "72e5e98dbc046f26cd65cc3f2f8e55fa1b25addefdc2c70b8feb4526026fbdfb",
+      "storage": "archive\\73deb93dd95f",
+      "first_date": "2002-05-16",
+      "last_date": "2024-02-02",
+      "reporting_years": 23,
+      "states": 22,
+      "districts": 246,
+      "markets": 547,
+      "varieties": 4,
+      "weekly_observations": 94426,
+      "reference_365_series": 270,
+      "daily_eligible_series": 53,
+      "median_missing_calendar_frequency": 0.7692759295499021,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "5bff94ab117da4e80373d8b3e17ec946e18e2e4c63a41367bbd6561af2f8deed",
+      "rank": 36,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Linseed",
+      "category": "Oilseeds",
+      "raw_records": 86397,
+      "usable_records": 85422,
+      "duplicate_records": 6,
+      "conflicting_records": 0,
+      "anomalous_records": 970,
+      "invalid_key_records": 0,
+      "review_records": 59,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Linseed.csv",
+      "source_sha256": "333826e935688fcad6c8675f07d678def007323631243e212efd891d94df3473",
+      "storage": "archive\\50273eb144f7",
+      "first_date": "2002-02-26",
+      "last_date": "2024-02-02",
+      "reporting_years": 23,
+      "states": 17,
+      "districts": 153,
+      "markets": 342,
+      "varieties": 3,
+      "weekly_observations": 27444,
+      "reference_365_series": 58,
+      "daily_eligible_series": 6,
+      "median_missing_calendar_frequency": 0.9378151260504202,
+      "median_reporting_gap_days": 6.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "8d7e6706bc0042b8b00082963c69871fb558557b381769492d08fa950dbd4419",
+      "rank": 49,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Litchi",
+      "category": "Fruits",
+      "raw_records": 18769,
+      "usable_records": 17490,
+      "duplicate_records": 258,
+      "conflicting_records": 651,
+      "anomalous_records": 410,
+      "invalid_key_records": 0,
+      "review_records": 64,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Litchi.csv",
+      "source_sha256": "b6eb4fbe587e1773a33d4e99d8e8c52a47cc07179f3789c7f11f28c5f31c6338",
+      "storage": "archive\\180acf4e8734",
+      "first_date": "2005-05-26",
+      "last_date": "2023-12-27",
+      "reporting_years": 19,
+      "states": 20,
+      "districts": 132,
+      "markets": 246,
+      "varieties": 2,
+      "weekly_observations": 5420,
+      "reference_365_series": 5,
+      "daily_eligible_series": 0,
+      "median_missing_calendar_frequency": 0.953152575004011,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "b162ec5033498efc47bdeb74e2b95a2c1d2d6b2a84366332bc46555e48da3c71",
+      "rank": 55,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Maize",
+      "category": "Cereals and grains",
+      "raw_records": 1077217,
+      "usable_records": 1071476,
+      "duplicate_records": 978,
+      "conflicting_records": 205,
+      "anomalous_records": 4561,
+      "invalid_key_records": 0,
+      "review_records": 486,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Maize.csv",
+      "source_sha256": "a87a4744658fdad576d6b2581ae5449057016954f495543c116eabcc22c2dff3",
+      "storage": "archive\\637a42a546ae",
+      "first_date": "2001-01-10",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 428,
+      "markets": 1649,
+      "varieties": 34,
+      "weekly_observations": 338127,
+      "reference_365_series": 777,
+      "daily_eligible_series": 180,
+      "median_missing_calendar_frequency": 0.868421052631579,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "d52fa477d63d0f1732b86d94028014925cdcc2299fce0c1bfd9d515d0fbf7bd9",
+      "rank": 24,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Mango",
+      "category": "Fruits",
+      "raw_records": 393551,
+      "usable_records": 351864,
+      "duplicate_records": 4829,
+      "conflicting_records": 31791,
+      "anomalous_records": 6389,
+      "invalid_key_records": 0,
+      "review_records": 2648,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Mango.csv",
+      "source_sha256": "6dee0d1bcf7ddb04eb0a370acc53a81baf1cfad82941cb91843258420e2d1d6c",
+      "storage": "archive\\6455dbcb9597",
+      "first_date": "2001-03-31",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 30,
+      "districts": 358,
+      "markets": 957,
+      "varieties": 16,
+      "weekly_observations": 91106,
+      "reference_365_series": 269,
+      "daily_eligible_series": 8,
+      "median_missing_calendar_frequency": 0.9,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "1b2d25745064821dd5b7271847a845a04cf8c5ccb9964efb3ef84633d21cf63f",
+      "rank": 48,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Mustard",
+      "category": "Oilseeds",
+      "raw_records": 1220240,
+      "usable_records": 1212963,
+      "duplicate_records": 40,
+      "conflicting_records": 12,
+      "anomalous_records": 7225,
+      "invalid_key_records": 0,
+      "review_records": 424,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Mustard.csv",
+      "source_sha256": "f779cfaad5a93d250300b95dbddec70a983e54a0a701fe6c7523d18c76d0da4a",
+      "storage": "archive\\4ec51082ce79",
+      "first_date": "2001-03-20",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 27,
+      "districts": 374,
+      "markets": 1215,
+      "varieties": 11,
+      "weekly_observations": 311105,
+      "reference_365_series": 775,
+      "daily_eligible_series": 213,
+      "median_missing_calendar_frequency": 0.8285714285714285,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "39a8dfa82e0e90ffe20435452682bd6486cdc5d5480b0a95e65b5f02da059689",
+      "rank": 21,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Onion",
+      "category": "Vegetables",
+      "raw_records": 2624379,
+      "usable_records": 2595611,
+      "duplicate_records": 708,
+      "conflicting_records": 68,
+      "anomalous_records": 27993,
+      "invalid_key_records": 0,
+      "review_records": 22330,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Onion.csv",
+      "source_sha256": "40876b2b2912566105b5a3e52f71fa722490377493d3b373c274e620f83c0603",
+      "storage": "archive\\cc278ed65b2d",
+      "first_date": "2001-01-10",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 31,
+      "districts": 511,
+      "markets": 1726,
+      "varieties": 25,
+      "weekly_observations": 611072,
+      "reference_365_series": 1473,
+      "daily_eligible_series": 618,
+      "median_missing_calendar_frequency": 0.7094594594594594,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "4414b7ccf7c21f8900fce12a62c84e14edf528beb782d91079dae0c319f44927",
+      "rank": 1,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Orange",
+      "category": "Fruits",
+      "raw_records": 267586,
+      "usable_records": 241527,
+      "duplicate_records": 2539,
+      "conflicting_records": 17997,
+      "anomalous_records": 6087,
+      "invalid_key_records": 0,
+      "review_records": 1988,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Orange.csv",
+      "source_sha256": "9cf8607f1119595f713317550c9043c5294517e723310983e442116b0e622e10",
+      "storage": "archive\\78e7771b8b46",
+      "first_date": "2001-01-27",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 32,
+      "districts": 305,
+      "markets": 661,
+      "varieties": 8,
+      "weekly_observations": 68211,
+      "reference_365_series": 191,
+      "daily_eligible_series": 47,
+      "median_missing_calendar_frequency": 0.852219583769715,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "58641688c9ccefc269acd4766ac41ab6c4babfa56c1f4c872fdc3c81f5094001",
+      "rank": 40,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Paddy(Dhan)(Common)",
+      "category": "Cereals and grains",
+      "raw_records": 2160970,
+      "usable_records": 2141199,
+      "duplicate_records": 1531,
+      "conflicting_records": 670,
+      "anomalous_records": 17592,
+      "invalid_key_records": 0,
+      "review_records": 839,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Paddy(Dhan)(Common).csv",
+      "source_sha256": "28af343682cbb4906839e67922c76832d1984722042cd413ba32df2552c2d445",
+      "storage": "archive\\6496e21b6192",
+      "first_date": "2001-03-14",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 31,
+      "districts": 471,
+      "markets": 2073,
+      "varieties": 172,
+      "weekly_observations": 595200,
+      "reference_365_series": 1650,
+      "daily_eligible_series": 308,
+      "median_missing_calendar_frequency": 0.8637053087757314,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "22d5eb5a7db67c7243a98e27df0f2b6b051acd0611dd5de6e6560774c80789a3",
+      "rank": 11,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Papaya",
+      "category": "Fruits",
+      "raw_records": 361444,
+      "usable_records": 352513,
+      "duplicate_records": 294,
+      "conflicting_records": 6110,
+      "anomalous_records": 2672,
+      "invalid_key_records": 0,
+      "review_records": 447,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Papaya.csv",
+      "source_sha256": "b8c3c767273542b9bc743a7c7ce58b827732dea04bf746bc870eb87c8c3930af",
+      "storage": "archive\\193e5e1cb236",
+      "first_date": "2001-04-21",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 298,
+      "markets": 639,
+      "varieties": 2,
+      "weekly_observations": 91927,
+      "reference_365_series": 249,
+      "daily_eligible_series": 113,
+      "median_missing_calendar_frequency": 0.8144401622718054,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "20cb76ea7647c5091167a62b4c8fb37d35556d332eb75827274ed4b632fb9d02",
+      "rank": 29,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Peach",
+      "category": "Fruits",
+      "raw_records": 15162,
+      "usable_records": 14146,
+      "duplicate_records": 8,
+      "conflicting_records": 444,
+      "anomalous_records": 673,
+      "invalid_key_records": 0,
+      "review_records": 52,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Peach.csv",
+      "source_sha256": "ced69f93bfb1c8a141aa9e13e99aa84368256f3330199aa29e166f906071d95a",
+      "storage": "archive\\2b1f3f0b7afa",
+      "first_date": "2003-05-07",
+      "last_date": "2024-01-15",
+      "reporting_years": 22,
+      "states": 15,
+      "districts": 89,
+      "markets": 192,
+      "varieties": 2,
+      "weekly_observations": 4706,
+      "reference_365_series": 7,
+      "daily_eligible_series": 0,
+      "median_missing_calendar_frequency": 0.95483123556483,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "e18d7d57e7ffd8cc2b8bb0082801eb27b5903461c6a767e2ab1a1996d9445811",
+      "rank": 53,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Pineapple",
+      "category": "Fruits",
+      "raw_records": 205146,
+      "usable_records": 193393,
+      "duplicate_records": 111,
+      "conflicting_records": 9640,
+      "anomalous_records": 2123,
+      "invalid_key_records": 0,
+      "review_records": 985,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Pineapple.csv",
+      "source_sha256": "24e736c4778ea419edd1aeb5e17090a126451c21f2ce3e641a9d545f52b55ec5",
+      "storage": "archive\\80421e0021c5",
+      "first_date": "2001-01-27",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 213,
+      "markets": 378,
+      "varieties": 2,
+      "weekly_observations": 57175,
+      "reference_365_series": 118,
+      "daily_eligible_series": 49,
+      "median_missing_calendar_frequency": 0.8715334420880914,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "7c121f9be2bfe55fc6689fb6408e777024ee59a704fbe7303ed5b753d81f249b",
+      "rank": 38,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Potato",
+      "category": "Vegetables",
+      "raw_records": 2764987,
+      "usable_records": 2731271,
+      "duplicate_records": 570,
+      "conflicting_records": 165,
+      "anomalous_records": 32983,
+      "invalid_key_records": 0,
+      "review_records": 2339,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Potato.csv",
+      "source_sha256": "ab76901280c17fb25c9aec1b3c39336966bde7c7bd2641a2e32330b205050cc4",
+      "storage": "archive\\6d61374da4b4",
+      "first_date": "2001-01-10",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 32,
+      "districts": 504,
+      "markets": 1620,
+      "varieties": 22,
+      "weekly_observations": 603287,
+      "reference_365_series": 1551,
+      "daily_eligible_series": 599,
+      "median_missing_calendar_frequency": 0.6802048384248631,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "9df24d464fb91f5babb88b0dee8f8088c414938d86bd9a8da6b724d1efa8c144",
+      "rank": 2,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Pumpkin",
+      "category": "Vegetables",
+      "raw_records": 915874,
+      "usable_records": 907652,
+      "duplicate_records": 48,
+      "conflicting_records": 4,
+      "anomalous_records": 8173,
+      "invalid_key_records": 0,
+      "review_records": 889,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Pumpkin.csv",
+      "source_sha256": "d7d03d64fc9096ef8852a31c3c8d9c2ac401242a4380b4d5239c69097b295392",
+      "storage": "archive\\c6c5211a5079",
+      "first_date": "2001-04-28",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 357,
+      "markets": 981,
+      "varieties": 2,
+      "weekly_observations": 227471,
+      "reference_365_series": 636,
+      "daily_eligible_series": 277,
+      "median_missing_calendar_frequency": 0.7554063901237233,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "3016010553111b228187cd464b93e6eee18e2bac0e951d5220786c777444a068",
+      "rank": 12,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Raddish",
+      "category": "Vegetables",
+      "raw_records": 736563,
+      "usable_records": 717630,
+      "duplicate_records": 125,
+      "conflicting_records": 2,
+      "anomalous_records": 18806,
+      "invalid_key_records": 0,
+      "review_records": 842,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Raddish.csv",
+      "source_sha256": "a6fd098a4da48a092d325dac11113ff00498bc6622ff4a23edfa9331565fc5f5",
+      "storage": "archive\\969748f1ffaf",
+      "first_date": "2001-11-27",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 346,
+      "markets": 913,
+      "varieties": 2,
+      "weekly_observations": 172350,
+      "reference_365_series": 533,
+      "daily_eligible_series": 223,
+      "median_missing_calendar_frequency": 0.7686801424425187,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "168625a8a703f32a390f1dc6efb8f542ae480dff7056e18f9d1302bec514de3d",
+      "rank": 19,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Rice",
+      "category": "Cereals and grains",
+      "raw_records": 1436499,
+      "usable_records": 1430765,
+      "duplicate_records": 704,
+      "conflicting_records": 61,
+      "anomalous_records": 4970,
+      "invalid_key_records": 0,
+      "review_records": 387,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Rice.csv",
+      "source_sha256": "2b64b53f21d419d0cf32fdb78bd37846220a4eb94154cb8e5eacbc263342d1b1",
+      "storage": "archive\\1b9bc7b7376e",
+      "first_date": "2001-03-12",
+      "last_date": "2024-02-02",
+      "reporting_years": 24,
+      "states": 29,
+      "districts": 422,
+      "markets": 1173,
+      "varieties": 174,
+      "weekly_observations": 357989,
+      "reference_365_series": 917,
+      "daily_eligible_series": 230,
+      "median_missing_calendar_frequency": 0.7603932452798396,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "ad9e13e08d0d55eb6164bee083108f31190e19db8b1ad27215dc39e439a4c5bd",
+      "rank": 17,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Rubber",
+      "category": "Commercial or cash crops",
+      "raw_records": 39749,
+      "usable_records": 39676,
+      "duplicate_records": 0,
+      "conflicting_records": 6,
+      "anomalous_records": 67,
+      "invalid_key_records": 0,
+      "review_records": 65,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Rubber.csv",
+      "source_sha256": "404b0f1051e812bbe0e3fbf7331ebe4161b2335e9efc829fd7f6673017960f88",
+      "storage": "archive\\a60f7b0cee08",
+      "first_date": "2003-01-25",
+      "last_date": "2024-02-02",
+      "reporting_years": 22,
+      "states": 4,
+      "districts": 16,
+      "markets": 41,
+      "varieties": 2,
+      "weekly_observations": 12931,
+      "reference_365_series": 23,
+      "daily_eligible_series": 9,
+      "median_missing_calendar_frequency": 0.8565985979884182,
+      "median_reporting_gap_days": 3.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "2f0671a9bdd08666039f184de1dc0a302edc330c17f4aa2634e64f028a7c6e7c",
+      "rank": 47,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Safflower",
+      "category": "Oilseeds",
+      "raw_records": 29241,
+      "usable_records": 29124,
+      "duplicate_records": 28,
+      "conflicting_records": 0,
+      "anomalous_records": 89,
+      "invalid_key_records": 0,
+      "review_records": 9,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Safflower.csv",
+      "source_sha256": "49f06ee3e765a313457f647d0ad5d4d7bc0fe3291d2ada606bd057faceaf452e",
+      "storage": "archive\\68fb9997343d",
+      "first_date": "2002-02-26",
+      "last_date": "2024-02-02",
+      "reporting_years": 23,
+      "states": 12,
+      "districts": 91,
+      "markets": 260,
+      "varieties": 5,
+      "weekly_observations": 12799,
+      "reference_365_series": 20,
+      "daily_eligible_series": 3,
+      "median_missing_calendar_frequency": 0.9630222471051072,
+      "median_reporting_gap_days": 6.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "086a0e38eeb9b8a5d194349b9f565a4d596bc96ca2391f161517c281ee77e99b",
+      "rank": 50,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Soyabean",
+      "category": "Oilseeds",
+      "raw_records": 888414,
+      "usable_records": 886200,
+      "duplicate_records": 412,
+      "conflicting_records": 106,
+      "anomalous_records": 1696,
+      "invalid_key_records": 0,
+      "review_records": 811,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Soyabean.csv",
+      "source_sha256": "3f605624ea8ad20f6056cfc852d9a34b25cff2889eaf00ae19f75c167faf31a8",
+      "storage": "archive\\1ad56bd0bea6",
+      "first_date": "2001-03-12",
+      "last_date": "2024-02-01",
+      "reporting_years": 24,
+      "states": 24,
+      "districts": 187,
+      "markets": 836,
+      "varieties": 6,
+      "weekly_observations": 256855,
+      "reference_365_series": 588,
+      "daily_eligible_series": 196,
+      "median_missing_calendar_frequency": 0.8626700680272109,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "037f596407a4a9cf13dcd53e716fea00be5167568b4e03c54a97e4d70c77ccd1",
+      "rank": 23,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Sugarcane",
+      "category": "Commercial or cash crops",
+      "raw_records": 2188,
+      "usable_records": 2172,
+      "duplicate_records": 0,
+      "conflicting_records": 0,
+      "anomalous_records": 16,
+      "invalid_key_records": 0,
+      "review_records": 65,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Sugarcane.csv",
+      "source_sha256": "9d2502674ffb2ea8a2285a3e21711250579f41e8653d857088b67a890191229e",
+      "storage": "archive\\ad32d6a38355",
+      "first_date": "2002-11-13",
+      "last_date": "2024-01-31",
+      "reporting_years": 23,
+      "states": 16,
+      "districts": 42,
+      "markets": 55,
+      "varieties": 2,
+      "weekly_observations": 1118,
+      "reference_365_series": 0,
+      "daily_eligible_series": 0,
+      "median_missing_calendar_frequency": 0.9744210002231876,
+      "median_reporting_gap_days": 11.5,
+      "fresh_series_now": 0,
+      "observations_sha256": "0520f7553a12f2e63dea8c9a91ed16767bbe04242b916200f2523892083eeba1",
+      "rank": 56,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Sunflower",
+      "category": "Oilseeds",
+      "raw_records": 114549,
+      "usable_records": 113643,
+      "duplicate_records": 391,
+      "conflicting_records": 12,
+      "anomalous_records": 503,
+      "invalid_key_records": 0,
+      "review_records": 32,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Sunflower.csv",
+      "source_sha256": "9b9b63b0dc093794d9da2eb28ab84500d7cb8845f099da0d6637ffc7a295a476",
+      "storage": "archive\\875af21cd687",
+      "first_date": "2001-05-26",
+      "last_date": "2024-02-01",
+      "reporting_years": 24,
+      "states": 20,
+      "districts": 138,
+      "markets": 500,
+      "varieties": 13,
+      "weekly_observations": 44915,
+      "reference_365_series": 83,
+      "daily_eligible_series": 10,
+      "median_missing_calendar_frequency": 0.9417949842750803,
+      "median_reporting_gap_days": 4.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "efdf69142de2a95aabdad1bc78f3d53ecc5edf7166d00d80de4cbe72ec754ffb",
+      "rank": 46,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Sweet Potato",
+      "category": "Vegetables",
+      "raw_records": 104679,
+      "usable_records": 103075,
+      "duplicate_records": 60,
+      "conflicting_records": 4,
+      "anomalous_records": 1540,
+      "invalid_key_records": 0,
+      "review_records": 102,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Sweet Potato.csv",
+      "source_sha256": "a6a8f039502db92450d7288b0b84847ca807703cf6ee19fd7b926ceb0e9248f9",
+      "storage": "archive\\ccbc72775f15",
+      "first_date": "2001-11-22",
+      "last_date": "2024-02-01",
+      "reporting_years": 24,
+      "states": 28,
+      "districts": 235,
+      "markets": 493,
+      "varieties": 4,
+      "weekly_observations": 31738,
+      "reference_365_series": 60,
+      "daily_eligible_series": 25,
+      "median_missing_calendar_frequency": 0.9054699946893257,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "2079f6c2be9f6ea6278a2133b5ee8570edd955a24c956c06b6b16e898d0f6c2a",
+      "rank": 42,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Tapioca",
+      "category": "Vegetables",
+      "raw_records": 96501,
+      "usable_records": 96458,
+      "duplicate_records": 3,
+      "conflicting_records": 0,
+      "anomalous_records": 40,
+      "invalid_key_records": 0,
+      "review_records": 247,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Tapioca.csv",
+      "source_sha256": "ff3ca1782ea95d4046d2d77cc6409afafe9a84ebfa8570db3012a7e2515c1a70",
+      "storage": "archive\\a9e25871578b",
+      "first_date": "2003-01-03",
+      "last_date": "2024-02-01",
+      "reporting_years": 22,
+      "states": 11,
+      "districts": 38,
+      "markets": 125,
+      "varieties": 2,
+      "weekly_observations": 30498,
+      "reference_365_series": 70,
+      "daily_eligible_series": 51,
+      "median_missing_calendar_frequency": 0.8359375,
+      "median_reporting_gap_days": 3.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "15643bec79b90cd5d490cd9b1b0e1e1b3aabccbda76acc5c5889ba32413361f1",
+      "rank": 37,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Tea",
+      "category": "Commercial or cash crops",
+      "raw_records": 6487,
+      "usable_records": 6486,
+      "duplicate_records": 0,
+      "conflicting_records": 0,
+      "anomalous_records": 1,
+      "invalid_key_records": 0,
+      "review_records": 24,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Tea.csv",
+      "source_sha256": "c36bdbf17eb03955de748da5a304345b49174817ee920f22b0043b12102ef0d1",
+      "storage": "archive\\017979e82990",
+      "first_date": "2002-02-14",
+      "last_date": "2022-10-12",
+      "reporting_years": 18,
+      "states": 10,
+      "districts": 14,
+      "markets": 17,
+      "varieties": 6,
+      "weekly_observations": 2005,
+      "reference_365_series": 7,
+      "daily_eligible_series": 0,
+      "median_missing_calendar_frequency": 0.805123873873874,
+      "median_reporting_gap_days": 2.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "7ede314f99a8f74bf23cb7b5efa4dbc8816b235996094ddfee7539c894cb59bd",
+      "rank": 54,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Tomato",
+      "category": "Vegetables",
+      "raw_records": 2338352,
+      "usable_records": 2309954,
+      "duplicate_records": 736,
+      "conflicting_records": 66,
+      "anomalous_records": 27599,
+      "invalid_key_records": 0,
+      "review_records": 11828,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Tomato.csv",
+      "source_sha256": "a1e749b2809be64e33253dbafbacfbe7353219a85046fdb9e484cd54d8d69d46",
+      "storage": "archive\\8289a9844fd5",
+      "first_date": "2001-02-08",
+      "last_date": "2024-02-01",
+      "reporting_years": 24,
+      "states": 30,
+      "districts": 487,
+      "markets": 1572,
+      "varieties": 6,
+      "weekly_observations": 514604,
+      "reference_365_series": 1354,
+      "daily_eligible_series": 578,
+      "median_missing_calendar_frequency": 0.6896551724137931,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "140e05dd539e6f4eb4d894ff1e179c9149a1e419aea9d4f90f03a45d847024f9",
+      "rank": 3,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    },
+    {
+      "crop": "Wheat",
+      "category": "Cereals and grains",
+      "raw_records": 2593767,
+      "usable_records": 2579015,
+      "duplicate_records": 488,
+      "conflicting_records": 106,
+      "anomalous_records": 14159,
+      "invalid_key_records": 0,
+      "review_records": 471,
+      "ambiguous_daily_key_records": 0,
+      "source_path": "Dataset\\India Commodity Wise Mandi Dataset\\Wheat.csv",
+      "source_sha256": "e093697b402729ce89eac08d8234a88491a23b4a0ea4207de29109bed672cd3c",
+      "storage": "archive\\cca303e99f5f",
+      "first_date": "2001-03-16",
+      "last_date": "2024-02-01",
+      "reporting_years": 24,
+      "states": 28,
+      "districts": 456,
+      "markets": 1984,
+      "varieties": 71,
+      "weekly_observations": 662171,
+      "reference_365_series": 1540,
+      "daily_eligible_series": 372,
+      "median_missing_calendar_frequency": 0.7860696517412935,
+      "median_reporting_gap_days": 1.0,
+      "fresh_series_now": 0,
+      "observations_sha256": "32f0be07b118733650b7cca70a03b35f22a51d56e4e4339256f8d606d7ff341e",
+      "rank": 8,
+      "selected": true,
+      "selection_reason": "Validated local archive; no crop-count or category quota",
+      "discovery_status": "historical_data",
+      "identity_basis": "Audited archive commodity identity"
+    }
+  ]
+}

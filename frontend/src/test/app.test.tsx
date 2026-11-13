@@ -1,9 +1,11 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { MemoryRouter } from "react-router-dom";
+import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { AppRoutes } from "../App";
+import { Layout } from "../components/Layout";
+import Overview from "../pages/Overview";
 import type { MapPoint } from "../components/MapView";
 
 // Leaflet needs a real browser; the stub records exactly which points a page plots.
@@ -35,6 +37,13 @@ const WH = (i: number, name: string, op: string) => ({ warehouse_id: `W:osm:land
 const WHS = [WH(1, "FCI Pune", "fci"), WH(2, "CWC Kalamboli", "cwc"), WH(3, "Agra Cold Storage", "cold_storage")];
 const unknownField = (cols: string[]) => ({ status: "unknown", values: Object.fromEntries(cols.map((c) => [c, null])) });
 
+const FC = (rain: (number | null)[], available = true) => ({
+  available, stale: false, retrieved_utc: available ? "2026-10-29T06:00:00+00:00" : null, reason: available ? null : "the forecast provider is not reachable",
+  provider: "Open-Meteo", official_warning: false, attribution: { text: "Weather forecast by Open-Meteo.com", licence: "CC BY 4.0", link: "https://open-meteo.com/" },
+  days: available ? rain.map((r, i) => ({ date: `2026-11-0${i + 1}`, rain_mm: r, tmax_c: 30, rain_probability_pct: 40 })) : [],
+  heavy_rain_days: rain.flatMap((r, i) => (r !== null && r >= 64.5 ? [{ date: `2026-11-0${i + 1}`, rain_mm: r }] : [])),
+});
+
 const FIXTURES: Record<string, unknown> = {
   "/api/health": { status: "ok", market_history_end: "2020-06-30", production_values_end: "2018-2019", live_data: false },
   "/api/meta": {
@@ -60,7 +69,15 @@ const FIXTURES: Record<string, unknown> = {
   "/api/outlook/arrivals/summary": { cells: 18, cells_better: 18, min_improvement_pct: 2.3, max_improvement_pct: 13.5, test: [] },
   "/api/outlook/prices/series-options": [{ state: "Kerala", district: "Alappuzha", market: "Chengannur", variety: "Small", origins: 104 }],
   "/api/outlook/prices/series": [{ origin_date: "2019-01-06T00:00:00", period: "val_2019", observed: 4000, persistence: 3450, hgb_conservative: 3700 }],
-  "/api/about": { sources: [{ data: "Mandi prices", source: "Open data", coverage: "to Jun 2020" }], spark: { version: "4.2.0", java: "21", window: "<= 2020-06-30", note: "local", mapreduce_label: "not Hadoop", rows_read: 7983133, last_run_seconds: 107.8, parity: [{ column: "key_set", rows_compared: 16673, mismatches: 0 }] }, reserved_production: { message: "counts only", counts: [] } },
+  "/api/locations/0/forecast": { ...FC([0.2, null, 3, 70, 1, 0, 0]), state: "Maharashtra", district: "Nashik", location_meaning: "district reference point (approximate for the district)" },
+  "/api/routes/weather": { coverage: "start and end district points only; the road between them is not checked", official_warning: false, heavy_rain_threshold_mm: 64.5,
+    message: "Heavy rain is forecast near the end of this route. Check current road conditions before dispatch.",
+    origin: { ...FC([0, 0, 0, 0, 0, 0, 0]), node_id: "D:Maharashtra|Nashik", name: "Nashik", state: "Maharashtra" }, dest: { ...FC([0, 1, 70, 2, 0, 0, 0]), node_id: "D:Maharashtra|Pune", name: "Pune", state: "Maharashtra" } },
+  "/api/v2/markets/meta": { available: true, kind: "observed", live: false, retrieved: "2026-10-29", attribution: "Mandi prices: DMI, published on data.gov.in", grade: "FAQ",
+    segments: [{ source: "agmarknet_archive", label: "Archive", first_week: "2020-07-06", last_week: "2024-01-22" }, { source: "datagov", label: "Recent", first_week: "2024-02-05", last_week: "2026-10-19" }],
+    breaks: [{ date: "2024-02-03", what: "source change" }, { date: "2025-11-07", what: "relaunch" }], states_by_crop: { Onion: ["Maharashtra"], Potato: [], Wheat: [] } },
+  "/api/v2/markets/weekly": [{ week_start: "2024-01-22T00:00:00", source: "agmarknet_archive", records: 50, markets: 20, modal_price_median: 1400 },
+    { week_start: "2024-02-05T00:00:00", source: "datagov", records: 60, markets: 25, modal_price_median: 1500 }, { week_start: "2026-10-19T00:00:00", source: "datagov", records: 70, markets: 30, modal_price_median: 2100 }],
 };
 
 let calls: URL[] = [];
@@ -80,35 +97,84 @@ beforeEach(() => {
       const op = url.searchParams.get("operator");
       body = { records: WHS.filter((w) => !op || w.operator_class === op), note: null };
     }
+    // Gujarat reports ₹300 more each week and Maharashtra misses nothing, so the comparison has a clear answer.
+    if (url.pathname === "/api/markets/weekly" && url.searchParams.get("state") === "Gujarat") body = (body as ReturnType<typeof week>[]).map((w) => ({ ...w, modal_price_median: w.modal_price_median + 300 }));
     if (url.pathname === "/api/locations/activity") body = act(url.searchParams.get("crop") === "Onion" ? [0, 1] : [2]);
     return body === undefined ? new Response(JSON.stringify({ detail: "not found" }), { status: 404 }) : new Response(JSON.stringify(body), { status: 200 });
   }));
 });
 
-function renderAt(path = "/") {
+function renderAt(path = "/", primary = false) {
+  // Retained historical components remain regression-tested as secondary views.
+  if (!primary) {
+    if (path === "/") path = "/history";
+    else if (path.startsWith("/markets")) path = path.replace("/markets", "/history/markets");
+    else if (path.startsWith("/warehouses")) path = path.replace("/warehouses", "/history/warehouses");
+  }
   const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
   return render(<QueryClientProvider client={client}><MemoryRouter initialEntries={[path]}><AppRoutes /></MemoryRouter></QueryClientProvider>);
 }
 const heading = () => screen.getByRole("heading", { level: 1 });
 
 describe("navigation", () => {
-  it("reaches all six sections from the top nav", async () => {
+  it("reaches every section from the main nav", async () => {
     const user = userEvent.setup();
-    renderAt();
+    renderAt("/", true);
     const nav = screen.getByRole("navigation", { name: "Main" });
-    for (const [link, title] of [["Markets", "Markets"], ["Price Outlook", "Price Outlook"], ["Routes", "Routes"], ["Warehouses", "Warehouses"], ["About & Data", "About & Data"], ["Overview", "Maharashtra"]]) {
+    expect(within(nav).getAllByRole("link")).toHaveLength(3);
+    for (const [link, title] of [["Markets", "Know your market."], ["Warehouses", "Room for the next step."], ["Strategies", "A better move for your harvest."]]) {
       await user.click(within(nav).getByRole("link", { name: link }));
       await waitFor(() => expect(heading()).toHaveTextContent(title));
     }
   });
+  it("redirects the retired About URL to Strategies", async () => {
+    renderAt("/about", true);
+    await waitFor(() => expect(heading()).toHaveTextContent("A better move for your harvest."));
+    expect(screen.queryByRole("link", { name: "About & Data" })).not.toBeInTheDocument();
+  });
 });
 
 describe("overview", () => {
-  it("shows API KPIs and filters the verified-location list", async () => {
+  it("summarises the selected state's reported prices", async () => {
+    const client = new QueryClient({ defaultOptions: { queries: { retry: false } } });
+    render(<QueryClientProvider client={client}><MemoryRouter initialEntries={["/history"]}>
+      <Routes><Route element={<Layout />}><Route path="/history" element={<Overview />} /></Route></Routes>
+    </MemoryRouter></QueryClientProvider>);
+    // 90-day window ending at the last report (8 Jul 2019): ₹1,500 -> ₹1,700
+    expect(await screen.findByTestId("kpi-latest")).toHaveTextContent("₹1,700");
+    expect(screen.getByTestId("kpi-latest")).toHaveTextContent("Week of 8 Jul 2019");
+    expect(screen.getByTestId("kpi-change")).toHaveTextContent("+₹200");
+    expect(screen.getByTestId("kpi-change")).toHaveTextContent("+13.3% since 1 Jul 2019");
+    expect(await screen.findByTestId("kpi-arrivals")).toHaveTextContent("4.73M");
+  });
+
+  it("explains observations with evidence and never promises profit", async () => {
+    renderAt();
+    const box = await screen.findByTestId("insights");
+    expect(await within(box).findByText("Prices are rising in Maharashtra")).toBeInTheDocument();
+    expect(await within(box).findByText("1 of 1 other states reported a higher price")).toBeInTheDocument();
+    expect(box).toHaveTextContent("Gujarat reported ₹2,000 against ₹1,700");
+    expect(within(box).getByRole("link", { name: /Check road distance/ })).toHaveAttribute("href", "/routes");
+    expect(document.body.textContent).not.toMatch(/guarantee(d)? (profit|return)|maximum profit|best market/i);
+  });
+
+  it("compares states only on the same reporting week and lets the user switch to one", async () => {
     const user = userEvent.setup();
     renderAt();
-    expect(await screen.findByTestId("kpi-arrivals")).toHaveTextContent("4.73M");
-    const list = screen.getByTestId("location-list");
+    const cmp = await screen.findByTestId("comparison");
+    const rows = await within(cmp).findAllByRole("button", { name: /price history/ });
+    expect(rows.map((r) => r.getAttribute("aria-label"))).toEqual(["Show Gujarat price history", "Show Maharashtra price history"]);
+    expect(rows[0]).toHaveTextContent("+₹300 vs Maharashtra");
+    await user.click(rows[0]);
+    await waitFor(() => expect(screen.getByTestId("kpi-latest")).toHaveTextContent("₹2,000"));
+  });
+});
+
+describe("districts", () => {
+  it("shows API KPIs and filters the verified-location list", async () => {
+    const user = userEvent.setup();
+    renderAt("/districts");
+    const list = await screen.findByTestId("location-list");
     await waitFor(() => expect(within(list).getAllByRole("button", { expanded: false })).toHaveLength(3));
     await user.click(screen.getByRole("button", { name: /Wheat/, pressed: false }));
     expect(within(list).getAllByRole("button", { expanded: false })).toHaveLength(1);
@@ -123,7 +189,7 @@ describe("overview", () => {
   });
 
   it("marks only points with 2019-20 reports as reported", async () => {
-    renderAt();
+    renderAt("/districts");
     await waitFor(() => expect(screen.getByTestId("map")).toHaveAttribute("data-count", "3"));
     const tones = screen.getByTestId("map").dataset.tones!.split(",");
     expect(tones.filter((t) => t === "ok")).toHaveLength(2);            // Nashik, Amreli have Onion reports; Agra does not
@@ -131,7 +197,7 @@ describe("overview", () => {
 
   it("opens the floating detail card with historical climate", async () => {
     const user = userEvent.setup();
-    renderAt();
+    renderAt("/districts");
     await user.click(await screen.findByRole("button", { name: /Nashik/ }));
     const card = await screen.findByTestId("floating-card");
     expect(card).toHaveTextContent("Historical averages, not a forecast");
@@ -223,5 +289,76 @@ describe("data boundaries", () => {
     for (const u of calls) {
       expect(u.search).not.toMatch(/holdout|202[3-9]/);
     }
+  });
+});
+
+describe("recent prices", () => {
+  it("shows observed recent state prices with coverage, source changes and attribution, never as a forecast", async () => {
+    renderAt("/markets?state=Maharashtra");
+    const card = await screen.findByTestId("recent-prices");
+    expect(await within(card).findByText("₹2,100")).toBeInTheDocument();
+    expect(card).toHaveTextContent("observed reports, not a forecast");
+    expect(card).toHaveTextContent(/weeks reported/);
+    expect(card).toHaveTextContent("data.gov.in");
+    expect(card.textContent).not.toMatch(/predict|expected price|will (rise|fall)/i);
+  });
+
+  it("says so when a state has no recent reports, and handles a missing table", async () => {
+    renderAt("/markets?state=Gujarat");
+    const card = await screen.findByTestId("recent-prices");
+    expect(await within(card).findByText("No recent reports for Gujarat")).toBeInTheDocument();
+    expect(calls.some((u) => u.pathname === "/api/v2/markets/weekly")).toBe(false);
+    const saved = FIXTURES["/api/v2/markets/meta"];
+    try {
+      cleanupAndRender({ available: false, message: "not built" });
+      expect(await screen.findByText("Recent prices are not available")).toBeInTheDocument();
+    } finally {
+      FIXTURES["/api/v2/markets/meta"] = saved;
+    }
+  });
+});
+
+function cleanupAndRender(meta: unknown) {
+  FIXTURES["/api/v2/markets/meta"] = meta;
+  document.body.innerHTML = "";
+  renderAt("/markets");
+}
+
+describe("weather forecast", () => {
+  it("shows a 7-day forecast on the district card with its update time and attribution, and missing values as dashes", async () => {
+    const user = userEvent.setup();
+    renderAt("/districts");
+    await user.click(await screen.findByRole("button", { name: /Nashik/ }));
+    const f = await screen.findByTestId("point-forecast");
+    expect(await within(f).findByRole("list", { name: "Seven-day forecast" })).toBeInTheDocument();
+    expect(within(f).getAllByRole("listitem")).toHaveLength(7);
+    expect(within(f).getAllByRole("listitem")[1]).toHaveAccessibleName(/rain unknown mm/);
+    expect(f).toHaveTextContent("approximate for the district");
+    expect(f).toHaveTextContent(/Updated/);
+    expect(within(f).getByRole("link", { name: "Weather forecast by Open-Meteo.com" })).toHaveAttribute("href", "https://open-meteo.com/");
+  });
+
+  it("says when the forecast provider is unavailable instead of showing numbers", async () => {
+    const saved = FIXTURES["/api/locations/0/forecast"];
+    FIXTURES["/api/locations/0/forecast"] = { ...FC([], false), state: "Maharashtra", district: "Nashik", location_meaning: "x" };
+    try {
+      const user = userEvent.setup();
+      renderAt("/districts");
+      await user.click(await screen.findByRole("button", { name: /Nashik/ }));
+      const f = await screen.findByTestId("point-forecast");
+      expect(await within(f).findByText(/Forecast unavailable right now/)).toBeInTheDocument();
+      expect(within(f).queryByRole("list")).toBeNull();
+    } finally {
+      FIXTURES["/api/locations/0/forecast"] = saved;
+    }
+  });
+
+  it("route weather covers only the end points and never claims a road is closed", async () => {
+    renderAt("/routes?from=D%3AMaharashtra%7CNashik&to=D%3AMaharashtra%7CPune");
+    const w = await screen.findByTestId("route-weather");
+    expect(await within(w).findByText(/Heavy rain is forecast near the end of this route/)).toHaveAttribute("role", "status");
+    expect(w).toHaveTextContent("Covers the two district points only, not the road between them");
+    expect(w).toHaveTextContent("not an official warning");
+    expect(w.textContent).not.toMatch(/(closed|unsafe|blocked|delayed)/i);
   });
 });
